@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ccgwm4melw7x5"]
+
+[ext_resource type="PackedScene" uid="uid://viqjffx48j4h" path="res://gameobjects/mess/GenericMess.tscn" id="1_ef1ts"]
+[ext_resource type="Texture2D" uid="uid://dy7yg288rix7g" path="res://icon.svg" id="2_q2ias"]
+
+[node name="GenericMess" unique_id=1815458754 instance=ExtResource("1_ef1ts")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="1" unique_id=468599746]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.015917331, 0)
+texture = ExtResource("2_q2ias")
+
+[editable path="InteractTrigger"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qj5ogh0dgi2a"]
 
 [ext_resource type="PackedScene" uid="uid://clsm22fwaqfjf" path="res://gameobjects/player/Player.tscn" id="1_o7f2i"]
+[ext_resource type="PackedScene" uid="uid://ccgwm4melw7x5" path="res://gameobjects/mess/TestMess.tscn" id="2_hsexo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fyu5l"]
 size = Vector3(10, 1, 10)
@@ -22,7 +23,13 @@ shape = SubResource("BoxShape3D_fyu5l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_o7f2i")
 
-[node name="Player" parent="." unique_id=349429890 instance=ExtResource("1_o7f2i")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1686474740]
 environment = SubResource("Environment_o7f2i")
+
+[node name="Player" parent="." unique_id=349429890 instance=ExtResource("1_o7f2i")]
+
+[node name="GenericMess" parent="." unique_id=1815458754 instance=ExtResource("2_hsexo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9506443, 0, -1.4463916)
+
+[node name="GenericMess2" parent="." unique_id=303645057 instance=ExtResource("2_hsexo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7097478, 0, -3.3704848)

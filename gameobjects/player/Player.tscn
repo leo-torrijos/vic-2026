@@ -6,14 +6,30 @@
 radius = 0.3
 height = 1.5
 
+[sub_resource type="BoxMesh" id="BoxMesh_wgnyx"]
+size = Vector3(0.25, 1.5, 0.25)
+
 [node name="Player" type="CharacterBody3D" unique_id=349429890]
 script = ExtResource("1_wgnyx")
+
+[node name="Neck" type="Node3D" parent="." unique_id=930481474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3200324, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=1284098317]
+current = true
+fov = 80.0
+
+[node name="InteractRay" type="RayCast3D" parent="Neck/Camera3D" unique_id=2141607628]
+target_position = Vector3(0, 0, -2)
+collision_mask = 5
+collide_with_areas = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1144212660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_fyu5l")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1676790305]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.235854, 0)
-
 [node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1531863122]
+
+[node name="TempMesh" type="MeshInstance3D" parent="." unique_id=1728155206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7859942, 0)
+mesh = SubResource("BoxMesh_wgnyx")
