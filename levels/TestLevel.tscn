@@ -29,7 +29,7 @@ environment = SubResource("Environment_o7f2i")
 [node name="Player" parent="." unique_id=349429890 instance=ExtResource("1_o7f2i")]
 
 [node name="GenericMess" parent="." unique_id=1815458754 instance=ExtResource("2_hsexo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9506443, 0, -1.4463916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.350733, 0, 3.5591252)
 
-[node name="GenericMess2" parent="." unique_id=303645057 instance=ExtResource("2_hsexo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7097478, 0, -3.3704848)
+[node name="GenericMess2" parent="." unique_id=227711088 instance=ExtResource("2_hsexo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5599267, 0, 3.4818761)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://clsm22fwaqfjf"]
 
 [ext_resource type="Script" uid="uid://b20fbd1nitdfa" path="res://gameobjects/player/Player.gd" id="1_wgnyx"]
+[ext_resource type="PackedScene" uid="uid://cf8c464f6knv2" path="res://gameobjects/player/PlayerUI.tscn" id="2_c5dv2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fyu5l"]
 radius = 0.3
@@ -28,7 +29,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_fyu5l")
 
-[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1531863122]
+[node name="PlayerUI" parent="." unique_id=411402018 instance=ExtResource("2_c5dv2")]
 
 [node name="TempMesh" type="MeshInstance3D" parent="." unique_id=1728155206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7859942, 0)

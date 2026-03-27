@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://viqjffx48j4h"]
 
+[ext_resource type="Script" uid="uid://cb72bqaundjeh" path="res://gameobjects/mess/Mess.gd" id="1_0wopc"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="1_h3d1j"]
+[ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="3_vcmcn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h3d1j"]
 radius = 0.75
 
 [node name="GenericMess" type="Node3D" unique_id=1815458754]
+script = ExtResource("1_0wopc")
 
 [node name="InteractTrigger" parent="." unique_id=1392577794 instance=ExtResource("1_h3d1j")]
 interaction_type = "clean"
 
 [node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
 shape = SubResource("SphereShape3D_h3d1j")
+
+[node name="SuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("3_vcmcn")]
 
 [editable path="InteractTrigger"]

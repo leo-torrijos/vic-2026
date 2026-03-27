@@ -11,6 +11,9 @@ var state = MOVE
 
 @onready var neck = $Neck
 @onready var camera = $Neck/Camera3D
+@onready var player_ui = $PlayerUI
+
+var current_interaction = null
 
 
 func _ready() -> void:
@@ -41,16 +44,19 @@ func _physics_process(delta: float) -> void:
 			
 			# Action (i.e. using item, cleaning)
 			if Input.is_action_just_pressed("action1"):
-				var interaction = $Neck/Camera3D/InteractRay.get_collider()
-				if interaction and interaction is InteractTrigger:
-					match interaction.interaction_type:
+				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
+				if current_interaction and current_interaction is InteractTrigger:
+					match current_interaction.current_interaction_type:
 						"clean":
+							current_interaction.get_parent().clean(self)
 							state = CLEAN
 					print_debug("I INTERACTED")
 		CLEAN:
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
 				state = MOVE
+				if current_interaction:
+					current_interaction.get_parent().clean(self)
 	move_and_slide()
 	
 func _unhandled_input(event):
@@ -61,3 +67,7 @@ func _unhandled_input(event):
 			neck.rotate_y(-event.relative.x * LOOK_SENSITIVITY)
 			camera.rotate_x(-event.relative.y * LOOK_SENSITIVITY)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+func done_cleaning():
+	state = MOVE
+	# TODO: chance to say something on clean?

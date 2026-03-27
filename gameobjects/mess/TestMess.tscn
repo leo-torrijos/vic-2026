@@ -9,4 +9,9 @@
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.015917331, 0)
 texture = ExtResource("2_q2ias")
 
+[node name="CleanTimer" type="Timer" parent="." index="2" unique_id=129996755]
+one_shot = true
+
+[connection signal="timeout" from="CleanTimer" to="." method="_on_clean_timer_timeout"]
+
 [editable path="InteractTrigger"]
