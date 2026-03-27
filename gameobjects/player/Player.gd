@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("action1"):
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:
-					match current_interaction.current_interaction_type:
+					match current_interaction.interaction_type:
 						"clean":
 							current_interaction.get_parent().clean(self)
 							state = CLEAN
