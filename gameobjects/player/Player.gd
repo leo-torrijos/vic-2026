@@ -43,14 +43,16 @@ func _physics_process(delta: float) -> void:
 				velocity.z = move_toward(velocity.z, 0.0, ACCEL)
 			
 			# Action (i.e. using item, cleaning)
-			if Input.is_action_just_pressed("action1"):
-				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
-				if current_interaction and current_interaction is InteractTrigger:
-					match current_interaction.interaction_type:
-						"clean":
+			current_interaction = $Neck/Camera3D/InteractRay.get_collider()
+			if current_interaction and current_interaction is InteractTrigger:
+				match current_interaction.interaction_type:
+					"clean":
+						if Input.is_action_just_pressed("action1"):
 							current_interaction.get_parent().clean(self)
 							state = CLEAN
-					print_debug("I INTERACTED")
+					"pickup":
+						# ethan go!!!!
+						pass
 		CLEAN:
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
