@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://clsm22fwaqfjf"]
+
+[ext_resource type="Script" uid="uid://b20fbd1nitdfa" path="res://gameobjects/player/Player.gd" id="1_wgnyx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fyu5l"]
+radius = 0.3
+height = 1.5
+
+[node name="Player" type="CharacterBody3D" unique_id=349429890]
+script = ExtResource("1_wgnyx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1144212660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_fyu5l")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1676790305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.235854, 0)
+
+[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1531863122]

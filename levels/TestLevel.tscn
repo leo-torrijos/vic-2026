@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://qj5ogh0dgi2a"]
+
+[ext_resource type="PackedScene" uid="uid://clsm22fwaqfjf" path="res://gameobjects/player/Player.tscn" id="1_o7f2i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fyu5l"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o7f2i"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="Environment" id="Environment_o7f2i"]
+
+[node name="TestLevel" type="Node3D" unique_id=1071976447]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=456844211]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1230918900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_fyu5l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=581307009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_o7f2i")
+
+[node name="Player" parent="." unique_id=349429890 instance=ExtResource("1_o7f2i")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1686474740]
+environment = SubResource("Environment_o7f2i")
