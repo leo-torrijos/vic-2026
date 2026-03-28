@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://jb01h8n0oufj"]
+
+[ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="2_7uror"]
+[ext_resource type="PackedScene" uid="uid://cneeo0pxpurvp" path="res://gameobjects/weapon/Weapon.tscn" id="2_abxau"]
+[ext_resource type="Script" uid="uid://fum7w5pgjhj4" path="res://gameobjects/pickups/Pickup.gd" id="2_p5wkj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7uror"]
+radius = 0.215
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1e00"]
+albedo_color = Color(0.69411767, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7uror"]
+material = SubResource("StandardMaterial3D_v1e00")
+size = Vector3(0.1, 0.1, 0.3)
+
+[node name="GenericPickup" type="Node3D" unique_id=429504598]
+script = ExtResource("2_p5wkj")
+collected_object = ExtResource("2_abxau")
+
+[node name="InteractTrigger" parent="." unique_id=1392577794 instance=ExtResource("2_7uror")]
+interaction_type = "pickup"
+
+[node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
+shape = SubResource("SphereShape3D_7uror")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1550902025]
+mesh = SubResource("BoxMesh_7uror")
+
+[editable path="InteractTrigger"]
