@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://byyqrwl3syrea"]
+
+[ext_resource type="PackedScene" uid="uid://cneeo0pxpurvp" path="res://gameobjects/weapon/Weapon.tscn" id="1_t34d1"]
+[ext_resource type="PackedScene" uid="uid://dmgju371pa4ah" path="res://assets/models/kitchen_knife.glb" id="2_pudjq"]
+
+[node name="WeaponKnife" unique_id=579591955 instance=ExtResource("1_t34d1")]
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=151005533]
+visible = false
+
+[node name="kitchen_knife" parent="." index="2" unique_id=43944995 instance=ExtResource("2_pudjq")]
+transform = Transform3D(-0.04, -3.496911e-09, 1.5285484e-16, 0, -1.7484555e-09, -0.04, 3.496911e-09, -0.04, 1.7484555e-09, 0.33945513, -0.19141388, -0.15774465)
