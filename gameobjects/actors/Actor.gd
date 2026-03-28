@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Actor
 
-enum {IDLE, PATROL}
+enum {IDLE, PATROL, DIE}
 
 @export var move_speed = 0.75
 
@@ -15,6 +15,7 @@ var current_navigation_delay = 0
 var next_position
 var follow_director
 var level
+var nav_mesh
 
 func _physics_process(delta: float) -> void:
 	match state:
@@ -51,4 +52,5 @@ func patrol(target_position):
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
-	follow_director._on_target_reached()
+	if follow_director:
+		follow_director._on_target_reached()
