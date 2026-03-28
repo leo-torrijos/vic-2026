@@ -4,23 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://ccgwm4melw7x5" path="res://gameobjects/mess/TestMess.tscn" id="2_hsexo"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="3_tqdee"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="4_yvpdy"]
-[ext_resource type="Texture2D" uid="uid://beov8kiagn5iq" path="res://assets/maptextures/testwall.png" id="5_tqdee"]
+[ext_resource type="Material" uid="uid://sj2qe0okf11y" path="res://assets/maptextures/testwall.tres" id="5_tqdee"]
 
 [sub_resource type="Environment" id="Environment_o7f2i"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvpdy"]
-albedo_texture = ExtResource("5_tqdee")
-metallic_specular = 0.0
-texture_filter = 2
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_qeqti"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tqdee"]
 _surfaces = [{
 "aabb": AABB(-4, -1, -4, 8, 1, 8),
 "attribute_data": PackedByteArray("AACAwAAAAAAAAIBAAAAAAAAAgEAAAIA/AACAwAAAgD8AAIBAAACAPwAAgMAAAIA/AACAwAAAAAAAAIBAAAAAAAAAgMAAAIBAAACAwAAAgMAAAIBAAACAwAAAgEAAAIBAAACAQAAAgEAAAIDAAACAQAAAgMAAAIDAAACAQAAAgMAAAIDAAAAAAAAAgEAAAAAAAACAQAAAgD8AAIDAAACAPwAAgEAAAIA/AACAwAAAgD8AAIDAAAAAAAAAgEAAAAAA"),
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
-"material": SubResource("StandardMaterial3D_yvpdy"),
+"material": ExtResource("5_tqdee"),
 "name": "testwall",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -28,7 +23,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AACAQAAAAAAAAIDAAACAwAAAAAAAAIDAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAwAAAgL8AAIBAAACAwAAAgL8AAIDAAACAwAAAAAAAAIDAAACAwAAAAAAAAIBAAACAwAAAgL8AAIBAAACAQAAAgL8AAIBAAACAQAAAgL8AAIDAAACAwAAAgL8AAIDAAACAwAAAAAAAAIBAAACAwAAAAAAAAIDAAACAQAAAAAAAAIDAAACAQAAAAAAAAIBAAACAQAAAAAAAAIBAAACAQAAAAAAAAIDAAACAQAAAgL8AAIDAAACAQAAAgL8AAIBAAACAQAAAgL8AAIBAAACAwAAAgL8AAIBAAACAwAAAAAAAAIBAAACAQAAAAAAAAIBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
 }]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bcaos"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvpdy"]
 points = PackedVector3Array(4, 0, 4, 4, -1, 4, -4, 0, 4, -4, -1, 4, 4, 0, -4, 4, -1, -4, -4, 0, -4, -4, -1, -4)
 
 [node name="TestLevel" type="Node3D" unique_id=1071976447]
@@ -50,11 +45,11 @@ local_map_file = "uid://irt3m5wt7eep"
 map_settings = ExtResource("4_yvpdy")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=1007099710]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=1858121045]
 collision_mask = 0
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=545001328]
-mesh = SubResource("ArrayMesh_qeqti")
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=607204224]
+mesh = SubResource("ArrayMesh_tqdee")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=654611887]
-shape = SubResource("ConvexPolygonShape3D_bcaos")
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=437363101]
+shape = SubResource("ConvexPolygonShape3D_yvpdy")

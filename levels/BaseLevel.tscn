@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cse4r7ovxp510"]
+
+[ext_resource type="Script" uid="uid://b14e40m0k5xpt" path="res://levels/LevelDirector.gd" id="1_ennia"]
+[ext_resource type="PackedScene" uid="uid://clsm22fwaqfjf" path="res://gameobjects/player/Player.tscn" id="1_lf7d8"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_ennia"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="3_x6cm1"]
+
+[node name="BaseLevel" type="Node3D" unique_id=1706961308]
+script = ExtResource("1_ennia")
+
+[node name="Player" parent="." unique_id=349429890 instance=ExtResource("1_lf7d8")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1918371590]
+
+[node name="FuncGodotMap" type="Node3D" parent="NavigationRegion3D" unique_id=1137447907]
+script = ExtResource("2_ennia")
+local_map_file = "uid://irt3m5wt7eep"
+map_settings = ExtResource("3_x6cm1")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
