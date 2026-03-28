@@ -5,14 +5,7 @@ enum {IDLE, PATROL}
 @export var move_speed = 0.75
 
 # State
-@export var health = 2.0
 var state = IDLE
-## Removed with damage. Humans with protection cannot be infected.
-@export var protection = 0
-## If immune, this human can NEVER be infected.
-@export var immune = false
-## Things this human can interact with
-@export var unlockable_objects : Array[Node3D]
 
 # Navigation
 @onready var nav_agent = $NavigationAgent3D
