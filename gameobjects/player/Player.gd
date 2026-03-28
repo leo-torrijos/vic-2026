@@ -16,6 +16,7 @@ var state = MOVE
 
 var current_interaction = null
 var hands_full = false
+var handheld = null
 
 
 func _ready() -> void:
@@ -45,19 +46,23 @@ func _physics_process(delta: float) -> void:
 				velocity.z = move_toward(velocity.z, 0.0, ACCEL)
 			
 			# Action (i.e. using item, cleaning)
-			current_interaction = $Neck/Camera3D/InteractRay.get_collider()
-			if current_interaction and current_interaction is InteractTrigger:
-				match current_interaction.interaction_type:
-					"clean":
-						if Input.is_action_just_pressed("action1"):
-							current_interaction.get_parent().clean(self)
-							state = CLEAN
-					"pickup":
-						if Input.is_action_just_pressed("action1"):
-							var handheld = current_interaction.get_parent().collected_object.instantiate()
-							current_interaction.get_parent().queue_free()
-							player_hand.add_child(handheld)
-							hands_full = true
+			if handheld and handheld is Weapon and handheld.get_node("KillRay").get_collider():
+				if Input.is_action_just_pressed("action1"):
+					print("KILL")
+			else:
+				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
+				if current_interaction and current_interaction is InteractTrigger:
+					match current_interaction.interaction_type:
+						"clean":
+							if Input.is_action_just_pressed("action1"):
+								current_interaction.get_parent().clean(self)
+								state = CLEAN
+						"pickup":
+							if Input.is_action_just_pressed("action1"):
+								handheld = current_interaction.get_parent().collected_object.instantiate()
+								current_interaction.get_parent().queue_free()
+								player_hand.add_child(handheld)
+								hands_full = true
 		CLEAN:
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
