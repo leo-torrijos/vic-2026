@@ -5,8 +5,16 @@
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_ennia"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="3_x6cm1"]
 
+[sub_resource type="Environment" id="Environment_lf7d8"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.6
+
 [node name="BaseLevel" type="Node3D" unique_id=1706961308]
 script = ExtResource("1_ennia")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=600597906]
+environment = SubResource("Environment_lf7d8")
 
 [node name="Player" parent="." unique_id=349429890 instance=ExtResource("1_lf7d8")]
 
