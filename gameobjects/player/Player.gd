@@ -51,7 +51,6 @@ func _physics_process(delta: float) -> void:
 					current_interaction = handheld.get_node("KillRay").get_collider()
 					if current_interaction.interaction_type == "kill":
 						current_interaction.get_parent().die()
-						print("KILL")
 			else:
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:
@@ -61,9 +60,21 @@ func _physics_process(delta: float) -> void:
 								current_interaction.get_parent().clean(self)
 								state = CLEAN
 						"pickup":
-							if Input.is_action_just_pressed("action1"):
+							if Input.is_action_just_pressed("action1") and not hands_full:
 								handheld = current_interaction.get_parent().collected_object.instantiate()
-								current_interaction.get_parent().queue_free()
+								handheld.stored_pickup = current_interaction.get_parent()
+								current_interaction.get_parent().get_parent().remove_child(handheld.stored_pickup)
+								player_hand.add_child(handheld)
+								hands_full = true
+						"put_in_holder":
+							if Input.is_action_just_pressed("action1") and hands_full:
+								current_interaction.get_parent().place_object(handheld.stored_pickup)
+								handheld.queue_free()
+								hands_full = false
+						"take_from_holder":
+							if Input.is_action_just_pressed("action1") and not hands_full:
+								handheld = current_interaction.get_parent().yield_object()
+								handheld.stored_pickup = current_interaction.get_parent().held_object
 								player_hand.add_child(handheld)
 								hands_full = true
 						"drag":

@@ -10,6 +10,7 @@
 [ext_resource type="Material" uid="uid://dpv8penqg3gm5" path="res://assets/maptextures/house/house_wood_spotted.tres" id="8_dkril"]
 [ext_resource type="PackedScene" uid="uid://bd3w810op6m3f" path="res://gameobjects/draggable/Corpse.tscn" id="9_kdcll"]
 [ext_resource type="PackedScene" uid="uid://dc7uistv866vx" path="res://gameobjects/actors/Victim.tscn" id="9_lbu4x"]
+[ext_resource type="PackedScene" uid="uid://la5wrlkgh5go" path="res://gameobjects/pickups/PickupKnife.tscn" id="10_j4pg1"]
 [ext_resource type="PackedScene" uid="uid://bnysi8whw1q7c" path="res://gameobjects/actors/navigation/WalkPath.tscn" id="10_vcl05"]
 [ext_resource type="PackedScene" uid="uid://bhsf2vutljybb" path="res://gameobjects/actors/navigation/WalkPoint.tscn" id="11_nn0v1"]
 
@@ -432,6 +433,9 @@ shadow_enabled = true
 [node name="Corpse" parent="Interactables" parent_id_path=PackedInt32Array(1269250877) index="1" unique_id=1629555621 instance=ExtResource("9_kdcll")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.4586396)
 
+[node name="PickupKnife" parent="Interactables" parent_id_path=PackedInt32Array(1269250877) index="2" unique_id=429504598 instance=ExtResource("10_j4pg1")]
+transform = Transform3D(-0.87766534, 0, -0.47927397, 0, 1, 0, 0.47927397, 0, -0.87766534, -2.8252048, 1.0023475, -12.762022)
+
 [node name="Victim" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="0" unique_id=154303676 instance=ExtResource("9_lbu4x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1208386, 0, -12.437648)
 
@@ -485,3 +489,5 @@ transform = Transform3D(0.9998381, 0, -0.017993152, 0, 1, 0, 0.017993152, 0, 0.9
 
 [node name="WalkPoint16" parent="Paths/WalkPathVictim" index="15" unique_id=1441066186 instance=ExtResource("11_nn0v1")]
 transform = Transform3D(0.84958917, 0, -0.527445, 0, 1, 0, 0.527445, 0, 0.84958917, -5.7756834, 0, -11.133073)
+
+[connection signal="death" from="Actors/Victim" to="." method="_on_victim_death"]

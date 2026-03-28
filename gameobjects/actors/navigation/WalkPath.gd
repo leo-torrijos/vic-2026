@@ -14,6 +14,9 @@ var current_index = -1
 var follow_points = []
 var current_follow_goal : Node3D
 
+## Emitted when "loop_path" is false and the entire path has been walked.
+signal path_completed
+
 func _ready():
 	for i in get_children():
 		if i is Node3D:
@@ -29,7 +32,11 @@ func _on_target_reached():
 		await get_tree().create_timer(new_pos_time).timeout
 	current_index += 1
 	if current_index >= follow_points.size():
-		current_index = 0
+		if loop_path:
+			current_index = 0
+		else:
+			emit_signal("path_completed")
+			return
 	current_follow_goal = follow_points[current_index]
 	#print("LET'S GO")
 	#print(current_follow_goal.global_position)
