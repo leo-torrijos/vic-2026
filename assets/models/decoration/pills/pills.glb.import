@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uboby2leiqcb"
-path="res://.godot/imported/vase.glb-9f3793b3e0e8d2acd5f53cbc60938227.scn"
+uid="uid://bpw53v2jnidpa"
+path="res://.godot/imported/pills.glb-9f0df506943cda33bcf7430b497d2926.scn"
 
 [deps]
 
-source_file="res://assets/models/vase.glb"
-dest_files=["res://.godot/imported/vase.glb-9f3793b3e0e8d2acd5f53cbc60938227.scn"]
+source_file="res://assets/models/decoration/pills/pills.glb"
+dest_files=["res://.godot/imported/pills.glb-9f0df506943cda33bcf7430b497d2926.scn"]
 
 [params]
 

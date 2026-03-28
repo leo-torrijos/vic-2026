@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmiw1q1rnu5b7"
-path.s3tc="res://.godot/imported/vase_flowerpetal.png-ca18ef076c18ac09e3dd2eb26e899b41.s3tc.ctex"
+uid="uid://bvkwqw7c48uq8"
+path.s3tc="res://.godot/imported/vase_Sprite.png-c90646c15f9e3386bae501df21ba53df.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "70a95bdb708422bd6da60cdf90a438f4"
+"md5": "3f93d3b83b4d42cd52ee3ea56c0f1771"
 }
 
 [deps]
 
-source_file="res://assets/models/vase_flowerpetal.png"
-dest_files=["res://.godot/imported/vase_flowerpetal.png-ca18ef076c18ac09e3dd2eb26e899b41.s3tc.ctex"]
+source_file="res://assets/models/decoration/vase/vase_Sprite.png"
+dest_files=["res://.godot/imported/vase_Sprite.png-c90646c15f9e3386bae501df21ba53df.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddbgs260mhu2o"
-path.s3tc="res://.godot/imported/pills_pills.png-7f69113ac932767e905501ea6c00cc10.s3tc.ctex"
+uid="uid://b335hal8vxdmn"
+path.s3tc="res://.godot/imported/vase_stem.png-ea0ba373dfd30446aa50c9e7372e7b75.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "59ad6a3daa5a8b1d63f266702d7e012c"
+"md5": "87d32845e0adea11490a37b253246547"
 }
 
 [deps]
 
-source_file="res://assets/models/pills_pills.png"
-dest_files=["res://.godot/imported/pills_pills.png-7f69113ac932767e905501ea6c00cc10.s3tc.ctex"]
+source_file="res://assets/models/decoration/vase/vase_stem.png"
+dest_files=["res://.godot/imported/vase_stem.png-ea0ba373dfd30446aa50c9e7372e7b75.s3tc.ctex"]
 
 [params]
 
