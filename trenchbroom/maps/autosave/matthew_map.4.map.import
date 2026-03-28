@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://k1k5wode7mew"
+path="res://.godot/imported/matthew_map.4.map-68b42b2ed0621523e5bbcf213a708e98.tres"
+
+[deps]
+
+source_file="res://trenchbroom/maps/autosave/matthew_map.4.map"
+dest_files=["res://.godot/imported/matthew_map.4.map-68b42b2ed0621523e5bbcf213a708e98.tres"]
+
+[params]
+

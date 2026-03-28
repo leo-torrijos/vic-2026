@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="vic2026"
-run/main_scene="uid://qj5ogh0dgi2a"
+run/main_scene="uid://bwqger3cncolg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbelrjeyyilkb"]
+
+[ext_resource type="Script" uid="uid://ce35clng3g55q" path="res://levels/DialogueDirector.gd" id="1_jk85f"]
+
+[node name="DialogueDirector" type="Node" unique_id=1024034190]
+script = ExtResource("1_jk85f")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dk4xoedv7bcob"]
+
+[ext_resource type="Texture2D" uid="uid://byks2kftv1ly7" path="res://assets/maptextures/house/house_cushion_red.png" id="1_4vfoy"]
+
+[resource]
+albedo_texture = ExtResource("1_4vfoy")
+metallic_specular = 0.0
+texture_filter = 2
