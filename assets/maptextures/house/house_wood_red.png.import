@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duvjsr22imfgd"
-path.s3tc="res://.godot/imported/house_carpet_orange.png-7830e25aa31e0e8ebe006d7e58af2d48.s3tc.ctex"
+uid="uid://cklid8r8rvobb"
+path.s3tc="res://.godot/imported/house_wood_red.png-5b0fae7d3f4f6975ebe59e101fba6767.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/maptextures/house/house_carpet_orange.png"
-dest_files=["res://.godot/imported/house_carpet_orange.png-7830e25aa31e0e8ebe006d7e58af2d48.s3tc.ctex"]
+source_file="res://assets/maptextures/house/house_wood_red.png"
+dest_files=["res://.godot/imported/house_wood_red.png-5b0fae7d3f4f6975ebe59e101fba6767.s3tc.ctex"]
 
 [params]
 
