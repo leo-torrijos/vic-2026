@@ -8,5 +8,5 @@
 [node name="MeshInstance3D" parent="." index="1" unique_id=151005533]
 visible = false
 
-[node name="kitchen_knife" parent="." index="2" unique_id=43944995 instance=ExtResource("2_pudjq")]
-transform = Transform3D(-0.04, -3.496911e-09, 1.5285484e-16, 0, -1.7484555e-09, -0.04, 3.496911e-09, -0.04, 1.7484555e-09, 0.33945513, -0.19141388, -0.15774465)
+[node name="kitchen_knife" parent="." index="2" unique_id=1807005868 instance=ExtResource("2_pudjq")]
+transform = Transform3D(-0.04, 3.496911e-09, 1.7484554e-09, -1.2924617e-09, 0.005055575, -0.039679226, -3.6898549e-09, -0.039679226, -0.005055575, 0.30047554, -0.19622263, -0.14156903)

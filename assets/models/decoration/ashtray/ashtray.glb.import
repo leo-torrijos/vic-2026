@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpw53v2jnidpa"
-path="res://.godot/imported/pills.glb-f46d09599891f791a834b339ba521ceb.scn"
+uid="uid://cfg1bhcp7sbyl"
+path="res://.godot/imported/ashtray.glb-437e81a56e951c1f8835f979ed36ab19.scn"
 
 [deps]
 
-source_file="res://assets/models/pills.glb"
-dest_files=["res://.godot/imported/pills.glb-f46d09599891f791a834b339ba521ceb.scn"]
+source_file="res://assets/models/decoration/ashtray/ashtray.glb"
+dest_files=["res://.godot/imported/ashtray.glb-437e81a56e951c1f8835f979ed36ab19.scn"]
 
 [params]
 
