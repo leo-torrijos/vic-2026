@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://c28epbwth2wev"]
 
+[ext_resource type="Script" uid="uid://l1usfjabls6v" path="res://gameobjects/triggers/SuspicionArea.gd" id="1_0e3oq"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_6jbk7"]
 radius = 2.0
 
 [node name="SuspicionArea" type="Area3D" unique_id=1503767028]
+script = ExtResource("1_0e3oq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=506871328]
 shape = SubResource("SphereShape3D_6jbk7")
