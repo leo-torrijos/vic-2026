@@ -75,7 +75,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_released("action1"):
 				state = MOVE
 				if current_interaction:
-					current_interaction.get_parent().cancel_clean(self)
+					current_interaction.get_parent().cancel_clean()
 		DRAG:
 			# For dragging stuff, probably corpses.
 			# Ratchet fix: Use "none" in input map to denote no input
