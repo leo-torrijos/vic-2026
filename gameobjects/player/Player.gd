@@ -12,9 +12,10 @@ var state = MOVE
 @onready var neck = $Neck
 @onready var camera = $Neck/Camera3D
 @onready var player_ui = $PlayerUI
+@onready var player_hand = $Neck/Camera3D/WeaponBone
 
 var current_interaction = null
-var has_pickup = false
+var hands_full = false
 
 
 func _ready() -> void:
@@ -53,8 +54,10 @@ func _physics_process(delta: float) -> void:
 							state = CLEAN
 					"pickup":
 						if Input.is_action_just_pressed("action1"):
-							pass
-						pass
+							var handheld = current_interaction.get_parent().collected_object.instantiate()
+							current_interaction.get_parent().queue_free()
+							player_hand.add_child(handheld)
+							hands_full = true
 		CLEAN:
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
