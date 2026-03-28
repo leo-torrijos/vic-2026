@@ -70,10 +70,12 @@ func _physics_process(delta: float) -> void:
 				if current_interaction and current_interaction is InteractTrigger:
 					match current_interaction.interaction_type:
 						"clean":
-							$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.clean
-							if Input.is_action_just_pressed("action1"):
-								current_interaction.get_parent().clean(self)
-								state = CLEAN
+							if not hands_full:
+								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.clean
+								if Input.is_action_just_pressed("action1"):
+									current_interaction.get_parent().clean(self)
+									state = CLEAN
+									hands_full = true
 						"pickup":
 							if not hands_full:
 								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.pickup
@@ -129,6 +131,7 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
 				state = MOVE
+				hands_full = false
 				if current_interaction:
 					current_interaction.get_parent().cancel_clean(self)
 		DRAG:
