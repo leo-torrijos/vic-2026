@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bnh028np76ihb"]
+
+[ext_resource type="PackedScene" uid="uid://bfara742u16ma" path="res://gameobjects/decor/Decor.tscn" id="1_5rqt7"]
+[ext_resource type="PackedScene" uid="uid://dvfnsj2wppi2w" path="res://assets/models/decoration/chair/chair_brown.glb" id="2_mrsep"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mrsep"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rxwku"]
+
+[sub_resource type="Animation" id="Animation_we786"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chair_brown:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chair_brown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.10155238, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rxwku"]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chair_brown:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5707964)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chair_brown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.36740392, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mrsep"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chair_brown:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chair_brown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.10155238, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xoymg"]
+_data = {
+&"RESET": SubResource("Animation_we786"),
+&"damage": SubResource("Animation_rxwku"),
+&"idle": SubResource("Animation_mrsep")
+}
+
+[node name="BrownChairDecor" unique_id=467157150 instance=ExtResource("1_5rqt7")]
+
+[node name="CollisionShape3D" parent="SuspicionArea" parent_id_path=PackedInt32Array(1503767028) index="0" unique_id=506871328]
+shape = SubResource("SphereShape3D_mrsep")
+
+[node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6098031, 0)
+shape = SubResource("SphereShape3D_rxwku")
+
+[node name="AnimationPlayer" parent="." index="4" unique_id=2066790702]
+libraries/ = SubResource("AnimationLibrary_xoymg")
+autoplay = &"idle"
+
+[node name="chair_brown" parent="." index="5" unique_id=164431673 instance=ExtResource("2_mrsep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10155238, 0)
+
+[editable path="SuspicionArea"]
+[editable path="InteractTrigger"]
