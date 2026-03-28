@@ -11,10 +11,9 @@ enum {
 	LOSS  ## Outro cutscene (if you lose)
 }
 
+var phase = 0
 
 const SUSPICION_LIMIT = 100
-
-
 var state = INTRO
 var suspicion = 0
 
@@ -24,9 +23,24 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func _physics_process(_delta: float) -> void:
-	if suspicion >= SUSPICION_LIMIT:
-		game_over()
+func next_phase():
+	phase += 1
+	# TODO: could use enum with these
+	match phase:
+		1: # Calm (Scope Out)
+			pass
+		2: # Murder
+			pass
+		3: # Cleanup
+			pass
+		4: # Investigation
+			pass
+		5: # Win
+			pass
+
+#func _physics_process(_delta: float) -> void:
+	#if suspicion >= SUSPICION_LIMIT:
+		#game_over()
 
 
 ## Intro -> Planning: Cutscene stuff
