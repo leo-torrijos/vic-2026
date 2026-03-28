@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bhsf2vutljybb"]
+
+[ext_resource type="Texture2D" uid="uid://cpr3rnaxdh02r" path="res://gameobjects/actors/navigation/walk_arrow.png" id="1_5b02k"]
+
+[node name="WalkPoint" type="Node3D" unique_id=1940477611]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1007081258]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.008481413, 0)
+texture = ExtResource("1_5b02k")

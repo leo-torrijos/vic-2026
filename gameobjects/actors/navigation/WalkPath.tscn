@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bnysi8whw1q7c"]
+
+[ext_resource type="Script" uid="uid://cbw1knrdk3y2y" path="res://gameobjects/actors/navigation/WalkPath.gd" id="1_s5j55"]
+
+[node name="WalkPath" type="Node3D" unique_id=453985004]
+script = ExtResource("1_s5j55")

@@ -27,3 +27,7 @@ mesh = SubResource("CapsuleMesh_u1k37")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1004073937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3901338, -0.27870452)
 mesh = SubResource("BoxMesh_w86fm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1626452981]
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
