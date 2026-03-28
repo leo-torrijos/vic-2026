@@ -17,3 +17,8 @@ script = ExtResource("2_ennia")
 local_map_file = "uid://irt3m5wt7eep"
 map_settings = ExtResource("3_x6cm1")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="CleanupTimer" type="Timer" parent="." unique_id=831077995]
+one_shot = true
+
+[connection signal="timeout" from="CleanupTimer" to="." method="_on_cleanup_timer_timeout"]

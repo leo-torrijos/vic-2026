@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duvjsr22imfgd"
-path.s3tc="res://.godot/imported/house_carpet_orange.png-7830e25aa31e0e8ebe006d7e58af2d48.s3tc.ctex"
+uid="uid://ddbgs260mhu2o"
+path.s3tc="res://.godot/imported/pills_pills.png-7f69113ac932767e905501ea6c00cc10.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "59ad6a3daa5a8b1d63f266702d7e012c"
+}
 
 [deps]
 
-source_file="res://assets/maptextures/house/house_carpet_orange.png"
-dest_files=["res://.godot/imported/house_carpet_orange.png-7830e25aa31e0e8ebe006d7e58af2d48.s3tc.ctex"]
+source_file="res://assets/models/pills_pills.png"
+dest_files=["res://.godot/imported/pills_pills.png-7f69113ac932767e905501ea6c00cc10.s3tc.ctex"]
 
 [params]
 
