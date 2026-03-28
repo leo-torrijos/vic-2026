@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bfara742u16ma"]
+
+[ext_resource type="Script" uid="uid://bf3d1ndxmru4u" path="res://gameobjects/decor/Decor.gd" id="1_i5m6g"]
+[ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="2_ete4e"]
+[ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_ssdt2"]
+
+[node name="Decor" type="Node3D" unique_id=467157150]
+script = ExtResource("1_i5m6g")
+
+[node name="SuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("2_ete4e")]
+monitorable = false
+
+[node name="InteractTrigger" parent="." unique_id=1392577794 instance=ExtResource("3_ssdt2")]
+
+[editable path="SuspicionArea"]
