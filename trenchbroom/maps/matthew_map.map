@@ -204,4 +204,13 @@
 ( 672 32 16 ) ( 673 32 16 ) ( 672 32 17 ) house/house_tile_white [ -1 0 0 32 ] [ 0 0 -1 0 ] 90 1 1
 ( 672 32 16 ) ( 672 32 17 ) ( 672 33 16 ) house/house_tile_white [ 0 1 0 0 ] [ 0 0 -1 0 ] 90 1 1
 }
+// brush 22
+{
+( 160 -192 0 ) ( 160 -191 0 ) ( 160 -192 1 ) house/house_wallpaper_yellow [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 160 -192 0 ) ( 160 -192 1 ) ( 161 -192 0 ) house/house_wallpaper_yellow [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 160 -192 0 ) ( 161 -192 0 ) ( 160 -191 0 ) house/house_wallpaper_yellow [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 256 -160 160 ) ( 256 -159 160 ) ( 257 -160 160 ) house/house_wallpaper_yellow [ 1 0 0 0 ] [ 0 -1 0 0 ] 270 1 1
+( 256 -160 16 ) ( 257 -160 16 ) ( 256 -160 17 ) house/house_wallpaper_yellow [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 256 -160 16 ) ( 256 -160 17 ) ( 256 -159 16 ) house/house_wallpaper_yellow [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
 }
