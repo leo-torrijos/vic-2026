@@ -15,7 +15,6 @@ var next_position
 var follow_director
 var level
 
-signal selected(human)
 signal die
 
 func _physics_process(delta: float) -> void:

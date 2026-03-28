@@ -19,10 +19,10 @@ func _ready():
 		if i is Node3D:
 			follow_points.append(i)
 	assert(follow_points.size() > 0)
-	navigator.connect("target_reached", _on_target_reached)
+	#navigator.connect("target_reached", _on_target_reached)
 	navigator.follow_director = self
 	_on_target_reached()
-	hide()
+	#hide()
 
 func _on_target_reached():
 	if new_pos_time > 0.0:
