@@ -2,8 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://qj5ogh0dgi2a" path="res://levels/TestLevel.tscn" id="1_x4oya"]
 [ext_resource type="PackedScene" uid="uid://jb01h8n0oufj" path="res://gameobjects/pickups/GenericPickup.tscn" id="2_5egj2"]
+[ext_resource type="PackedScene" uid="uid://la5wrlkgh5go" path="res://gameobjects/pickups/PickupKnife.tscn" id="3_bwjeq"]
 
 [node name="TestLevelEthan" unique_id=1071976447 instance=ExtResource("1_x4oya")]
 
 [node name="GenericPickup" parent="." index="5" unique_id=429504598 instance=ExtResource("2_5egj2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3687649, 0.055379927, 3.0526464)
+
+[node name="PickupKnife" parent="." index="7" unique_id=583307206 instance=ExtResource("3_bwjeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.777487, 0, 0.74594164)
+
+[editable path="PickupKnife"]
+[editable path="PickupKnife/InteractTrigger"]

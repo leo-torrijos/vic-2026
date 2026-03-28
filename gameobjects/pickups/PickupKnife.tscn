@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://la5wrlkgh5go"]
+
+[ext_resource type="PackedScene" uid="uid://jb01h8n0oufj" path="res://gameobjects/pickups/GenericPickup.tscn" id="1_rcepl"]
+[ext_resource type="PackedScene" uid="uid://byyqrwl3syrea" path="res://gameobjects/weapon/WeaponKnife.tscn" id="2_52xoy"]
+[ext_resource type="PackedScene" uid="uid://dmgju371pa4ah" path="res://assets/models/kitchen_knife.glb" id="3_52xoy"]
+
+[node name="PickupKnife" unique_id=429504598 instance=ExtResource("1_rcepl")]
+collected_object = ExtResource("2_52xoy")
+
+[node name="InteractTrigger" parent="." index="0" unique_id=1392577794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01956515, -0.1519834)
+
+[node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
+transform = Transform3D(0.38366365, 0, 0, 0, 0.32061833, 0, 0, 0, 1.4479764, 0, 0, 0)
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=1550902025]
+visible = false
+
+[node name="kitchen_knife" parent="." index="2" unique_id=43944995 instance=ExtResource("3_52xoy")]
+transform = Transform3D(7.642742e-17, -1.7484555e-09, 0.04, -0.04, -1.7484555e-09, 0, 1.7484555e-09, -0.04, -1.7484555e-09, 0, 0.013895392, 0.008896545)
+
+[editable path="InteractTrigger"]
