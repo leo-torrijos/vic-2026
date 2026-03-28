@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0p3svsa3x4cq"
-path="res://.godot/imported/house_lamp.glb-306eaaa5c2d2436ab1058b7c572cd024.scn"
+uid="uid://d12w2wbcm8ugv"
+path="res://.godot/imported/chair.glb-c6577e5c47ced3513727e71b5a2723ff.scn"
 
 [deps]
 
-source_file="res://assets/models/decoration/house_lamp.glb"
-dest_files=["res://.godot/imported/house_lamp.glb-306eaaa5c2d2436ab1058b7c572cd024.scn"]
+source_file="res://assets/models/chair.glb"
+dest_files=["res://.godot/imported/chair.glb-c6577e5c47ced3513727e71b5a2723ff.scn"]
 
 [params]
 

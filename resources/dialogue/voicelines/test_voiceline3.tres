@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Voiceline" format=3 uid="uid://cf7cqd7hydu00"]
+
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_41dhk"]
+[ext_resource type="AudioStream" uid="uid://bjssjub2oms5y" path="res://audio/sfx/hi-hi-hi-ha-clash-royale.wav" id="1_xo6g8"]
+
+[resource]
+script = ExtResource("1_41dhk")
+speaker = "player"
+audio_recording = ExtResource("1_xo6g8")
+subtitle = "Si no te gusta andate al cho ri zo"
+metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"

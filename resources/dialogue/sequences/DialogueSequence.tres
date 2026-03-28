@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://c8kqj2dsa6gbb"]
+
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="1_yq6da"]
+
+[resource]
+script = ExtResource("1_yq6da")
+lines = null

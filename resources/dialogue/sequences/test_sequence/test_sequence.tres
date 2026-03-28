@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueSequence" format=3 uid="uid://bpck2kefuixhl"]
+
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_xcyiy"]
+[ext_resource type="Resource" uid="uid://4t05x0mx6ykc" path="res://resources/dialogue/voicelines/test_voiceline.tres" id="2_10058"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="2_elyjl"]
+[ext_resource type="Resource" uid="uid://bg4wg041sjik2" path="res://resources/dialogue/voicelines/test_voiceline2.tres" id="3_b5xjv"]
+[ext_resource type="Resource" uid="uid://cf7cqd7hydu00" path="res://resources/dialogue/voicelines/test_voiceline3.tres" id="4_6mcfm"]
+
+[resource]
+script = ExtResource("2_elyjl")
+lines = Array[ExtResource("1_xcyiy")]([ExtResource("2_10058"), ExtResource("3_b5xjv"), ExtResource("4_6mcfm")])
+metadata/_custom_type_script = "uid://ci0xrf5ysnuaf"

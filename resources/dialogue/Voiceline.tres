@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Voiceline" format=3 uid="uid://dq1ppvn0860t"]
+
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_nntbe"]
+
+[resource]
+script = ExtResource("1_nntbe")
