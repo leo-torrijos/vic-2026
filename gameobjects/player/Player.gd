@@ -14,6 +14,7 @@ var state = MOVE
 @onready var player_ui = $PlayerUI
 
 var current_interaction = null
+var has_pickup = false
 
 
 func _ready() -> void:
@@ -51,7 +52,8 @@ func _physics_process(delta: float) -> void:
 							current_interaction.get_parent().clean(self)
 							state = CLEAN
 					"pickup":
-						# ethan go!!!!
+						if Input.is_action_just_pressed("action1"):
+							pass
 						pass
 		CLEAN:
 			velocity = Vector3.ZERO

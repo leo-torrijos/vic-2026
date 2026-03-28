@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://jb01h8n0oufj"]
+
+[ext_resource type="Script" uid="uid://fum7w5pgjhj4" path="res://gameobjects/pickups/Pickup.gd" id="2_p5wkj"]
+
+[node name="GenericPickup" type="Node3D" unique_id=429504598]
+script = ExtResource("2_p5wkj")
