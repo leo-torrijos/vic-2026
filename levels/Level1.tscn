@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://c5vfv3t7va816" path="res://assets/maptextures/house/house_bricks_beige.tres" id="5_dkril"]
 [ext_resource type="Material" uid="uid://b7nnkna2gr3g0" path="res://assets/maptextures/house/house_carpet_beige.tres" id="7_gqfrg"]
 [ext_resource type="Material" uid="uid://dpv8penqg3gm5" path="res://assets/maptextures/house/house_wood_spotted.tres" id="8_dkril"]
+[ext_resource type="PackedScene" uid="uid://bd3w810op6m3f" path="res://gameobjects/draggable/Corpse.tscn" id="9_kdcll"]
 [ext_resource type="PackedScene" uid="uid://dc7uistv866vx" path="res://gameobjects/actors/Victim.tscn" id="9_lbu4x"]
 [ext_resource type="PackedScene" uid="uid://bnysi8whw1q7c" path="res://gameobjects/actors/navigation/WalkPath.tscn" id="10_vcl05"]
 [ext_resource type="PackedScene" uid="uid://bhsf2vutljybb" path="res://gameobjects/actors/navigation/WalkPoint.tscn" id="11_nn0v1"]
@@ -427,6 +428,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12061095, 2.7588646, -12.21
 light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
 light_energy = 0.5
 shadow_enabled = true
+
+[node name="Corpse" parent="Interactables" parent_id_path=PackedInt32Array(1269250877) index="1" unique_id=1629555621 instance=ExtResource("9_kdcll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.4586396)
 
 [node name="Victim" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="0" unique_id=154303676 instance=ExtResource("9_lbu4x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1208386, 0, -12.437648)

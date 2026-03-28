@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-enum {FREEZE, MOVE, CLEAN, DIE}
+enum {FREEZE, MOVE, CLEAN, DRAG, DIE}
 
 const SPEED = 5.0
 
@@ -63,12 +63,37 @@ func _physics_process(delta: float) -> void:
 								current_interaction.get_parent().queue_free()
 								player_hand.add_child(handheld)
 								hands_full = true
+						"drag":
+							if Input.is_action_just_pressed("action1"):
+								current_interaction.get_parent().drag(self)
+								state = DRAG
 		CLEAN:
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
 				state = MOVE
 				if current_interaction:
 					current_interaction.get_parent().cancel_clean(self)
+		DRAG:
+			# For dragging stuff, probably corpses.
+			# Ratchet fix: Use "none" in input map to denote no input
+			var input_dir = Input.get_vector("left", "right", "none", "backward")
+			var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+			if direction:
+					#$CameraAnim.play("run")
+				#else:
+					#$CameraAnim.play("walk")
+				velocity.x = lerp(velocity.x, direction.x * SPEED * 0.5, ACCEL)
+				velocity.z = lerp(velocity.z, direction.z * SPEED * 0.5, ACCEL)
+				
+			else:
+				velocity.x = move_toward(velocity.x, 0.0, ACCEL)
+				velocity.z = move_toward(velocity.z, 0.0, ACCEL)
+			
+			# Release draggable
+			if Input.is_action_just_released("action1"):
+				state = MOVE
+				if current_interaction:
+					current_interaction.get_parent().release()
 	move_and_slide()
 	
 func _unhandled_input(event):

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dp5x6nb2dq8nr"]
+
+[ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="1_c178w"]
+[ext_resource type="Script" uid="uid://5nnpp8y8tlop" path="res://gameobjects/draggable/Draggable.gd" id="1_ttbuw"]
+
+[node name="Draggable" type="CharacterBody3D" unique_id=1629555621]
+collision_layer = 0
+script = ExtResource("1_ttbuw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=32117267]
+
+[node name="InteractTrigger" parent="." unique_id=1392577794 instance=ExtResource("1_c178w")]
+interaction_type = "drag"
+
+[editable path="InteractTrigger"]

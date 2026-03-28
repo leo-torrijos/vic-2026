@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bd3w810op6m3f"]
+
+[ext_resource type="PackedScene" uid="uid://dp5x6nb2dq8nr" path="res://gameobjects/draggable/Draggable.tscn" id="1_5juo4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5juo4"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5juo4"]
+size = Vector3(0.5, 0.25, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5juo4"]
+size = Vector3(0.25, 0.25, 1.5)
+
+[node name="Corpse" unique_id=1629555621 instance=ExtResource("1_5juo4")]
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=32117267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_5juo4")
+
+[node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12831908, 0)
+shape = SubResource("BoxShape3D_5juo4")
+
+[node name="TempMesh" type="MeshInstance3D" parent="." index="2" unique_id=1146013112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10217059, 0)
+mesh = SubResource("BoxMesh_5juo4")
+
+[editable path="InteractTrigger"]
