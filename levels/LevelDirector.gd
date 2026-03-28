@@ -25,6 +25,11 @@ var suspicion = 0
 func _ready() -> void:
 	$CleanupTimer.wait_time = cleanup_time
 	next_phase()
+	
+	# Actors setup
+	for i in $Actors.get_children():
+		# provide nav mesh to aid in random movement while death tweaking
+		i.nav_mesh = $Actors/Victim/NavigationAgent3D.get_navigation_map()
 
 func next_phase():
 	phase += 1
