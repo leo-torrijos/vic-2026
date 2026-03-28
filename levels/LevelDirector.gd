@@ -24,11 +24,10 @@ var suspicion = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CleanupTimer.wait_time = cleanup_time
-
+	next_phase()
 
 func next_phase():
 	phase += 1
-	# TODO: could use enum with these
 	match phase:
 		INTRO:
 			pass
@@ -36,7 +35,7 @@ func next_phase():
 			pass
 		MURDER: # Murder
 			print_debug("YOU KILLED THEM...")
-			pass
+			next_phase()
 		CLEANUP: # Cleanup
 			print_debug("Cleanup!")
 			pass
@@ -56,7 +55,7 @@ func next_phase():
 ## Planning -> Cleanup: Victim Actor emits signal on death
 # TODO: connect this to victim dying (current only one)
 # NOTE: Make sure if multiple victims are added this is improved
-func _on_victim_die():
+func _on_victim_death() -> void:
 	next_phase()
 	$CleanupTimer.start()
 
