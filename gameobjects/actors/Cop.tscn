@@ -1,5 +1,26 @@
 [gd_scene format=3 uid="uid://bta8i2xft3c74"]
 
 [ext_resource type="PackedScene" uid="uid://dit8uydsusfkp" path="res://gameobjects/actors/Actor.tscn" id="1_fk3hd"]
+[ext_resource type="Script" uid="uid://clathxjr7epd8" path="res://gameobjects/actors/Cop.gd" id="2_gupl4"]
+[ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_jqqm1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqqm1"]
+radius = 0.25830078
+height = 1.5348511
 
 [node name="Cop" unique_id=154303676 instance=ExtResource("1_fk3hd")]
+script = ExtResource("2_gupl4")
+
+[node name="InteractTrigger" parent="." index="3" unique_id=1392577794 instance=ExtResource("3_jqqm1")]
+interaction_type = "stall"
+
+[node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76045287, 0)
+shape = SubResource("CapsuleShape3D_jqqm1")
+
+[node name="StallTimer" type="Timer" parent="." index="4" unique_id=372697858]
+one_shot = true
+
+[connection signal="timeout" from="StallTimer" to="." method="_on_stall_timer_timeout"]
+
+[editable path="InteractTrigger"]

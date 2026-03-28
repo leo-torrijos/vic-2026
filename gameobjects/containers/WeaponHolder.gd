@@ -10,6 +10,7 @@ func place_object(pickup: Pickup):
 	held_object = pickup
 	$StoragePoint.add_child(held_object)
 	held_object.global_position = $StoragePoint.global_position
+	held_object.global_rotation = $StoragePoint.global_rotation
 	$InteractTrigger.interaction_type = "take_from_holder"
 
 

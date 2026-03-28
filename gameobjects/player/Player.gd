@@ -81,6 +81,15 @@ func _physics_process(delta: float) -> void:
 							if Input.is_action_just_pressed("action1"):
 								current_interaction.get_parent().drag(self)
 								state = DRAG
+						"stall":
+							if Input.is_action_just_pressed("action1"):
+								var cop = current_interaction.get_parent()
+								if cop.state != Cop.STALLED:
+									# TODO: allow different stall times for info/objects
+									current_interaction.get_parent().stall(1.0)
+								else:
+									# TODO: handle attempts to stall when cop is already stalled
+									pass
 		CLEAN:
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
