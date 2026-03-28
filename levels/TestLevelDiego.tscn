@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://clsm22fwaqfjf" path="res://gameobjects/player/Player.tscn" id="1_fjdwr"]
 [ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="2_bocy7"]
 [ext_resource type="PackedScene" uid="uid://ccgwm4melw7x5" path="res://gameobjects/mess/TestMess.tscn" id="2_e4hrf"]
-[ext_resource type="Script" uid="uid://ce35clng3g55q" path="res://levels/DialogueDirector.gd" id="2_fjdwr"]
+[ext_resource type="Script" uid="uid://ce35clng3g55q" path="res://gameobjects/components/DialogueDirector.gd" id="2_fjdwr"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="3_larht"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="4_kkulk"]
 [ext_resource type="Material" uid="uid://sj2qe0okf11y" path="res://assets/maptextures/testwall.tres" id="5_k7cq6"]
