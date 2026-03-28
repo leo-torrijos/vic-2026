@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Voiceline" format=3 uid="uid://4t05x0mx6ykc"]
+
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_0ex0n"]
+[ext_resource type="AudioStream" uid="uid://bjssjub2oms5y" path="res://audio/sfx/hi-hi-hi-ha-clash-royale.wav" id="1_obhad"]
+
+[resource]
+script = ExtResource("1_0ex0n")
+speaker = "player"
+audio_recording = ExtResource("1_obhad")
+subtitle = "Este es el rap de fernanfloo"
+metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"
