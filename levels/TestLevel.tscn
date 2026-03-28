@@ -26,6 +26,19 @@ _surfaces = [{
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvpdy"]
 points = PackedVector3Array(4, 0, 4, 4, -1, 4, -4, 0, 4, -4, -1, 4, 4, 0, -4, 4, -1, -4, -4, 0, -4, -4, -1, -4)
 
+[sub_resource type="BoxMesh" id="BoxMesh_tqdee"]
+size = Vector3(2, 6, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvpdy"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+disable_ambient_light = true
+albedo_color = Color(0.99607843, 0.92156863, 0.7921569, 0.21960784)
+disable_receive_shadows = true
+stencil_flags = 2
+
 [node name="TestLevel" type="Node3D" unique_id=1071976447]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1686474740]
@@ -53,3 +66,8 @@ mesh = SubResource("ArrayMesh_tqdee")
 
 [node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=437363101]
 shape = SubResource("ConvexPolygonShape3D_yvpdy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1555234029]
+transform = Transform3D(1, 0, 0, 0, 0.7606666, 0.64914274, 0, -0.64914274, 0.7606666, 4.7683716e-07, 0.5321976, -2.1629167)
+mesh = SubResource("BoxMesh_tqdee")
+surface_material_override/0 = SubResource("StandardMaterial3D_yvpdy")
