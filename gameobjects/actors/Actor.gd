@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Actor
 
-enum {IDLE, PATROL}
+enum {IDLE, PATROL, DIE, STALLED}
 
 @export var move_speed = 0.75
 
@@ -15,14 +15,17 @@ var current_navigation_delay = 0
 var next_position
 var follow_director
 var level
+var nav_mesh
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match state:
 		IDLE:
 			velocity = Vector3.ZERO
 		PATROL:
 			move()
 			move_and_slide()
+		STALLED:
+			velocity = Vector3.ZERO
 
 func move():
 	current_navigation_delay += 1
@@ -51,4 +54,5 @@ func patrol(target_position):
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
-	follow_director._on_target_reached()
+	if follow_director:
+		follow_director._on_target_reached()

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bq7ogmiar1owl"]
+
+[ext_resource type="Texture2D" uid="uid://cqabiws6x5y26" path="res://assets/maptextures/house/bathroom-tiles.png" id="1_gf10w"]
+
+[resource]
+albedo_texture = ExtResource("1_gf10w")
+metallic_specular = 0.0
+texture_filter = 2

@@ -3,18 +3,46 @@
 [ext_resource type="PackedScene" uid="uid://qj5ogh0dgi2a" path="res://levels/TestLevel.tscn" id="1_x4oya"]
 [ext_resource type="PackedScene" uid="uid://la5wrlkgh5go" path="res://gameobjects/pickups/PickupKnife.tscn" id="3_bwjeq"]
 [ext_resource type="PackedScene" uid="uid://dc7uistv866vx" path="res://gameobjects/actors/Victim.tscn" id="4_2ofi2"]
+[ext_resource type="PackedScene" uid="uid://ccsge73f53euo" path="res://assets/models/decoration/toilet/toilet.glb" id="4_fhqq8"]
 [ext_resource type="PackedScene" uid="uid://d3517wb0ww4t3" path="res://gameobjects/containers/WeaponHolder.tscn" id="4_mdmqj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uko1n"]
+radius = 0.3
 
 [node name="TestLevelEthan" unique_id=1071976447 instance=ExtResource("1_x4oya")]
 
 [node name="PickupKnife" parent="." index="6" unique_id=583307206 instance=ExtResource("3_bwjeq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.777487, 0, 0.74594164)
 
-[node name="Victim" parent="." index="7" unique_id=154303676 instance=ExtResource("4_2ofi2")]
+[node name="PickupKnife2" parent="." index="7" unique_id=429504598 instance=ExtResource("3_bwjeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3486621, 0, 2.158641)
+
+[node name="kitchen_knife" parent="PickupKnife2" index="2" unique_id=43944995]
+transform = Transform3D(-7.414727e-10, 0.016962918, 0.03622512, -0.04, -1.7484556e-09, -1.4682091e-23, 1.5834504e-09, -0.03622512, 0.016962918, 0, 0.013895392, 0.008896589)
+
+[node name="Victim" parent="." index="8" unique_id=154303676 instance=ExtResource("4_2ofi2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9135375, 0, -2.7148128)
 
-[node name="WeaponHolder" parent="." index="8" unique_id=662123432 instance=ExtResource("4_mdmqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1732886, 0.3540557, 3.0621223)
+[node name="toilet2" parent="." index="9" unique_id=201488975 instance=ExtResource("4_fhqq8")]
+transform = Transform3D(0.01973842, 0, 0.99980515, 0, 1, 0, -0.99980515, 0, 0.01973842, -2.8624566, 0, 2.7867122)
+
+[node name="seat" parent="toilet2" index="1" unique_id=1410921637]
+transform = Transform3D(1, 0, 0, 0, -0.039835393, 0.99920624, 0, -0.99920624, -0.039835393, -0.008364439, 0.769646, -0.10008955)
+
+[node name="WeaponHolder" parent="toilet2" index="2" unique_id=662123432 instance=ExtResource("4_mdmqj")]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0.4044783, 0)
+
+[node name="CollisionShape3D" parent="toilet2/WeaponHolder/InteractTrigger" parent_id_path=PackedInt32Array(662123432, 1392577794) index="0" unique_id=1950459346]
+transform = Transform3D(0.9999997, 0, -1.8626451e-09, 0, 1, 0, 1.8626451e-09, 0, 0.9999997, 0.020588875, -0.022979617, -0.06371772)
+shape = SubResource("SphereShape3D_uko1n")
+
+[node name="StoragePoint" parent="toilet2/WeaponHolder" index="1" unique_id=1530027104]
+transform = Transform3D(0.99958736, -0.019704811, -0.020885702, 0.01970481, -0.05833071, 0.9981026, -0.0208857, -0.9981028, -0.057918362, 0.00094246864, -0.024717331, 0.04773569)
 
 [editable path="PickupKnife"]
 [editable path="PickupKnife/InteractTrigger"]
+[editable path="PickupKnife2"]
+[editable path="PickupKnife2/InteractTrigger"]
+[editable path="toilet2"]
+[editable path="toilet2/WeaponHolder"]
+[editable path="toilet2/WeaponHolder/InteractTrigger"]

@@ -8,6 +8,14 @@
 radius = 0.25830078
 height = 1.5348511
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_20lhs"]
+height = 1.0
+radius = 4.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_usmqo"]
+height = 1.5
+radius = 0.6
+
 [node name="Victim" unique_id=154303676 instance=ExtResource("1_e4gn8")]
 script = ExtResource("2_gr526")
 
@@ -18,5 +26,32 @@ interaction_type = "kill"
 [node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76045287, 0)
 shape = SubResource("CapsuleShape3D_20lhs")
+
+[node name="DetectDecor" type="Area3D" parent="." index="4" unique_id=1853595755]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape3D" parent="DetectDecor" index="0" unique_id=1086236130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5484604, 0)
+shape = SubResource("CylinderShape3D_20lhs")
+
+[node name="DamageDecor" type="Area3D" parent="." index="5" unique_id=1657117917]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageDecor" index="0" unique_id=991964188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7938079, 0)
+shape = SubResource("CylinderShape3D_usmqo")
+
+[node name="MessRetargetTimer" type="Timer" parent="." index="6" unique_id=952297132]
+wait_time = 0.5
+one_shot = true
+
+[node name="DeathTimer" type="Timer" parent="." index="7" unique_id=18451875]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="body_entered" from="DamageDecor" to="." method="_on_damage_decor_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 
 [editable path="InteractTrigger"]

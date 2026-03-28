@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnmviggbds448"]
+
+[ext_resource type="Texture2D" uid="uid://cv5ioyjaaw62d" path="res://assets/maptextures/house/house_wood_spotted_beige.png" id="1_yv22n"]
+
+[resource]
+albedo_texture = ExtResource("1_yv22n")
+metallic_specular = 0.0
+texture_filter = 2

@@ -26,16 +26,16 @@ local_map_file = "uid://irt3m5wt7eep"
 map_settings = ExtResource("3_x6cm1")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
+[node name="Decor" type="Node3D" parent="NavigationRegion3D" unique_id=2044517480]
+
+[node name="Props" type="Node3D" parent="NavigationRegion3D" unique_id=1060471790]
+
 [node name="CleanupTimer" type="Timer" parent="." unique_id=831077995]
 one_shot = true
 
 [node name="Lights" type="Node3D" parent="." unique_id=1463423439]
 
 [node name="Interactables" type="Node3D" parent="." unique_id=1269250877]
-
-[node name="Decor" type="Node3D" parent="Interactables" unique_id=2044517480]
-
-[node name="Props" type="Node3D" parent="." unique_id=1060471790]
 
 [node name="Actors" type="Node3D" parent="." unique_id=295258673]
 

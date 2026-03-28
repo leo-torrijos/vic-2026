@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://cf8c464f6knv2"]
 
+[ext_resource type="Texture2D" uid="uid://bcpdgmdo4j1it" path="res://assets/gui/temp_crosshair_default.png" id="1_5g6qw"]
+
 [node name="PlayerUI" type="CanvasLayer" unique_id=411402018]
+
+[node name="Crosshair" type="TextureRect" parent="." unique_id=1671996916]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_5g6qw")
+stretch_mode = 3
