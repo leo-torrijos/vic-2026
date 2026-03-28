@@ -1,5 +1,22 @@
 [gd_scene format=3 uid="uid://dc7uistv866vx"]
 
 [ext_resource type="PackedScene" uid="uid://dit8uydsusfkp" path="res://gameobjects/actors/Actor.tscn" id="1_e4gn8"]
+[ext_resource type="Script" uid="uid://bahuo3p8odixe" path="res://gameobjects/actors/Victim.gd" id="2_gr526"]
+[ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_20lhs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20lhs"]
+radius = 0.25830078
+height = 1.5348511
 
 [node name="Victim" unique_id=154303676 instance=ExtResource("1_e4gn8")]
+script = ExtResource("2_gr526")
+
+[node name="InteractTrigger" parent="." index="3" unique_id=1392577794 instance=ExtResource("3_20lhs")]
+collision_layer = 20
+interaction_type = "kill"
+
+[node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76045287, 0)
+shape = SubResource("CapsuleShape3D_20lhs")
+
+[editable path="InteractTrigger"]
