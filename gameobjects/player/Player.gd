@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_released("action1"):
 				state = MOVE
 				if current_interaction:
-					current_interaction.get_parent().clean(self)
+					current_interaction.get_parent().cancel_clean(self)
 	move_and_slide()
 	
 func _unhandled_input(event):
