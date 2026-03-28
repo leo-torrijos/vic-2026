@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Actor
 
 enum {IDLE, PATROL}
 
@@ -14,8 +15,6 @@ var current_navigation_delay = 0
 var next_position
 var follow_director
 var level
-
-signal die
 
 func _physics_process(delta: float) -> void:
 	match state:

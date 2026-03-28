@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://byyqrwl3syrea" path="res://gameobjects/weapon/WeaponKnife.tscn" id="2_52xoy"]
 [ext_resource type="PackedScene" uid="uid://dmgju371pa4ah" path="res://assets/models/kitchen_knife.glb" id="3_52xoy"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_52xoy"]
+radius = 0.041503906
+height = 0.5820923
+
 [node name="PickupKnife" unique_id=429504598 instance=ExtResource("1_rcepl")]
 collected_object = ExtResource("2_52xoy")
 
@@ -11,7 +15,8 @@ collected_object = ExtResource("2_52xoy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01956515, -0.1519834)
 
 [node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
-transform = Transform3D(0.38366365, 0, 0, 0, 0.32061833, 0, 0, 0, 1.4479764, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.0029916614, -0.007293701)
+shape = SubResource("CapsuleShape3D_52xoy")
 
 [node name="MeshInstance3D" parent="." index="1" unique_id=1550902025]
 visible = false
