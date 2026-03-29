@@ -50,6 +50,7 @@ texture_under = ExtResource("2_lweor")
 texture_progress = ExtResource("2_lweor")
 
 [node name="SuspiciousLabel" type="Label" parent="Control" unique_id=1967558081]
+visible = false
 layout_mode = 1
 offset_left = 74.0
 offset_top = 84.0

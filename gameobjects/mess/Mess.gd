@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func clean(player_scene):
 	$CleanTimer.start()
+	player = player_scene
 	
 func cancel_clean():
 	$CleanTimer.stop()
