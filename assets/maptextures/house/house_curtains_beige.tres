@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bcgvbms46r4k5"]
+
+[ext_resource type="Texture2D" uid="uid://dsojm8td3o307" path="res://assets/maptextures/house/house_curtains_beige.png" id="1_a0cye"]
+
+[resource]
+albedo_texture = ExtResource("1_a0cye")
+metallic_specular = 0.0
+texture_filter = 2

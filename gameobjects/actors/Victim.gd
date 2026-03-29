@@ -4,16 +4,18 @@ class_name Victim
 var corpse_scene = preload("res://gameobjects/draggable/Corpse.tscn")
 var blood_puddle_scene = preload("res://gameobjects/mess/BloodPuddle.tscn")
 
+signal about_to_die
 signal death
 
 func die():
+	emit_signal("about_to_die")
 	$DeathTimer.start()
 	state = DIE
 	$InteractTrigger/CollisionShape3D.set_deferred("disabled", true)
 	move_speed *= 3.0
 	follow_director.queue_free()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match state:
 		IDLE:
 			velocity = Vector3.ZERO

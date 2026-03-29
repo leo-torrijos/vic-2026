@@ -28,8 +28,8 @@ func cancel_clean():
 func _on_clean_timer_timeout() -> void:
 	player.done_cleaning()
 	dirty = false
-	$SuspicionArea.set_deferred("monitorable", false)
-	$InteractTrigger.set_deferred("monitorable", false)
+	$SuspicionArea/CollisionShape3D.set_deferred("disabled", false)
+	$InteractTrigger/CollisionShape3D.set_deferred("disabled", true)
 	$CleanIcon.hide()
 	$AnimationPlayer.play("idle")
 
@@ -37,7 +37,7 @@ func _on_clean_timer_timeout() -> void:
 func get_dirty():
 	if not dirty:
 		dirty = true
-		$SuspicionArea.set_deferred("monitorable", true)
-		$InteractTrigger.set_deferred("monitorable", true)
+		$SuspicionArea/CollisionShape3D.set_deferred("disabled", true)
+		$InteractTrigger/CollisionShape3D.set_deferred("disabled", false)
 		$CleanIcon.show()
 		$AnimationPlayer.play("damage")

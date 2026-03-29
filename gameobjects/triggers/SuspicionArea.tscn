@@ -3,7 +3,19 @@
 [ext_resource type="Script" uid="uid://l1usfjabls6v" path="res://gameobjects/triggers/SuspicionArea.gd" id="1_0e3oq"]
 
 [node name="SuspicionArea" type="Area3D" unique_id=1503767028]
+collision_layer = 0
+collision_mask = 64
 script = ExtResource("1_0e3oq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=506871328]
 debug_color = Color(0.85490197, 0.17254902, 0.19607843, 1)
+
+[node name="Sightline" type="RayCast3D" parent="." unique_id=1607535020]
+hit_from_inside = true
+
+[node name="AdditionTimer" type="Timer" parent="." unique_id=619271401]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="AdditionTimer" to="." method="_on_addition_timer_timeout"]

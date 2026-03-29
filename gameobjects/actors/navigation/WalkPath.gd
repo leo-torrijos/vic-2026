@@ -7,6 +7,9 @@ extends Node3D
 # TODO: actually implement "finishing" paths
 ## Whether this path should be looped or only be travelled once
 @export var loop_path = true
+@export var start_on = true
+
+@export var arrow_color = Color.WHITE
 
 var current_index = -1
 
@@ -21,6 +24,7 @@ func _ready():
 	for i in get_children():
 		if i is Node3D:
 			follow_points.append(i)
+			i.get_node("Sprite3D").modulate = arrow_color
 	assert(follow_points.size() > 0)
 	#navigator.connect("target_reached", _on_target_reached)
 	navigator.follow_director = self
@@ -42,3 +46,6 @@ func _on_target_reached():
 	#print(current_follow_goal.global_position)
 	if navigator:
 		navigator.patrol(current_follow_goal.global_position)
+
+func start_pathing():
+	_on_target_reached()

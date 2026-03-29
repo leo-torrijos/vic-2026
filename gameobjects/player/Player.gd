@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 enum {FREEZE, MOVE, CLEAN, DRAG, DIE}
 
@@ -6,6 +7,8 @@ const SPEED = 5.0
 
 const LOOK_SENSITIVITY = 0.005
 const ACCEL = 1.0
+
+const INSPECTION_MAX = 45  # Number of frames it takes to inspect something
 
 const CROSSHAIR_TEXTURES = {
 	"default" : preload("res://assets/gui/temp_crosshair_default.png"),
@@ -23,11 +26,13 @@ var state = MOVE
 @onready var camera = $Neck/Camera3D
 @onready var player_ui = $PlayerUI
 @onready var player_hand = $Neck/Camera3D/WeaponBone
+@onready var crosshair: TextureRect = $PlayerUI/Control/CenterContainer/Crosshair
 
 var current_interaction = null
 var hands_full = false
 var handheld = null
 
+var inspection_count = 0
 
 func _ready() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -56,11 +61,11 @@ func _physics_process(delta: float) -> void:
 				velocity.z = move_toward(velocity.z, 0.0, ACCEL)
 			
 			# Set default crosshair texture; override later if necessary
-			$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.default
+			crosshair.texture = CROSSHAIR_TEXTURES.default
 			
 			# Action (i.e. using item, cleaning)
 			if handheld and handheld is Weapon and handheld.get_node("KillRay").get_collider():
-				$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.kill
+				crosshair.texture = CROSSHAIR_TEXTURES.kill
 				if Input.is_action_just_pressed("action1"):
 					current_interaction = handheld.get_node("KillRay").get_collider()
 					if current_interaction.interaction_type == "kill":
@@ -68,17 +73,33 @@ func _physics_process(delta: float) -> void:
 			else:
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:
+					# Inspect handling
+					if current_interaction.inspectable:
+						$PlayerUI/InspectMeter/ActiveInspect.show()
+						crosshair.texture = CROSSHAIR_TEXTURES.inspect
+						if Input.is_action_pressed("interact"):
+							inspection_count += 1
+							if inspection_count > INSPECTION_MAX:
+								$InspectHandler.inspect(current_interaction)
+								inspection_count = 0
+						else:
+							inspection_count = 0
+						$PlayerUI/InspectMeter/ActiveInspect.value = inspection_count
+					else:
+						$PlayerUI/InspectMeter/ActiveInspect.hide()
+					
 					match current_interaction.interaction_type:
 						"clean":
 							if not hands_full:
-								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.clean
+								crosshair.texture = CROSSHAIR_TEXTURES.clean
 								if Input.is_action_just_pressed("action1"):
 									current_interaction.get_parent().clean(self)
 									state = CLEAN
 									hands_full = true
+									$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", false)
 						"pickup":
 							if not hands_full:
-								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.pickup
+								crosshair.texture = CROSSHAIR_TEXTURES.pickup
 								if Input.is_action_just_pressed("action1"):
 									handheld = current_interaction.get_parent().collected_object.instantiate()
 									handheld.stored_pickup = current_interaction.get_parent()
@@ -87,14 +108,14 @@ func _physics_process(delta: float) -> void:
 									hands_full = true
 						"put_in_holder":
 							if hands_full and handheld != null:
-								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.putdown
+								crosshair.texture = CROSSHAIR_TEXTURES.putdown
 								if Input.is_action_just_pressed("action1"):
 									current_interaction.get_parent().place_object(handheld.stored_pickup)
 									handheld.queue_free()
 									hands_full = false
 						"take_from_holder":
 							if hands_full and handheld != null:  # Swap weapons
-								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.putdown
+								crosshair.texture = CROSSHAIR_TEXTURES.putdown
 								if Input.is_action_just_pressed("action1"):
 									var temp_handheld = current_interaction.get_parent().yield_object()
 									temp_handheld.stored_pickup = current_interaction.get_parent().held_object
@@ -103,7 +124,7 @@ func _physics_process(delta: float) -> void:
 									handheld = temp_handheld
 									player_hand.add_child(handheld)
 							elif not hands_full:
-								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.pickup
+								crosshair.texture = CROSSHAIR_TEXTURES.pickup
 								if Input.is_action_just_pressed("action1"):
 									handheld = current_interaction.get_parent().yield_object()
 									handheld.stored_pickup = current_interaction.get_parent().held_object
@@ -111,13 +132,13 @@ func _physics_process(delta: float) -> void:
 									hands_full = true
 						"drag":
 							if not hands_full:
-								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.pickup
+								crosshair.texture = CROSSHAIR_TEXTURES.pickup
 								if Input.is_action_just_pressed("action1") and global_position.distance_to(current_interaction.global_position) < 1.0:
-									current_interaction.get_parent().drag(self)
-									state = DRAG
 									hands_full = true
+									state = DRAG
+									current_interaction.get_parent().drag(self)
 						"stall":
-							$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.talk
+							crosshair.texture = CROSSHAIR_TEXTURES.talk
 							if Input.is_action_just_pressed("action1"):
 								var cop = current_interaction.get_parent()
 								if cop.state != Cop.STALLED:
@@ -126,16 +147,19 @@ func _physics_process(delta: float) -> void:
 								else:
 									# TODO: handle attempts to stall when cop is already stalled
 									pass
+				else:
+					$PlayerUI/InspectMeter/ActiveInspect.hide()
 		CLEAN:
-			$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.clean
+			crosshair.texture = CROSSHAIR_TEXTURES.clean
 			velocity = Vector3.ZERO
 			if Input.is_action_just_released("action1"):
 				state = MOVE
 				hands_full = false
 				if current_interaction:
 					current_interaction.get_parent().cancel_clean()
+					$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", true)
 		DRAG:
-			$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.putdown
+			crosshair.texture = CROSSHAIR_TEXTURES.putdown
 			# For dragging stuff, probably corpses.
 			# Ratchet fix: Use "none" in input map to denote no input
 			var input_dir = Input.get_vector("left", "right", "none", "backward")
@@ -153,10 +177,10 @@ func _physics_process(delta: float) -> void:
 			
 			# Release draggable
 			if Input.is_action_just_released("action1"):
-				state = MOVE
-				hands_full = false
 				if current_interaction:
 					current_interaction.get_parent().release()
+				state = MOVE
+				hands_full = false
 	move_and_slide()
 	
 func _unhandled_input(event):
@@ -172,3 +196,4 @@ func done_cleaning():
 	state = MOVE
 	hands_full = false
 	# TODO: chance to say something on clean?
+	$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", true)

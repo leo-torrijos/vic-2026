@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b20fbd1nitdfa" path="res://gameobjects/player/Player.gd" id="1_wgnyx"]
 [ext_resource type="PackedScene" uid="uid://cf8c464f6knv2" path="res://gameobjects/player/PlayerUI.tscn" id="2_c5dv2"]
+[ext_resource type="Script" path="res://gameobjects/player/InspectHandler.gd" id="3_ln0t8"]
+[ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="4_5ys7b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fyu5l"]
 radius = 0.3
@@ -9,6 +11,9 @@ height = 1.5
 
 [sub_resource type="BoxMesh" id="BoxMesh_wgnyx"]
 size = Vector3(0.25, 1.5, 0.25)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2sgil"]
+radius = 8.0
 
 [node name="Player" type="CharacterBody3D" unique_id=349429890]
 collision_layer = 2
@@ -38,3 +43,15 @@ shape = SubResource("CapsuleShape3D_fyu5l")
 [node name="TempMesh" type="MeshInstance3D" parent="." unique_id=1728155206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7859942, 0)
 mesh = SubResource("BoxMesh_wgnyx")
+
+[node name="InspectHandler" type="Node3D" parent="." unique_id=553094586]
+script = ExtResource("3_ln0t8")
+
+[node name="CleaningSuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("4_5ys7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68512213, 0)
+suspicion_amount = 5.0
+
+[node name="CollisionShape3D" parent="CleaningSuspicionArea" index="0" unique_id=506871328]
+shape = SubResource("SphereShape3D_2sgil")
+
+[editable path="CleaningSuspicionArea"]

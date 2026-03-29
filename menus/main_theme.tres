@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://b8tjyg88h6spv"]
+
+[ext_resource type="FontFile" uid="uid://ci7lvp46vmvek" path="res://assets/fonts/Fraunces9ptSuperSoft-Regular.otf" id="1_e0fnq"]
+
+[resource]
+default_font = ExtResource("1_e0fnq")
+default_font_size = 0

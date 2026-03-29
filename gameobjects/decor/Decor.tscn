@@ -9,13 +9,12 @@
 script = ExtResource("1_i5m6g")
 
 [node name="SuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("2_ete4e")]
-monitorable = false
 
 [node name="InteractTrigger" parent="." unique_id=1392577794 instance=ExtResource("3_ssdt2")]
-monitorable = false
 interaction_type = "clean"
 
 [node name="CleanTimer" type="Timer" parent="." unique_id=551552800]
+one_shot = true
 
 [node name="CleanIcon" type="Sprite3D" parent="." unique_id=2136628513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6672914, 0)

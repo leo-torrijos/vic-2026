@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://perrklxlduvd"]
+
+[ext_resource type="StyleBox" uid="uid://bxqj50xt8ntg8" path="res://resources/subtitle_stylebox.tres" id="1_e18m3"]
+[ext_resource type="Theme" uid="uid://b8tjyg88h6spv" path="res://menus/main_theme.tres" id="1_kfsga"]
+
+[node name="Captions" type="CanvasLayer" unique_id=526434998]
+
+[node name="Control" type="Control" parent="." unique_id=466961970]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=606209144]
+visible = false
+layout_mode = 0
+offset_left = 330.0
+offset_top = 524.0
+offset_right = 950.0
+offset_bottom = 618.0
+theme_override_styles/panel = ExtResource("1_e18m3")
+
+[node name="Label" type="Label" parent="Control/PanelContainer" unique_id=871700169]
+layout_mode = 2
+theme = ExtResource("1_kfsga")
+text = "This is supposed to be captions"
+horizontal_alignment = 1
+vertical_alignment = 2

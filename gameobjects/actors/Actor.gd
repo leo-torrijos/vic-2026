@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Actor
 
-enum {IDLE, PATROL, DIE, STALLED}
+enum {FREEZE, IDLE, PATROL, DIE, STALLED}
 
 @export var move_speed = 0.75
 
@@ -19,6 +19,8 @@ var nav_mesh
 
 func _physics_process(_delta: float) -> void:
 	match state:
+		FREEZE:
+			velocity = Vector3.ZERO
 		IDLE:
 			velocity = Vector3.ZERO
 		PATROL:

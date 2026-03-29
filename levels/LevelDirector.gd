@@ -1,6 +1,5 @@
 extends Node3D
 
-
 ## State Enum
 enum {
 	INTRO,  ## Opening cutscene
@@ -12,7 +11,7 @@ enum {
 	LOSE  ## Outro cutscene (if you lose)
 }
 
-@export var cleanup_time = 20.0
+@export var cleanup_time : float = 20.0
 
 var phase = 0
 
@@ -23,6 +22,7 @@ var suspicion = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.current_level_director = self
 	$CleanupTimer.wait_time = cleanup_time
 	next_phase()
 	
@@ -37,14 +37,18 @@ func next_phase():
 		INTRO:
 			pass
 		CALM: # Calm (Scope Out)
-			pass
+			$Music/CalmMusic.play()
 		MURDER: # Murder
+			$Music/CalmMusic.stop()
+			$Music/MurderSting.play()
 			print_debug("YOU KILLED THEM...")
-			next_phase()
 		CLEANUP: # Cleanup
 			print_debug("Cleanup!")
+			get_node("Paths/WalkPathCop").show()
 			pass
 		INVESTIGATION: # Investigation
+			get_node("Actors/Cop").activate()
+			$SuspicionUI.show()
 			print_debug("Investigation begins. POLICE INCOMING!")
 		WIN: # Win
 			pass
@@ -75,3 +79,11 @@ func _on_cleanup_timer_timeout() -> void:
 func game_over() -> void:
 	# TODO: loss cutscene
 	pass
+
+func update_suspicion_ui(total_suspicion):
+	$SuspicionUI/Control/SuspicionMeter.value = total_suspicion
+
+
+func _on_victim_about_to_die() -> void:
+	if phase < MURDER:
+		next_phase()
