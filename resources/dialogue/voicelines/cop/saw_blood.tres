@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Voiceline" format=3 uid="uid://b4m5ca78aj64h"]
+
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_3nnhj"]
+[ext_resource type="AudioStream" uid="uid://dwo0rl2v5rimb" path="res://audio/dialogue/cop_ethan/cop_ethan_sus_2.wav" id="1_7bp4c"]
+
+[resource]
+script = ExtResource("1_3nnhj")
+speaker = "Cop"
+audio_recording = ExtResource("1_7bp4c")
+metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"

@@ -26,7 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://bnysi8whw1q7c" path="res://gameobjects/actors/navigation/WalkPath.tscn" id="24_goy2t"]
 [ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="24_ll8t0"]
 [ext_resource type="PackedScene" uid="uid://bhsf2vutljybb" path="res://gameobjects/actors/navigation/WalkPoint.tscn" id="25_qgcry"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="25_uyv43"]
+[ext_resource type="Resource" uid="uid://b75f0pxoe4m1c" path="res://resources/dialogue/sequences/cop/saw_corpse_sequence.tres" id="26_3byf5"]
 [ext_resource type="PackedScene" uid="uid://d3517wb0ww4t3" path="res://gameobjects/containers/WeaponHolder.tscn" id="26_pp8lr"]
+[ext_resource type="Resource" uid="uid://dsr3crll5empc" path="res://resources/dialogue/sequences/cop/saw_blood_sequence.tres" id="27_pp470"]
 [ext_resource type="PackedScene" uid="uid://dbelrjeyyilkb" path="res://gameobjects/components/DialogueDirector.tscn" id="29_3byf5"]
 
 [sub_resource type="Environment" id="Environment_gqfrg"]
@@ -957,6 +960,10 @@ collision_mask = 1
 [node name="Cop" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="1" unique_id=789131365 node_paths=PackedStringArray("spawn_point") instance=ExtResource("23_474ws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.416554)
 spawn_point = NodePath("../../Paths/WalkPathCop/WalkPoint")
+dialogues = Dictionary[String, ExtResource("25_uyv43")]({
+"Saw blood": ExtResource("27_pp470"),
+"Saw corpse": ExtResource("26_3byf5")
+})
 
 [node name="TalkingAudio" parent="Actors/Cop" index="6" unique_id=1315216573 instance=ExtResource("24_ll8t0")]
 

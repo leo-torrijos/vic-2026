@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dit8uydsusfkp" path="res://gameobjects/actors/Actor.tscn" id="1_fk3hd"]
 [ext_resource type="Script" uid="uid://clathxjr7epd8" path="res://gameobjects/actors/Cop.gd" id="2_gupl4"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="3_btpbt"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_jqqm1"]
+[ext_resource type="Resource" uid="uid://b75f0pxoe4m1c" path="res://resources/dialogue/sequences/cop/saw_corpse_sequence.tres" id="4_jymge"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqqm1"]
 radius = 0.25830078
@@ -11,6 +13,9 @@ height = 1.5348511
 [node name="Cop" unique_id=154303676 instance=ExtResource("1_fk3hd")]
 collision_layer = 64
 script = ExtResource("2_gupl4")
+dialogues = Dictionary[String, ExtResource("3_btpbt")]({
+"Saw corpse": ExtResource("4_jymge")
+})
 
 [node name="InteractTrigger" parent="." index="3" unique_id=1392577794 instance=ExtResource("3_jqqm1")]
 interaction_type = "stall"
