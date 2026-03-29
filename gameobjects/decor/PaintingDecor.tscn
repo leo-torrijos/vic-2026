@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cyqrjik031n3x"]
+
+[ext_resource type="PackedScene" uid="uid://bfara742u16ma" path="res://gameobjects/decor/Decor.tscn" id="1_uc6fv"]
+[ext_resource type="PackedScene" uid="uid://31hua7vl3rxf" path="res://assets/models/decoration/art/picture1.glb" id="2_ruvy8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uc6fv"]
+radius = 5.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ruvy8"]
+size = Vector3(1.5, 1.2, 0.4)
+
+[sub_resource type="Animation" id="Animation_uc6fv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("picture1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.054342687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("picture1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ruvy8"]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("picture1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.07637578, 0, -0.054342687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("picture1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.374792)]
+}
+
+[sub_resource type="Animation" id="Animation_eagk2"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("picture1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("picture1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.054342687)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xuk6s"]
+_data = {
+&"RESET": SubResource("Animation_uc6fv"),
+&"damage": SubResource("Animation_ruvy8"),
+&"idle": SubResource("Animation_eagk2")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uc6fv"]
+size = Vector3(1, 1, 0.2)
+
+[node name="PaintingDecor" unique_id=1678101023 instance=ExtResource("1_uc6fv")]
+time_to_clean = 1.0
+
+[node name="CollisionShape3D" parent="SuspicionArea" parent_id_path=PackedInt32Array(1503767028) index="0" unique_id=506871328]
+shape = SubResource("SphereShape3D_uc6fv")
+
+[node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.15012833)
+shape = SubResource("BoxShape3D_ruvy8")
+
+[node name="CleanIcon" parent="." index="3" unique_id=2136628513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9467329, -0.25825793)
+
+[node name="AnimationPlayer" parent="." index="4" unique_id=2066790702]
+libraries/ = SubResource("AnimationLibrary_xuk6s")
+autoplay = &"idle"
+
+[node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(2033304068) index="0" unique_id=313961488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016413808, -0.09365702)
+shape = SubResource("BoxShape3D_uc6fv")
+
+[node name="picture1" parent="." index="6" unique_id=1066463886 instance=ExtResource("2_ruvy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.054342687)
+
+[editable path="SuspicionArea"]
+[editable path="InteractTrigger"]

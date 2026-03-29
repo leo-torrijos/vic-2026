@@ -1,19 +1,20 @@
-[gd_scene format=3 uid="uid://bnh028np76ihb"]
+[gd_scene format=3 uid="uid://cuaje8w3t5s6a"]
 
-[ext_resource type="PackedScene" uid="uid://bfara742u16ma" path="res://gameobjects/decor/Decor.tscn" id="1_5rqt7"]
-[ext_resource type="PackedScene" uid="uid://dvfnsj2wppi2w" path="res://assets/models/decoration/chair/chair_brown.glb" id="2_mrsep"]
+[ext_resource type="PackedScene" uid="uid://bfara742u16ma" path="res://gameobjects/decor/Decor.tscn" id="1_5cffb"]
+[ext_resource type="PackedScene" uid="uid://ndxrq5lk10j5" path="res://assets/models/decoration/tv/tv.glb" id="2_wd21u"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_mrsep"]
-radius = 3.0
+[sub_resource type="SphereShape3D" id="SphereShape3D_yu2ac"]
+radius = 2.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_rxwku"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5cffb"]
+size = Vector3(0.8, 0.8, 0.6)
 
-[sub_resource type="Animation" id="Animation_we786"]
+[sub_resource type="Animation" id="Animation_5cffb"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("chair_brown:rotation")
+tracks/0/path = NodePath("tv:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,49 +26,49 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("chair_brown:position")
+tracks/1/path = NodePath("tv:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.10155238, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_rxwku"]
+[sub_resource type="Animation" id="Animation_wd21u"]
 resource_name = "damage"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("chair_brown:rotation")
+tracks/0/path = NodePath("tv:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 1.5707964)]
+"values": [Vector3(0, 0.16824974, 1.5707964)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("chair_brown:position")
+tracks/1/path = NodePath("tv:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.36740392, 0)]
+"values": [Vector3(0.44921857, 0.2796961, 0.001803875)]
 }
 
-[sub_resource type="Animation" id="Animation_mrsep"]
+[sub_resource type="Animation" id="Animation_yu2ac"]
 resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("chair_brown:rotation")
+tracks/0/path = NodePath("tv:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -79,47 +80,44 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("chair_brown:position")
+tracks/1/path = NodePath("tv:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.10155238, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xoymg"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_had16"]
 _data = {
-&"RESET": SubResource("Animation_we786"),
-&"damage": SubResource("Animation_rxwku"),
-&"idle": SubResource("Animation_mrsep")
+&"RESET": SubResource("Animation_5cffb"),
+&"damage": SubResource("Animation_wd21u"),
+&"idle": SubResource("Animation_yu2ac")
 }
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_mrsep"]
-height = 1.0
-radius = 0.6
+[sub_resource type="BoxShape3D" id="BoxShape3D_wd21u"]
+size = Vector3(0.7, 1, 0.25)
 
-[node name="BrownChairDecor" unique_id=467157150 instance=ExtResource("1_5rqt7")]
+[node name="Decor" unique_id=1678101023 instance=ExtResource("1_5cffb")]
 
 [node name="CollisionShape3D" parent="SuspicionArea" parent_id_path=PackedInt32Array(1503767028) index="0" unique_id=506871328]
-shape = SubResource("SphereShape3D_mrsep")
-disabled = true
+shape = SubResource("SphereShape3D_yu2ac")
 
 [node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6098031, 0)
-shape = SubResource("SphereShape3D_rxwku")
-disabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6440281, 0)
+shape = SubResource("BoxShape3D_5cffb")
 
-[node name="chair_brown" parent="." index="4" unique_id=164431673 instance=ExtResource("2_mrsep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10155238, 0)
-
-[node name="AnimationPlayer" parent="." index="5" unique_id=2066790702]
-libraries/ = SubResource("AnimationLibrary_xoymg")
+[node name="AnimationPlayer" parent="." index="4" unique_id=2066790702]
+libraries/ = SubResource("AnimationLibrary_had16")
 autoplay = &"idle"
 
 [node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(2033304068) index="0" unique_id=313961488]
-shape = SubResource("CylinderShape3D_mrsep")
+shape = SubResource("BoxShape3D_wd21u")
+
+[node name="tv" parent="." index="6" unique_id=194984081 instance=ExtResource("2_wd21u")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [editable path="SuspicionArea"]
 [editable path="InteractTrigger"]

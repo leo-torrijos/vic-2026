@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cb6j360p30wu4"]
+
+[ext_resource type="PackedScene" uid="uid://bfara742u16ma" path="res://gameobjects/decor/Decor.tscn" id="1_6btmw"]
+[ext_resource type="PackedScene" uid="uid://bkm8g823voius" path="res://assets/models/decoration/table/table_small.glb" id="2_q4qx0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6btmw"]
+radius = 3.0
+
+[sub_resource type="Animation" id="Animation_6btmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("table_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("table_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q4qx0"]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("table_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.9604645e-08, 0.19044548, 0.3251131)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("table_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.64980984, -1.4245462, 1.3319823)]
+}
+
+[sub_resource type="Animation" id="Animation_yjb4o"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("table_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("table_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2sda"]
+_data = {
+&"RESET": SubResource("Animation_6btmw"),
+&"damage": SubResource("Animation_q4qx0"),
+&"idle": SubResource("Animation_yjb4o")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6btmw"]
+height = 0.65888673
+radius = 0.4
+
+[node name="SmallTableDecor" unique_id=1678101023 instance=ExtResource("1_6btmw")]
+
+[node name="CollisionShape3D" parent="SuspicionArea" parent_id_path=PackedInt32Array(1503767028) index="0" unique_id=506871328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3063994, 0)
+shape = SubResource("SphereShape3D_6btmw")
+
+[node name="AnimationPlayer" parent="." index="4" unique_id=2066790702]
+libraries/ = SubResource("AnimationLibrary_k2sda")
+
+[node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(2033304068) index="0" unique_id=313961488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31889662, 0)
+shape = SubResource("CylinderShape3D_6btmw")
+
+[node name="table_small" parent="." index="6" unique_id=972161940 instance=ExtResource("2_q4qx0")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[editable path="SuspicionArea"]
