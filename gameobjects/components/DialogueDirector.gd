@@ -11,6 +11,8 @@ func _ready():
 	register_speaker("player", get_node("../Player"))
 	register_speaker("fake_policeman", get_node("../FakePoliceman"))
 	var sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
+	var timer = Timer.new()
+	timer.start(3)
 	start_dialogue(sequence)
 
 func register_speaker(speaker_name: String, node: Node):
@@ -52,8 +54,11 @@ func _end_dialogue():
 	is_dialogue_taking_place = false
 	_hide_subtitle()
 
-func _display_subtitle(text : String):
-	print(text) # Temporary for testing dialogues, will be a label in the future
+func _display_subtitle(subtitle : String):
+	var label : Label = Captions.get_child(0).get_child(0) # Temporary for testing dialogues
+	label.text = subtitle
+	#label.visible_ratio = 0.0;
+	
 
 func _hide_subtitle():
 	print("")
