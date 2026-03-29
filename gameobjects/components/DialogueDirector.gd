@@ -2,21 +2,29 @@ extends Node
 
 class_name DialogueDirector
 
-@export var speakers : Dictionary[String, Node] = {}  # Who's saying what lol
+@export var speakers : Dictionary[String, Node] = {}  # Who are our actors in scene (people that can talk in level)
 var current_sequence: DialogueSequence
 var index = 0
 var is_dialogue_taking_place = false
+var label : Label
+var sequence : Resource
 
 func _ready():
 	#register_speaker("eldidi", get_node("../Player"))
 	#register_speaker("Fake policeman", get_node("../FakePoliceman"))
-	var sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
-	start_dialogue(sequence)
+	label = Captions.get_child(0).get_child(0)
+	sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
+	#start_dialogue(sequence)
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		start_dialogue(sequence)
 
 func register_speaker(speaker_name: String, node: Node):
 	speakers[speaker_name] = node
 
 func start_dialogue(sequence: DialogueSequence):
+	label.visible = true
 	if is_dialogue_taking_place:
 		return
 	current_sequence = sequence
@@ -50,10 +58,11 @@ func _on_line_finished():
 
 func _end_dialogue():
 	is_dialogue_taking_place = false
+	label.visible = false
 	_hide_subtitle()
 
 func _display_subtitle(subtitle : String):
-	var label : Label = Captions.get_child(0).get_child(0) # Temporary for testing dialogues
+	# Temporary for testing dialogues
 	label.text = subtitle
 	#label.visible_ratio = 0.0;
 	
