@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bnu6okxd2c17s" path="res://gameobjects/containers/WeaponHolder.gd" id="1_rlx07"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="2_aobhc"]
+[ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="3_8ac01"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aobhc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rslxj"]
+radius = 2.0
 
 [node name="WeaponHolder" type="Node3D" unique_id=662123432]
 script = ExtResource("1_rlx07")
@@ -16,4 +20,12 @@ shape = SubResource("BoxShape3D_aobhc")
 
 [node name="StoragePoint" type="Node3D" parent="." unique_id=1530027104]
 
+[node name="SuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("3_8ac01")]
+suspicion_amount = 10.0
+
+[node name="CollisionShape3D" parent="SuspicionArea" index="0" unique_id=506871328]
+shape = SubResource("SphereShape3D_rslxj")
+disabled = true
+
 [editable path="InteractTrigger"]
+[editable path="SuspicionArea"]
