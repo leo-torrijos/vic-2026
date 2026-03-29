@@ -117,6 +117,8 @@ func _physics_process(delta: float) -> void:
 										handheld.stored_pickup = current_interaction.get_parent()
 										current_interaction.get_parent().get_parent().remove_child(handheld.stored_pickup)
 										player_hand.add_child(handheld)
+										handheld.get_node("KillRay").global_position = camera.global_position
+										handheld.get_node("KillRay").global_rotation = camera.global_rotation
 										hands_full = true
 							"put_in_holder":
 								if hands_full and handheld != null:
@@ -135,12 +137,16 @@ func _physics_process(delta: float) -> void:
 										handheld.queue_free()
 										handheld = temp_handheld
 										player_hand.add_child(handheld)
+										handheld.get_node("KillRay").global_position = camera.global_position
+										handheld.get_node("KillRay").global_rotation = camera.global_rotation
 								elif not hands_full:
 									crosshair.texture = CROSSHAIR_TEXTURES.pickup
 									if Input.is_action_just_pressed("action1"):
 										handheld = current_interaction.get_parent().yield_object()
 										handheld.stored_pickup = current_interaction.get_parent().held_object
 										player_hand.add_child(handheld)
+										handheld.get_node("KillRay").global_position = camera.global_position
+										handheld.get_node("KillRay").global_rotation = camera.global_rotation
 										hands_full = true
 							"drag":
 								if not hands_full:
