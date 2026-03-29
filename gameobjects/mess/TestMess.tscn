@@ -10,3 +10,4 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 texture = ExtResource("2_q2ias")
 
 [editable path="InteractTrigger"]
+[editable path="SuspicionArea"]
