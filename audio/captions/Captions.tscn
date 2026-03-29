@@ -15,6 +15,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=606209144]
+visible = false
 layout_mode = 0
 offset_left = 330.0
 offset_top = 524.0
