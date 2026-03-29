@@ -34,6 +34,7 @@ func animate():
 	if tween:
 		tween.kill()
 	tween = create_tween()
+	tween.set_trans(tween.TransitionType.TRANS_SINE)
 	tween.tween_property(subtitle_label, "visible_ratio", 1.0, current_stream_duration - TWEEENING_THRESHOLD_END_TIME)
 
 func register_speaker(speaker_name: String, node: Node):
@@ -65,7 +66,7 @@ func _play_current_line():
 	current_stream_duration = talking_audio.stream.get_length()
 
 	# Show subtitles
-	_display_subtitle(line.speaker + ": " + line.subtitle)
+	_display_subtitle(line.speaker.to_upper() + " \n" + line.subtitle)
 
 	# Wait for finish
 	talking_audio.finished_speaking.connect(_on_line_finished, CONNECT_ONE_SHOT)
@@ -82,7 +83,7 @@ func _display_subtitle(subtitle : String):
 	# Temporary for testing dialogues
 	subtitle_label.text = subtitle
 	subtitle_label.visible_ratio = 0.0
-	subtitle_label.visible_characters = current_speaker.length()
+	subtitle_label.visible_characters = current_speaker.length() + 2 # There was a space lol
 	animate()
 	
 	
