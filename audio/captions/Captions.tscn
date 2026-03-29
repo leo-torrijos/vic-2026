@@ -17,10 +17,10 @@ mouse_filter = 2
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=606209144]
 visible = false
 layout_mode = 0
-offset_left = 493.5
-offset_top = 531.0
-offset_right = 786.5
-offset_bottom = 611.0
+offset_left = 330.0
+offset_top = 524.0
+offset_right = 950.0
+offset_bottom = 618.0
 theme_override_styles/panel = ExtResource("1_e18m3")
 
 [node name="Label" type="Label" parent="Control/PanelContainer" unique_id=871700169]

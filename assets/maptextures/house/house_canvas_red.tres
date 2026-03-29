@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://baiw6einm1mgk"]
+
+[ext_resource type="Texture2D" uid="uid://dlu11x174qk3j" path="res://assets/maptextures/house/house_canvas_red.png" id="1_xmyti"]
+
+[resource]
+albedo_texture = ExtResource("1_xmyti")
+metallic_specular = 0.0
+texture_filter = 2
