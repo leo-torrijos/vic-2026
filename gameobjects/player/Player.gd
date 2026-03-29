@@ -7,6 +7,8 @@ const SPEED = 5.0
 const LOOK_SENSITIVITY = 0.005
 const ACCEL = 1.0
 
+const INSPECTION_MAX = 45  # Number of frames it takes to inspect something
+
 const CROSSHAIR_TEXTURES = {
 	"default" : preload("res://assets/gui/temp_crosshair_default.png"),
 	"inspect" : preload("res://assets/gui/temp_crosshair_inspect.png"),
@@ -28,6 +30,7 @@ var current_interaction = null
 var hands_full = false
 var handheld = null
 
+var inspection_count = 0
 
 func _ready() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -68,6 +71,21 @@ func _physics_process(delta: float) -> void:
 			else:
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:
+					# Inspect handling
+					if current_interaction.inspectable:
+						$PlayerUI/InspectMeter/ActiveInspect.show()
+						$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.inspect
+						if Input.is_action_pressed("interact"):
+							inspection_count += 1
+							if inspection_count > INSPECTION_MAX:
+								$InspectHandler.inspect(current_interaction)
+								inspection_count = 0
+						else:
+							inspection_count = 0
+						$PlayerUI/InspectMeter/ActiveInspect.value = inspection_count
+					else:
+						$PlayerUI/InspectMeter/ActiveInspect.hide()
+					
 					match current_interaction.interaction_type:
 						"clean":
 							if not hands_full:
@@ -126,6 +144,8 @@ func _physics_process(delta: float) -> void:
 								else:
 									# TODO: handle attempts to stall when cop is already stalled
 									pass
+				else:
+					$PlayerUI/InspectMeter/ActiveInspect.hide()
 		CLEAN:
 			$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.clean
 			velocity = Vector3.ZERO

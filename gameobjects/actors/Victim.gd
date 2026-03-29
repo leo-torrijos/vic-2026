@@ -12,7 +12,7 @@ func die():
 	move_speed *= 3.0
 	follow_director.queue_free()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match state:
 		IDLE:
 			velocity = Vector3.ZERO
