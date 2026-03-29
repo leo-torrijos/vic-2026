@@ -169,6 +169,7 @@ func _physics_process(delta: float) -> void:
 								crosshair.texture = CROSSHAIR_TEXTURES.talk
 								if Input.is_action_just_pressed("action1"):
 									var victim = current_interaction.get_parent()
+									print(victim)
 									if victim.taken_pills == null and ($InspectHandler.inspected_list.has("pills")):
 										victim.pills_prompt_triggered($InspectHandler.pills_instance)
 				else:
