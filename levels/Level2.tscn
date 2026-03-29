@@ -11,15 +11,15 @@
 [ext_resource type="Material" uid="uid://btudasgvhct8u" path="res://assets/maptextures/house/house_carpet_blue.tres" id="9_vfe3a"]
 [ext_resource type="Material" uid="uid://iqoj06c17jlr" path="res://assets/maptextures/house/house_curtains_blue.tres" id="10_jnmpp"]
 [ext_resource type="Material" uid="uid://c5vfv3t7va816" path="res://assets/maptextures/house/house_bricks_beige.tres" id="11_k6hxo"]
-[ext_resource type="Material" uid="uid://bf1qvmvr23vr4" path="res://assets/maptextures/house/metal_silver_seamless.tres" id="12_46xdq"]
-[ext_resource type="Material" uid="uid://dagcx3mbfcp04" path="res://assets/maptextures/house/metal_gold_seamless.tres" id="13_aa0ii"]
+[ext_resource type="Material" path="res://assets/maptextures/house/metal_silver_seamless.tres" id="12_46xdq"]
+[ext_resource type="Material" path="res://assets/maptextures/house/metal_gold_seamless.tres" id="13_aa0ii"]
 [ext_resource type="Material" uid="uid://bjnfl63rbnr48" path="res://assets/maptextures/house/house_wood_red.tres" id="14_vcbjw"]
 [ext_resource type="Material" uid="uid://bcgvbms46r4k5" path="res://assets/maptextures/house/house_curtains_beige.tres" id="15_jscuo"]
 [ext_resource type="Material" uid="uid://baiw6einm1mgk" path="res://assets/maptextures/house/house_canvas_red.tres" id="16_m7q71"]
 [ext_resource type="Material" uid="uid://dnwdf5t6h6l0q" path="res://assets/maptextures/house/house_wood_shelves_2.tres" id="17_e48gy"]
-[ext_resource type="Material" uid="uid://0lgvdh1pde67" path="res://assets/maptextures/house/house_trim_gold.tres" id="18_fmwlo"]
+[ext_resource type="Material" path="res://assets/maptextures/house/house_trim_gold.tres" id="18_fmwlo"]
 [ext_resource type="PackedScene" uid="uid://bnh028np76ihb" path="res://gameobjects/decor/BrownChairDecor.tscn" id="19_k6hxo"]
-[ext_resource type="PackedScene" uid="uid://dp3wt4qj5ux3v" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="20_46xdq"]
+[ext_resource type="PackedScene" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="20_46xdq"]
 [ext_resource type="PackedScene" uid="uid://cyqrjik031n3x" path="res://gameobjects/decor/PaintingDecor.tscn" id="21_aa0ii"]
 [ext_resource type="PackedScene" uid="uid://cuaje8w3t5s6a" path="res://gameobjects/decor/TVDecor.tscn" id="22_vcbjw"]
 [ext_resource type="PackedScene" uid="uid://d1mucey0ana1y" path="res://gameobjects/decor/LargePlantDecor.tscn" id="23_jscuo"]
@@ -622,7 +622,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAvgAA9j8AAEXAAAAAvgAA2j8AAE3AAAAAPgAA2j8AAE3AAAAAPgAA9j8AAEXAAAAAvgAA9r8AAEVAAAAAPgAA9r8AAEVAAAAAPgAA2j8AAE3AAAAAvgAA2j8AAE3AAAAAvgAA9r8AAEVAAAAAvgAA2j8AAE3AAAAAvgAA9j8AAEXAAAAAvgAA2r8AAE1AAAAAPgAA2r8AAE1AAAAAPgAA9j8AAEXAAAAAPgAA2j8AAE3AAAAAPgAA9r8AAEVAAAAAvgAA2r8AAE1AAAAAvgAA9j8AAEXAAAAAPgAA9j8AAEXAAAAAPgAA2r8AAE1AAAAAvgAA2r8AAE1AAAAAPgAA2r8AAE1AAAAAPgAA9r8AAEVAAAAAvgAA9r8AAEVAJdH//wAA/78l0f//AAD/vyXR//8AAP+/JdH//wAA/7/ZrgAAJdH//9muAAAl0f//2a4AACXR///ZrgAAJdH//wAA/3//f5KoAAD/f/9/kqgAAP9//3+SqAAA/3//f5Ko////fyXR//////9/JdH//////38l0f//////fyXR////fyXR/3+SqP9/JdH/f5Ko/38l0f9/kqj/fyXR/3+SqP9/JVH///+//38lUf///7//fyVR////v/9/JVH///+/")
 }]
 
-[node name="BaseLevel" unique_id=1706961308 instance=ExtResource("1_gljt1")]
+[node name="BaseLevel2" unique_id=1706961308 instance=ExtResource("1_gljt1")]
 
 [node name="NavigationRegion3D" parent="." index="2" unique_id=1918371590]
 navigation_mesh = SubResource("NavigationMesh_m7q71")
@@ -1124,11 +1124,9 @@ shadow_enabled = true
 
 [node name="Victim" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="0" unique_id=154303676 instance=ExtResource("27_e48gy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9980993, 0, -4.6791368)
-visible = true
 
 [node name="Cop" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="1" unique_id=1370046151 node_paths=PackedStringArray("spawn_point") instance=ExtResource("28_fmwlo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.9540367)
-visible = true
 spawn_point = NodePath("../../Paths/WalkPathCop")
 
 [node name="WalkPathVictim" parent="Paths" parent_id_path=PackedInt32Array(1295105940) index="0" unique_id=453985004 node_paths=PackedStringArray("navigator") instance=ExtResource("27_m7q71")]
@@ -1280,6 +1278,13 @@ transform = Transform3D(-0.9999999, 3.5527137e-15, 1.3311832e-07, 0, 0.99999994,
 
 [node name="WalkPoint37" parent="Paths/WalkPathCop" index="36" unique_id=1170904616 instance=ExtResource("28_e48gy")]
 transform = Transform3D(-0.8817153, 1.4060188e-08, 0.4717815, 0, 0.99999994, -2.9802322e-08, -0.47178155, -2.6277167e-08, -0.8817152, 1.141726, 0.003081128, -0.81613094)
+
+[node name="DialogueDirector" parent="." index="10" unique_id=1024034190 node_paths=PackedStringArray("speakers")]
+speakers = {
+"Cop": NodePath("../Actors/Cop"),
+"Detective": NodePath("../Player"),
+"Victim": NodePath("../Actors/Victim")
+}
 
 [connection signal="about_to_die" from="Actors/Victim" to="." method="_on_victim_about_to_die"]
 [connection signal="death" from="Actors/Victim" to="." method="_on_victim_death"]
