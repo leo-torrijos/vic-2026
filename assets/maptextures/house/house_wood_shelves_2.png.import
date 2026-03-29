@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc5s3lhwcr480"
-path.s3tc="res://.godot/imported/house_bush.png-efb5215728e12500e10789fa4ce349c5.s3tc.ctex"
+uid="uid://tvgbgprftxko"
+path.s3tc="res://.godot/imported/house_wood_shelves_2.png-6530baf763a31abb21e80d9543e14ca6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/maptextures/house/house_bush.png"
-dest_files=["res://.godot/imported/house_bush.png-efb5215728e12500e10789fa4ce349c5.s3tc.ctex"]
+source_file="res://assets/maptextures/house/house_wood_shelves_2.png"
+dest_files=["res://.godot/imported/house_wood_shelves_2.png-6530baf763a31abb21e80d9543e14ca6.s3tc.ctex"]
 
 [params]
 
