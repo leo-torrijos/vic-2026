@@ -95,4 +95,4 @@ func _on_victim_about_to_die() -> void:
 
 func _on_walk_path_cop_path_completed() -> void:
 	if phase != LOSE:
-		next_phase()
+		next_phase(WIN)
