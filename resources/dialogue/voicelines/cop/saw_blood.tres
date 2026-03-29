@@ -7,4 +7,5 @@
 script = ExtResource("1_3nnhj")
 speaker = "Cop"
 audio_recording = ExtResource("1_7bp4c")
+subtitle = "This doesn't look right..."
 metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"
