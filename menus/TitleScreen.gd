@@ -13,3 +13,7 @@ func _on_level_1_button_pressed() -> void:
 func _on_level_2_button_pressed() -> void:
 	add_sibling(Level2Scene.instantiate())
 	queue_free()
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
