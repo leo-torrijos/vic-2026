@@ -154,6 +154,12 @@ func _physics_process(delta: float) -> void:
 									else:
 										# TODO: handle attempts to stall when cop is already stalled
 										pass
+							"talk":
+								crosshair.texture = CROSSHAIR_TEXTURES.talk
+								if Input.is_action_just_pressed("action1"):
+									var victim = current_interaction.get_parent()
+									if victim.taken_pills == null and ($InspectHandler.inspected_list.has("pills")):
+										victim.pills_prompt_triggered($InspectHandler.pills_instance)
 				else:
 					$PlayerUI/InspectLabel.hide()
 					#inspect_indicator.hide()

@@ -4,26 +4,31 @@ class_name Victim
 var corpse_scene = preload("res://gameobjects/draggable/Corpse.tscn")
 var blood_puddle_scene = preload("res://gameobjects/mess/BloodPuddle.tscn")
 
+var taken_pills : Pills
+
 signal about_to_die
 signal death
 
-func die():
+func die(to_pills := false):
 	$DamageDecor/CollisionShape3D.set_deferred("disabled", false)
 	emit_signal("about_to_die")
 	$DeathTimer.start()
-	state = DIE
+	if to_pills:
+		state = DIE_TO_PILLS
+	else:
+		state = DIE
 	$InteractTrigger/CollisionShape3D.set_deferred("disabled", true)
 	move_speed *= 3.0
 	follow_director.queue_free()
 
 func _physics_process(_delta: float) -> void:
 	match state:
-		IDLE:
+		IDLE, TAKE_PILLS:
 			velocity = Vector3.ZERO
-		PATROL:
+		PATROL, WALK_TO_PILLS:
 			move()
 			move_and_slide()
-		DIE:
+		DIE, DIE_TO_PILLS:
 			if $MessRetargetTimer.is_stopped():
 				if $DetectDecor.has_overlapping_bodies():
 					print("I HATE THAT OBJECT")
@@ -35,9 +40,12 @@ func _physics_process(_delta: float) -> void:
 				var blood_puddle = blood_puddle_scene.instantiate()
 				blood_puddle.transform = transform
 				blood_puddle.rotation.y = randf_range(0, 2 * PI)
+				if state == DIE_TO_PILLS:
+					blood_puddle.get_node("Sprite3D").modulate = Color(0, 255, 0)
 				get_parent().add_child(blood_puddle)
 			move()
 			move_and_slide()
+			
 
 func _on_death_timer_timeout() -> void:
 	death.emit()
@@ -50,3 +58,22 @@ func _on_death_timer_timeout() -> void:
 
 func _on_damage_decor_body_entered(body: Node3D) -> void:
 	body.get_parent().get_dirty()
+
+
+func pills_prompt_triggered(pills: Pills):
+	taken_pills = pills
+	state = WALK_TO_PILLS
+	nav_agent.set_target_position(taken_pills.global_position)
+
+
+func _on_detect_pills_area_entered(area: Area3D) -> void:
+	look_at(area.global_position)
+	state = TAKE_PILLS
+	$TakePillsTimer.start()
+
+
+func _on_take_pills_timer_timeout() -> void:
+	if taken_pills.poisoned:
+		die(true)
+	else:
+		state = PATROL
