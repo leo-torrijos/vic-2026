@@ -54,8 +54,10 @@ func next_phase(forced_state=0):
 			print_debug("Investigation begins. POLICE INCOMING!")
 		WIN: # Win
 			print_debug("you won!")
+			$Win.show()
 		LOSE: # Lose :(
 			print_debug("Busted!")
+			$GameOver.show()
 
 #func _physics_process(_delta: float) -> void:
 	#if suspicion >= SUSPICION_LIMIT:
