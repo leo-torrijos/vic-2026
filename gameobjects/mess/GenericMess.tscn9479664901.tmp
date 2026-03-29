@@ -32,4 +32,3 @@ one_shot = true
 [connection signal="timeout" from="CleanTimer" to="." method="_on_clean_timer_timeout"]
 
 [editable path="InteractTrigger"]
-[editable path="SuspicionArea"]

@@ -9,6 +9,7 @@ radius = 0.25830078
 height = 1.5348511
 
 [node name="Cop" unique_id=154303676 instance=ExtResource("1_fk3hd")]
+collision_layer = 64
 script = ExtResource("2_gupl4")
 
 [node name="InteractTrigger" parent="." index="3" unique_id=1392577794 instance=ExtResource("3_jqqm1")]

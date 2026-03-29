@@ -76,6 +76,7 @@ func _physics_process(delta: float) -> void:
 									current_interaction.get_parent().clean(self)
 									state = CLEAN
 									hands_full = true
+									$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", false)
 						"pickup":
 							if not hands_full:
 								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.pickup
@@ -134,6 +135,7 @@ func _physics_process(delta: float) -> void:
 				hands_full = false
 				if current_interaction:
 					current_interaction.get_parent().cancel_clean()
+					$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", true)
 		DRAG:
 			$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.putdown
 			# For dragging stuff, probably corpses.
@@ -172,3 +174,4 @@ func done_cleaning():
 	state = MOVE
 	hands_full = false
 	# TODO: chance to say something on clean?
+	$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", true)

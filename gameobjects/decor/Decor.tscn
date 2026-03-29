@@ -9,10 +9,8 @@
 script = ExtResource("1_i5m6g")
 
 [node name="SuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("2_ete4e")]
-monitorable = false
 
 [node name="InteractTrigger" parent="." unique_id=1392577794 instance=ExtResource("3_ssdt2")]
-monitorable = false
 interaction_type = "clean"
 
 [node name="CleanTimer" type="Timer" parent="." unique_id=551552800]

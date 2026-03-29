@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dp5x6nb2dq8nr" path="res://gameobjects/draggable/Draggable.tscn" id="1_5juo4"]
 [ext_resource type="PackedScene" uid="uid://b76j7p33edw82" path="res://assets/models/characters/characters.glb" id="2_tkpry"]
+[ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="3_ku6gs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5juo4"]
 radius = 0.25
@@ -12,6 +13,9 @@ size = Vector3(0.5, 0.25, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5juo4"]
 size = Vector3(0.25, 0.25, 1.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o5oy8"]
+radius = 8.0
 
 [node name="Corpse" unique_id=1629555621 instance=ExtResource("1_5juo4")]
 
@@ -31,4 +35,19 @@ mesh = SubResource("BoxMesh_5juo4")
 [node name="characters" parent="." index="3" unique_id=314841262 instance=ExtResource("2_tkpry")]
 transform = Transform3D(0.74, 0, 0, 0, -3.2346428e-08, 0.74, 0, -0.74, -3.2346428e-08, 0, 0.0712986, 0.72587585)
 
+[node name="SuspicionArea" parent="." index="4" unique_id=1503767028 instance=ExtResource("3_ku6gs")]
+suspicion_amount = 10.0
+
+[node name="CollisionShape3D" parent="SuspicionArea" index="0" unique_id=506871328]
+shape = SubResource("SphereShape3D_o5oy8")
+
+[node name="DragBleedDelay" type="Timer" parent="." index="5" unique_id=1485965777]
+one_shot = true
+
+[node name="DragBleedTimer" type="Timer" parent="." index="6" unique_id=1561180274]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
 [editable path="InteractTrigger"]
+[editable path="SuspicionArea"]

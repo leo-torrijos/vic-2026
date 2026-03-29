@@ -104,10 +104,12 @@ radius = 0.6
 
 [node name="CollisionShape3D" parent="SuspicionArea" parent_id_path=PackedInt32Array(1503767028) index="0" unique_id=506871328]
 shape = SubResource("SphereShape3D_mrsep")
+disabled = true
 
 [node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6098031, 0)
 shape = SubResource("SphereShape3D_rxwku")
+disabled = true
 
 [node name="chair_brown" parent="." index="4" unique_id=164431673 instance=ExtResource("2_mrsep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10155238, 0)

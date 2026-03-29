@@ -15,6 +15,10 @@ run/main_scene="uid://bwqger3cncolg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://dwku1wv33ymq3"
+
 [display]
 
 window/size/viewport_width=1280
@@ -86,6 +90,7 @@ none={
 3d_physics/layer_4="suspicion"
 3d_physics/layer_5="damage"
 3d_physics/layer_6="decor"
+3d_physics/layer_7="cop"
 
 [physics]
 

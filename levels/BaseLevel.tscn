@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_ennia"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="3_x6cm1"]
 [ext_resource type="PackedScene" uid="uid://c1ihcddv63a2e" path="res://menus/Pause.tscn" id="5_ennia"]
+[ext_resource type="AudioStream" uid="uid://b7j5if6g5vop2" path="res://audio/music/House.mp3" id="6_x6cm1"]
+[ext_resource type="AudioStream" uid="uid://b6gs4jndo40j0" path="res://audio/music/Demise.mp3" id="7_vt8va"]
 
 [sub_resource type="Environment" id="Environment_lf7d8"]
 ambient_light_source = 2
@@ -43,5 +45,32 @@ one_shot = true
 [node name="Paths" type="Node3D" parent="." unique_id=1295105940]
 
 [node name="Pause" parent="." unique_id=343961332 instance=ExtResource("5_ennia")]
+
+[node name="SuspicionUI" type="CanvasLayer" parent="." unique_id=279518392]
+visible = false
+
+[node name="Control" type="Control" parent="SuspicionUI" unique_id=890074875]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SuspicionMeter" type="ProgressBar" parent="SuspicionUI/Control" unique_id=1046416417]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 28.0
+offset_right = 762.0
+offset_bottom = 55.0
+
+[node name="Music" type="Node3D" parent="." unique_id=1388782696]
+
+[node name="CalmMusic" type="AudioStreamPlayer" parent="Music" unique_id=497465067]
+stream = ExtResource("6_x6cm1")
+
+[node name="MurderSting" type="AudioStreamPlayer" parent="Music" unique_id=568543826]
+stream = ExtResource("7_vt8va")
 
 [connection signal="timeout" from="CleanupTimer" to="." method="_on_cleanup_timer_timeout"]
