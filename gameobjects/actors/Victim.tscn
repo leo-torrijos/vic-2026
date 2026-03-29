@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bahuo3p8odixe" path="res://gameobjects/actors/Victim.gd" id="2_gr526"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_20lhs"]
 [ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="4_usmqo"]
-[ext_resource type="PackedScene" uid="uid://kt4k676voxtf" path="res://assets/models/characters/actor.glb" id="5_45nhq"]
+[ext_resource type="PackedScene" uid="uid://jy5a2c3tb7ms" path="res://assets/models/characters/victim.glb" id="5_45nhq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20lhs"]
 radius = 0.25830078
@@ -82,8 +82,8 @@ visible = false
 wait_time = 3.0
 one_shot = true
 
-[node name="actor" parent="." index="13" unique_id=1672906365 instance=ExtResource("5_45nhq")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.043903455, 0, 0.035396397)
+[node name="actor" parent="." index="13" unique_id=927701953 instance=ExtResource("5_45nhq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8.705811, 0, 0)
 
 [connection signal="area_entered" from="DetectPills" to="." method="_on_detect_pills_area_entered"]
 [connection signal="body_entered" from="DamageDecor" to="." method="_on_damage_decor_body_entered"]
