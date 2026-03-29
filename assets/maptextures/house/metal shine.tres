@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cukme7sy60bcv"]
+
+[ext_resource type="Texture2D" uid="uid://cvch165gs7cf7" path="res://assets/maptextures/house/metal shine.png" id="1_fdr1k"]
+
+[resource]
+albedo_texture = ExtResource("1_fdr1k")
+metallic_specular = 0.0
+texture_filter = 2

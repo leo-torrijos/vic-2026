@@ -96,6 +96,10 @@ _data = {
 &"idle": SubResource("Animation_mrsep")
 }
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mrsep"]
+height = 1.0
+radius = 0.6
+
 [node name="BrownChairDecor" unique_id=467157150 instance=ExtResource("1_5rqt7")]
 
 [node name="CollisionShape3D" parent="SuspicionArea" parent_id_path=PackedInt32Array(1503767028) index="0" unique_id=506871328]
@@ -105,12 +109,15 @@ shape = SubResource("SphereShape3D_mrsep")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6098031, 0)
 shape = SubResource("SphereShape3D_rxwku")
 
-[node name="AnimationPlayer" parent="." index="4" unique_id=2066790702]
+[node name="chair_brown" parent="." index="4" unique_id=164431673 instance=ExtResource("2_mrsep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10155238, 0)
+
+[node name="AnimationPlayer" parent="." index="5" unique_id=2066790702]
 libraries/ = SubResource("AnimationLibrary_xoymg")
 autoplay = &"idle"
 
-[node name="chair_brown" parent="." index="5" unique_id=164431673 instance=ExtResource("2_mrsep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10155238, 0)
+[node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(2033304068) index="0" unique_id=313961488]
+shape = SubResource("CylinderShape3D_mrsep")
 
 [editable path="SuspicionArea"]
 [editable path="InteractTrigger"]

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dagcx3mbfcp04"]
+
+[ext_resource type="Texture2D" uid="uid://cilk2d52gigki" path="res://assets/maptextures/house/metal_gold_seamless.png" id="1_aewng"]
+
+[resource]
+albedo_texture = ExtResource("1_aewng")
+metallic_specular = 0.0
+texture_filter = 2
