@@ -112,7 +112,7 @@ func _physics_process(delta: float) -> void:
 						"drag":
 							if not hands_full:
 								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.pickup
-								if Input.is_action_just_pressed("action1"):
+								if Input.is_action_just_pressed("action1") and global_position.distance_to(current_interaction.global_position) < 1.0:
 									current_interaction.get_parent().drag(self)
 									state = DRAG
 									hands_full = true
@@ -170,4 +170,5 @@ func _unhandled_input(event):
 
 func done_cleaning():
 	state = MOVE
+	hands_full = false
 	# TODO: chance to say something on clean?
