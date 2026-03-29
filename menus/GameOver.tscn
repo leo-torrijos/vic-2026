@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dsulwxttkxrkd"]
+
+[ext_resource type="Script" uid="uid://ckufg35plnmvj" path="res://levels/GameOver.gd" id="1_7dapq"]
+[ext_resource type="Theme" uid="uid://b8tjyg88h6spv" path="res://menus/main_theme.tres" id="2_1dg2u"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=1252156121]
+visible = false
+script = ExtResource("1_7dapq")
+
+[node name="Control" type="Control" parent="." unique_id=2025377278]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_1dg2u")
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=77129377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.07058824, 0.07058824, 0.07058824, 0.58431375)
+
+[node name="Label" type="Label" parent="Control" unique_id=369801053]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -213.0
+offset_right = 117.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Busted!"
+
+[node name="Retry" type="Button" parent="Control" unique_id=1308665632]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 461.0
+offset_right = 746.0
+offset_bottom = 501.0
+text = "Retry"
+
+[connection signal="pressed" from="Control/Retry" to="." method="_on_retry_pressed"]

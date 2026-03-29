@@ -10,6 +10,7 @@ signal about_to_die
 signal death
 
 func die(to_pills := false):
+	$DyingSound.play()
 	$DamageDecor/CollisionShape3D.set_deferred("disabled", false)
 	emit_signal("about_to_die")
 	$DeathTimer.start()

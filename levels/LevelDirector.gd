@@ -45,10 +45,12 @@ func next_phase(forced_state=0):
 			$Music/MurderSting.play()
 			print_debug("YOU KILLED THEM...")
 		CLEANUP: # Cleanup
+			$CleanUpLabel.show()
 			print_debug("Cleanup!")
 			get_node("Paths/WalkPathCop").show()
 			pass
 		INVESTIGATION: # Investigation
+			$CleanUpLabel.hide()
 			get_node("Actors/Cop").activate()
 			$SuspicionUI.show()
 			print_debug("Investigation begins. POLICE INCOMING!")

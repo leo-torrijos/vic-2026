@@ -162,7 +162,7 @@ func _physics_process(delta: float) -> void:
 								if Input.is_action_just_pressed("action1"):
 									var cop = current_interaction.get_parent()
 									if cop.state != Cop.STALLED:
-										Global.current_level_director.get_node("DialogueDirector").start_dialogue(BAD_STALLS[randi_range(0, BAD_STALLS.size() - 1)])
+										#Global.current_level_director.get_node("DialogueDirector").start_dialogue(BAD_STALLS[randi_range(0, BAD_STALLS.size() - 1)])
 										# TODO: allow different stall times for info/objects
 										current_interaction.get_parent().stall(1.0)
 									else:

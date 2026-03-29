@@ -6,6 +6,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_aekgs"]
 radius = 2.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_aekgs"]
+size = Vector3(0.5, 1.895, 0.5)
+
 [sub_resource type="Animation" id="Animation_aekgs"]
 length = 0.001
 tracks/0/type = "value"
@@ -106,6 +109,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44705462, 0)
 [node name="CollisionShape3D" parent="SuspicionArea" index="0" unique_id=506871328]
 shape = SubResource("SphereShape3D_aekgs")
 
+[node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44769287, 0)
+shape = SubResource("BoxShape3D_aekgs")
+
 [node name="AnimationPlayer" parent="." index="4" unique_id=2066790702]
 libraries/ = SubResource("AnimationLibrary_fds5u")
 autoplay = &"idle"
@@ -118,3 +125,4 @@ shape = SubResource("CylinderShape3D_aekgs")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.06289537, 0)
 
 [editable path="SuspicionArea"]
+[editable path="InteractTrigger"]
