@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvch165gs7cf7"
-path.s3tc="res://.godot/imported/metal shine.png-c66a7b4f160a36cc580b18abc8280127.s3tc.ctex"
+uid="uid://crv14h4ca2wgu"
+path.s3tc="res://.godot/imported/ceiling light_house_trim_brown.png-cdd9e724bfb8cf6c378e2c628c774314.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d0a40883d048329e55542d56847c6c27"
+}
 
 [deps]
 
-source_file="res://assets/maptextures/house/metal shine.png"
-dest_files=["res://.godot/imported/metal shine.png-c66a7b4f160a36cc580b18abc8280127.s3tc.ctex"]
+source_file="res://assets/models/decoration/ceiling light/ceiling light_house_trim_brown.png"
+dest_files=["res://.godot/imported/ceiling light_house_trim_brown.png-cdd9e724bfb8cf6c378e2c628c774314.s3tc.ctex"]
 
 [params]
 

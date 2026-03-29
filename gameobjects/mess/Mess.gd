@@ -4,7 +4,8 @@ extends Node3D
 # generic
 # wipe
 @export var mess_type = "generic"
-@export var time_to_clean = 2.0
+@export var time_to_clean = 1.5
+
 
 var player
 

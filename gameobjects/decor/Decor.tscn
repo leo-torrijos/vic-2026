@@ -5,11 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_ssdt2"]
 [ext_resource type="Texture2D" uid="uid://ej1oo45kj6et" path="res://assets/icons/must_clean_icon.png" id="5_uduik"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_h8pe4"]
-height = 1.0
-radius = 0.3
-
-[node name="Decor" type="Node3D" unique_id=467157150]
+[node name="Decor" type="Node3D" unique_id=1678101023]
 script = ExtResource("1_i5m6g")
 
 [node name="SuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("2_ete4e")]
@@ -30,13 +26,12 @@ texture = ExtResource("5_uduik")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2066790702]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=951311412]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2033304068]
 collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=313961488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5358496, 0)
-shape = SubResource("CylinderShape3D_h8pe4")
 
 [connection signal="timeout" from="CleanTimer" to="." method="_on_clean_timer_timeout"]
 

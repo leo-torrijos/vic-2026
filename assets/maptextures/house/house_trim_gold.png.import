@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvch165gs7cf7"
-path.s3tc="res://.godot/imported/metal shine.png-c66a7b4f160a36cc580b18abc8280127.s3tc.ctex"
+uid="uid://dea8u8kk523om"
+path.s3tc="res://.godot/imported/house_trim_gold.png-4842566a84f91cf500ccd37cc1f92857.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/maptextures/house/metal shine.png"
-dest_files=["res://.godot/imported/metal shine.png-c66a7b4f160a36cc580b18abc8280127.s3tc.ctex"]
+source_file="res://assets/maptextures/house/house_trim_gold.png"
+dest_files=["res://.godot/imported/house_trim_gold.png-4842566a84f91cf500ccd37cc1f92857.s3tc.ctex"]
 
 [params]
 
