@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://bwqger3cncolg"]
 
 [ext_resource type="PackedScene" uid="uid://cse4r7ovxp510" path="res://levels/BaseLevel.tscn" id="1_b84ys"]
+[ext_resource type="Environment" uid="uid://q7w416v4g3ag" path="res://resources/environment/70s sky.tres" id="2_qv7rl"]
 [ext_resource type="Material" uid="uid://btudasgvhct8u" path="res://assets/maptextures/house/house_carpet_blue.tres" id="2_vi6ws"]
 [ext_resource type="Material" uid="uid://bj008uoie26re" path="res://assets/maptextures/house/house_wood_orange.tres" id="3_cr8f5"]
 [ext_resource type="Material" uid="uid://bjnfl63rbnr48" path="res://assets/maptextures/house/house_wood_red.tres" id="3_gqfrg"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="3_xgs4t"]
 [ext_resource type="Material" uid="uid://cdoo3ejr0nney" path="res://assets/maptextures/house/house_carpet_orange.tres" id="4_gqfrg"]
 [ext_resource type="Material" uid="uid://c5vfv3t7va816" path="res://assets/maptextures/house/house_bricks_beige.tres" id="5_dkril"]
 [ext_resource type="Material" uid="uid://bijrgobhr0utc" path="res://assets/maptextures/house/house_wallpaper_green.tres" id="6_6gurj"]
@@ -31,15 +33,10 @@
 [ext_resource type="PackedScene" uid="uid://cuaje8w3t5s6a" path="res://gameobjects/decor/TVDecor.tscn" id="24_wyuhx"]
 [ext_resource type="PackedScene" uid="uid://cohkgkaxsgbhj" path="res://assets/models/doorcontainers/oven/oven.glb" id="25_dp4a1"]
 [ext_resource type="PackedScene" uid="uid://b76k07y6lp2og" path="res://gameobjects/containers/ToiletContainer.tscn" id="26_dp4a1"]
-[ext_resource type="PackedScene" uid="uid://bm3p78rvpw157" path="res://gameobjects/containers/Closet.tscn" id="26_jb2e5"]
+[ext_resource type="PackedScene" path="res://gameobjects/containers/Closet.tscn" id="26_jb2e5"]
 [ext_resource type="PackedScene" uid="uid://ccw6luc6j1gea" path="res://gameobjects/inspect_objects/Pills.tscn" id="27_u4hc1"]
-[ext_resource type="PackedScene" uid="uid://cq3a3qwihwvcv" path="res://gameobjects/pickups/PickupPoison.tscn" id="28_q4j23"]
-[ext_resource type="PackedScene" uid="uid://dp3wt4qj5ux3v" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="30_cbal1"]
-
-[sub_resource type="Environment" id="Environment_gqfrg"]
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.25
+[ext_resource type="PackedScene" path="res://gameobjects/pickups/PickupPoison.tscn" id="28_q4j23"]
+[ext_resource type="PackedScene" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="30_cbal1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_32mhh"]
 vertices = PackedVector3Array(-22.75, 7.5, -67.75, -22.75, 7.5, 61.75, -21.25, 7.5, 61.75, -21.25, 7.5, -67.75, -17.5, 3.5, -13, -17.5, 3.5, -12, -17.25, 3.5, -11.75, -18.75, 3.5, -13.75, -18.5, 3.5, -13.25, -17.5, 3.5, -14.75, -17.25, 3.5, -67.75, -18.5, 3.5, -17.25, -17.5, 3.5, -16.25, -20.5, 3.5, -67.75, -20.5, 3.5, -16.75, -20, 3.5, -17.25, -20.5, 0.5, -24.75, -20.5, 0.5, 61.5, -17.25, 0.5, 61.5, -17.25, 0.5, -24.75, -16.5, 0.5, -24.75, -16.5, 0.5, 61.5, -15.75, 0.5, 61.5, -15.75, 0.5, -24.75, -13, 0.5, -18.75, -10.25, 0.5, -18.5, -10, 0.5, -20.25, -13, 0.5, -24.75, -4, 0.5, -20.25, -4, 0.5, -24.75, -8.25, 4.5, -24.75, -8.25, 4.5, 1.75, 11.75, 4.5, 1.75, 11.75, 4.5, -24.75, -3.5, 0.5, -17.25, -2.25, 0.5, -17.25, -2, 0.5, -18.25, -3.5, 0.5, -20, -0.5, 0.5, -18, 1.75, 0.5, -19, -0.5, 0.5, -15.25, 1.75, 0.5, -15.25, 4, 0.5, -19.25, 4, 0.5, -24.75, 9.5, 0.5, -7.25, 10.75, 0.5, -7.25, 10.75, 0.5, -8, 9.5, 0.5, -19, 11.75, 0.5, -24.75, 11.75, 0.5, -8.25, -9.75, 1.5, -19.75, -9.75, 1.5, 61.75, -9.25, 1.5, 61.75, -9.25, 1.5, -19.75, -13, 0.5, 61.75, -10.25, 0.5, 61.75, -6.75, 0.5, -17, -6, 0.5, -17.25, -6, 0.5, -18.5, -7.5, 0.5, -18.5, -6, 0.5, -14.5, -6.75, 0.5, -15.75, -7.5, 0.5, -13, -6.75, 0.5, -13, -6.25, 0.5, -7.25, -4.75, 0.5, -7, -4.5, 0.5, -7.5, -6.25, 0.5, -8.75, -5, 0.5, -4, -3.75, 0.5, -3.75, -3.5, 0.5, -5.5, -4.5, 0.5, -5.75, -6.25, 0.5, -5.25, -7.5, 0.5, -8.25, -6.75, 0.5, -6.75, -6, 0.5, -12.25, -3.25, 0.5, -14.5, -5.25, 0.5, -3.25, -7.5, 0.5, -3.25, -3.25, 0.5, -7.5, -2.75, 0.5, -9.5, -3.25, 0.5, -9.75, -6.5, 0.5, -11.25, -15.75, 6.75, -18, -15.75, 6.75, -17, -14.75, 6.75, -17, -14.75, 6.75, -18, 8.5, 0.5, -1.75, 10.5, 0.5, -1.75, 9.5, 0.5, -2.5, 2.25, 0.5, -8.25, 2.75, 0.5, -8.25, 3.25, 0.5, -9.25, -1.5, 0.5, -10, 8.5, 0.5, -3.5, 4.75, 0.5, -16.75, 4.5, 0.5, -17.5, 3.5, 0.5, -17.5, 5, 0.5, -2, 5, 0.5, 0, 6, 0.5, -0.5, 9.75, 0.5, -5.5, 8.25, 0.5, -5.5, 8, 0.5, -5, 4, 0.5, -9.25, 4.25, 0.5, -8.25, 5.5, 0.5, -8, 5, 0.5, -3.5, 3.5, 0.5, -3.5, 3.5, 0.5, -2.25, 5.5, 0.5, -4, 7, 0.5, -3.75, 6.75, 0.5, -5.25, 3.5, 0.5, -15.25, 5.5, 0.5, -15, 6.75, 0.5, -8, 7.75, 0.5, -8.25, 5.75, 0.5, -16.75, 5, 0.5, -13.5, -1.5, 0.5, -13.5, 6.75, 0.5, 0.75, 6.75, 0.5, -17.5, 6.75, 0.5, -13.75, 7.75, 0.5, -13.5, -19.75, 8.75, -16, -19.75, 8.75, -15, -18.75, 8.75, -15, -18.75, 8.75, -16, -5.75, 1.5, -15.5, -5.75, 1.5, -15, -4.25, 1.5, -15, -4.25, 1.5, -15.5, -19, 3.5, -13, -20, 3.5, -13.75, -20.5, 3.5, -5.5, -20.25, 3.5, -5.5, -20, 3.5, -6.25, -20.25, 3.5, -8.25, -17.75, 3.5, -10.75, -17.25, 3.5, -10.25, -19, 3.5, -6.25, -17.75, 3.5, -7.25, -19.25, 3.5, -7.25, -19, 3.5, -12, -19.25, 3.5, -10.75, -20.25, 3.5, -9.75, -20.5, 3.5, -14.25, -18.75, 3.5, -5.25, -17.25, 3.5, -5.25, -17.25, 3.5, -7.75, -18.75, 9.75, -12.5, -18.75, 9.75, -12, -17.75, 9.75, -12, -17.75, 9.75, -12.5, -7.5, 1.5, -12.5, -7.5, 1.5, -11.5, -6.5, 1.5, -11.75, -6.75, 1.5, -12.5, -7.5, 1, -10.75, -7.5, 1, -10.25, -6.75, 1, -10.25, -6.75, 1, -10.75, -3.75, 0.5, -3.25, -1.5, 0.5, -3, -2.75, 0.5, -6.25, 1.75, 0.5, -8, 1.75, 0.5, 0.75, -1.5, 0.5, 0.75, -7.5, 1.5, -9.75, -7.5, 1.5, -8.75, -6.75, 1.5, -8.75, -6.75, 1.5, -9.75, -19, 8.75, -9, -19, 8.75, -8.5, -18, 8.75, -8.5, -18, 8.75, -9, -6.25, 1.5, -6.5, -6.25, 1.5, -5.75, -5.25, 1.5, -5.75, -5.25, 1.5, -6.5, -4.25, 1.5, -6.5, -4, 1.5, -6, -3.25, 1.5, -6.25, -20, 9.75, -6, -20, 9.75, -5, -19, 9.75, -5, -19, 9.75, -6, -20.5, 3.5, 7.5, -20.25, 3.5, 7.5, -20.25, 3.5, 6.75, -20, 3.5, -4.75, -19.25, 3.5, 5.75, -19, 3.5, -4.75, -17.75, 3.5, 5.75, -17.25, 3.5, 6.25, -16, 7.25, -2.75, -16, 7.25, -1.75, -15, 7.25, -1.75, -15, 7.25, -2.75, -2.25, 1, -2.5, -7.5, 1, -2.5, -7.5, 1, -1, -8, 1, -0.75, -8, 1, 4.75, -2.25, 1, 4.75, 3.5, 1.25, -1.75, 3.5, 1.25, 0.75, 4.25, 1.25, 0.75, 4.25, 1.25, -1.75, -14.25, 6.5, 0, -14.25, 6.5, 1, -13.75, 6.5, 1, -13.75, 6.5, 0, 5.5, 1, 0, 5.5, 1, 0.75, 6, 1, 0.75, 6, 1, 0, 8.5, 0.5, 0.5, 8.5, 0.5, 1.75, 10.75, 0.5, 1.75, 10.75, 0.5, 0.5, -8.25, 3.5, 2.5, -8.25, 3.5, 4.75, -2.25, 3.5, 4.75, -2.25, 3.5, 2.5, 6.75, 0.5, 5.25, 6.75, 0.5, 2.5, -1.5, 0.5, 2.5, -1.75, 0.5, 5, -8.25, 3.5, 5.75, -8.25, 3.5, 6.25, 7.25, 3.5, 6.25, 7.25, 3.5, 5.75, -20.25, 3.5, 8.25, -20.5, 3.5, 61.75, -17.25, 3.5, 61.75, -17.25, 3.5, 8.75, -17.75, 3.5, 9.25, -19.25, 3.5, 9.25, -19, 8.75, 7.5, -19, 8.75, 8, -18, 8.75, 8, -18, 8.75, 7.5)
@@ -653,7 +650,10 @@ points = PackedVector3Array(8.125, 0.875, -16.75, 8.125, 0.75, -16.75, 7.875, 0.
 [node name="BaseLevel" unique_id=1706961308 instance=ExtResource("1_b84ys")]
 
 [node name="WorldEnvironment" parent="." index="0" unique_id=600597906]
-environment = SubResource("Environment_gqfrg")
+environment = ExtResource("2_qv7rl")
+
+[node name="Player" parent="." index="1" unique_id=349429890]
+BAD_STALLS = Array[ExtResource("3_xgs4t")]([])
 
 [node name="NavigationRegion3D" parent="." index="2" unique_id=1918371590]
 navigation_mesh = SubResource("NavigationMesh_32mhh")

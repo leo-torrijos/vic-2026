@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://si26t5ms3syv"]
 
 [ext_resource type="PackedScene" uid="uid://cse4r7ovxp510" path="res://levels/BaseLevel.tscn" id="1_gljt1"]
+[ext_resource type="Environment" uid="uid://q7w416v4g3ag" path="res://resources/environment/70s sky.tres" id="2_idw50"]
 [ext_resource type="Material" uid="uid://dfbrgoypbrc7w" path="res://assets/maptextures/house/house_wood_beige.tres" id="2_jiouf"]
 [ext_resource type="Material" uid="uid://pisnu2rp88u" path="res://assets/maptextures/house/house_wallpaper_red.tres" id="3_pixff"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="3_xupr1"]
 [ext_resource type="Material" uid="uid://bj008uoie26re" path="res://assets/maptextures/house/house_wood_orange.tres" id="4_6m74g"]
 [ext_resource type="Material" uid="uid://bijrgobhr0utc" path="res://assets/maptextures/house/house_wallpaper_green.tres" id="5_qcwkq"]
 [ext_resource type="Material" uid="uid://d2uq8gfhq5lfs" path="res://assets/maptextures/house/house_pattern_red.tres" id="6_behg1"]
@@ -19,7 +21,7 @@
 [ext_resource type="Material" uid="uid://dnwdf5t6h6l0q" path="res://assets/maptextures/house/house_wood_shelves_2.tres" id="17_e48gy"]
 [ext_resource type="Material" uid="uid://0lgvdh1pde67" path="res://assets/maptextures/house/house_trim_gold.tres" id="18_fmwlo"]
 [ext_resource type="PackedScene" uid="uid://bnh028np76ihb" path="res://gameobjects/decor/BrownChairDecor.tscn" id="19_k6hxo"]
-[ext_resource type="PackedScene" uid="uid://dp3wt4qj5ux3v" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="20_46xdq"]
+[ext_resource type="PackedScene" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="20_46xdq"]
 [ext_resource type="PackedScene" uid="uid://cyqrjik031n3x" path="res://gameobjects/decor/PaintingDecor.tscn" id="21_aa0ii"]
 [ext_resource type="PackedScene" uid="uid://cuaje8w3t5s6a" path="res://gameobjects/decor/TVDecor.tscn" id="22_vcbjw"]
 [ext_resource type="PackedScene" uid="uid://d1mucey0ana1y" path="res://gameobjects/decor/LargePlantDecor.tscn" id="23_jscuo"]
@@ -31,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bnysi8whw1q7c" path="res://gameobjects/actors/navigation/WalkPath.tscn" id="27_m7q71"]
 [ext_resource type="PackedScene" uid="uid://bhsf2vutljybb" path="res://gameobjects/actors/navigation/WalkPoint.tscn" id="28_e48gy"]
 [ext_resource type="PackedScene" uid="uid://bta8i2xft3c74" path="res://gameobjects/actors/Cop.tscn" id="28_fmwlo"]
-[ext_resource type="PackedScene" uid="uid://bm3p78rvpw157" path="res://gameobjects/containers/Closet.tscn" id="32_yw7ng"]
+[ext_resource type="PackedScene" path="res://gameobjects/containers/Closet.tscn" id="32_yw7ng"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_m7q71"]
 vertices = PackedVector3Array(-18.75, -0.5, -12, -7.25, -0.5, -12, -7.25, -0.5, -14, -6.75, -0.5, -14.25, -6.75, -0.5, -25.75, -18.75, -0.5, -25.75, 8.75, -0.5, -14.25, 9, -0.5, -12.5, 15.75, -0.5, -12.75, 15.75, -0.5, -25.75, -6.75, 7, -13.75, -6.75, 7, 2, 3.25, 7, 2, 3.25, 7, -13.75, 4, 4, -13.75, 4, 4, 2, 8.5, 4, 2, 8.5, 4, -13.75, 0.5, 4, -12.25, 0.25, 4, -13, -0.5, 4, -13, -1, 4, -12, -0.5, 4, -11, -0.75, 4, -3.75, -0.5, 4, -3.25, 0.5, 4, -3.25, -0.5, 4, -5.25, -1, 4, -4.75, -1.75, 4, -5, -1.75, 4, -3.5, -1.75, 4, -11, -1.5, 4, -12, 2.75, 4, -13, 0.75, 4, -11.25, 1.5, 4, -11, 1.5, 2, -6.5, 2.5, 0.75, -4.25, 2.666666, 3.75, -10.083334, -1.75, 4, -13, -6, 4, -13, -6, 4, -10.25, -3.5, 4, -10.25, 1, 1, -4.5, -3.5, 4.5, -9.75, -6, 4.5, -9.75, -6, 4.5, -8.75, -1.75, 4, -8.75, -5.25, 1.25, -13, -5.25, 1.25, -12.5, -2, 1.25, -12.5, -2, 1.25, -13, -3, 0.5, -6.25, -2.25, 0.5, -6.25, -2, 0.5, -6.75, -3.25, 0.5, -8, -5.5, 0.5, -6.75, -5, 0.5, -6.75, -4.75, 0.5, -7.75, -5, 0.5, -8.5, -5, 0.5, -12, -5, 0.5, -9.75, -3.25, 0.5, -9.75, -2, 0.5, -12, -3.5, 0.5, -8.5, -3, 0.5, -9, -1.25, 0.5, -6.75, 0.75, 0.5, -5.5, 0.75, 0.5, -11, 2, 0.5, -12, 2, 0.5, -13, -1.5, 0.5, -13, -1, 0.5, -5.25, 7.75, 0.5, -7.25, 7.75, 0.5, -7.75, 6.75, 0.5, -7.5, 6.25, 0.5, -7, 7.25, 0.5, -5.25, 4, 0.5, -4, 3.25, 0.5, -3.5, 3.25, 0.5, 0.75, 7.75, 0.5, 0.75, 2.5, 0.5, -12, 6, 0.5, -8.25, 5.5, 0.5, -7, 4, 0.5, -11, 4, 0.5, -10, 4.5, 0.5, -9.75, 4.5, 0.5, -5.25, 4, 0.5, -5.5, 5.75, 0.5, -12, 6.75, 0.5, -11, 7.75, 0.5, -10.75, 7.75, 0.5, -12, 6.75, 0.5, -13, 6.25, 0.5, -13, 6, 0.5, -10.25, 4, 0.5, -7.25, 2.75, 0.5, -11.25, 6.5, 0.5, -5.75, 7.75, 0.5, -5.5, 5, 0.5, -12, 4.5, 0.5, -13, 9, -0.5, 0.5, 15.75, -0.5, 0.75, -18.75, -0.5, 0.25, -7.25, -0.5, 0.25, -6, 1, -10.25, -6, 1.25, -9.75, -5.5, 1.25, -9.75, -5.5, 1.25, -10.5, 6.5, 1.5, -10.25, 6.5, 1.5, -8.25, 7.5, 1.5, -8, 7.5, 1.5, -10.5, -5, 4, 0.25, -4.5, 4, 0.5, -4.25, 4, 0, -5, 4, -1.5, -3.5, 4, 0, -3.25, 4, 0.75, -2.75, 4, 0.75, -2.25, 4, -0.25, 0, 4, -1.5, -0.5, 4, -2, -1, 4, -0.75, 0.75, 4, -0.25, -2.5, 4, -4.5, -2, 4, -5, 1.25, 4, 0.75, 1.75, 4, 0.75, -1.75, 4, -7.5, -2.25, 4, -7.5, 1.25, 4, -2, -5.5, 4, -4.5, -5.5, 4, -7.5, -6, 4, -7.5, -6, 4, -1.75, -1.75, 4, -1, -4.75, 4.75, -7.25, -4.75, 4.75, -5.5, -3, 4.75, -5.5, -3, 4.75, -7.25, -4.75, 0.5, -2, -5.25, 0.5, -1.25, -4.25, 0.5, -0.75, -3.5, 0.5, -5.5, -4.25, 0.5, -5.5, -4.5, 0.5, -4.5, -5.25, 0.5, -4.5, -6, 0.5, -5.5, -6, 0.5, -2.75, -5.25, 0.5, -2.75, -1, 0.5, -2, -2, 0.5, -1.5, -1.25, 0.5, -0.25, -4.5, 0.5, 0.5, -2.25, 0.5, 0.75, -2.25, 0.5, 0, -1, 0.5, 0.5, -5.25, 1, -5.5, -5.25, 1, -5, -4.75, 1, -5, -4.75, 1, -5.5, 2.25, 4.25, -2, 2.25, 4.25, -1.5, 2.75, 4.25, -1.5, 2.75, 4.25, -2, -6, 4.5, -1.25, -6, 4.5, -0.75, -5.25, 4.5, -0.75, -5.75, 1.5, -0.5, -5.5, 1.5, 0.25, -4.75, 1.5, 0.25, -4.75, 1.5, -0.75, -7.25, -0.5, 2, -18.75, -0.5, 14.75, -7.5, -0.5, 14.75, 0, 4.5, 0.25, 0, 4.5, 0.75, 0.75, 4.5, 0.75, 0.75, 4.5, 0.25, 9, -0.5, 2, 8.5, -0.5, 2.5, 15.75, -0.5, 14.75, -7, -0.5, 2.5)
@@ -624,6 +626,12 @@ _surfaces = [{
 }]
 
 [node name="BaseLevel2" unique_id=1706961308 instance=ExtResource("1_gljt1")]
+
+[node name="WorldEnvironment" parent="." index="0" unique_id=600597906]
+environment = ExtResource("2_idw50")
+
+[node name="Player" parent="." index="1" unique_id=349429890]
+BAD_STALLS = Array[ExtResource("3_xupr1")]([])
 
 [node name="NavigationRegion3D" parent="." index="2" unique_id=1918371590]
 navigation_mesh = SubResource("NavigationMesh_m7q71")
