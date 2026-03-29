@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://bo6xiyi8m3fud"]
 
+[ext_resource type="PackedScene" uid="uid://d3517wb0ww4t3" path="res://gameobjects/containers/WeaponHolder.tscn" id="1_g85jm"]
+
 [node name="GenericContainer" type="Node3D" unique_id=818117057]
+
+[node name="WeaponHolder" parent="." unique_id=662123432 instance=ExtResource("1_g85jm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=796536355]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=296072429]
