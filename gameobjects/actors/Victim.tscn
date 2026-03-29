@@ -10,7 +10,7 @@ height = 1.5348511
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_20lhs"]
 height = 1.0
-radius = 4.0
+radius = 6.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_usmqo"]
 height = 1.5
@@ -45,7 +45,6 @@ shape = SubResource("CylinderShape3D_usmqo")
 disabled = true
 
 [node name="MessRetargetTimer" type="Timer" parent="." index="6" unique_id=952297132]
-wait_time = 0.5
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="." index="7" unique_id=18451875]
