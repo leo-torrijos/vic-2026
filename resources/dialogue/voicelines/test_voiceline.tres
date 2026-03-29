@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_0ex0n")
-speaker = "player"
+speaker = "eldidi"
 audio_recording = ExtResource("1_obhad")
 subtitle = "Este es el rap de fernanfloo"
 metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"

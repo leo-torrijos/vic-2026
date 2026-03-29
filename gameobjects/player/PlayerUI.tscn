@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cf8c464f6knv2"]
 
 [ext_resource type="Texture2D" uid="uid://bcpdgmdo4j1it" path="res://assets/gui/temp_crosshair_default.png" id="1_5g6qw"]
+[ext_resource type="Texture2D" uid="uid://c8bpqju7jbb7c" path="res://assets/gui/inspect_gauge_inactive.png" id="2_xj3oi"]
+[ext_resource type="Texture2D" uid="uid://cbnlxll00fi66" path="res://assets/gui/inspect_gauge_under.png" id="3_gqqoi"]
+[ext_resource type="Texture2D" uid="uid://3b6sdqt50n6j" path="res://assets/gui/inspect_gauge_over.png" id="4_lweor"]
+[ext_resource type="Texture2D" uid="uid://bs5487fg72w02" path="res://assets/gui/inspect_gauge_progress.png" id="5_acq0l"]
 
 [node name="PlayerUI" type="CanvasLayer" unique_id=411402018]
 
@@ -12,3 +16,29 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5g6qw")
 stretch_mode = 3
+
+[node name="InspectMeter" type="Control" parent="." unique_id=1159815352]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1056.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 96.0
+
+[node name="InactiveInspect" type="TextureRect" parent="InspectMeter" unique_id=1966133806]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+texture = ExtResource("2_xj3oi")
+
+[node name="ActiveInspect" type="TextureProgressBar" parent="InspectMeter" unique_id=960746373]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+max_value = 45.0
+fill_mode = 4
+texture_under = ExtResource("3_gqqoi")
+texture_over = ExtResource("4_lweor")
+texture_progress = ExtResource("5_acq0l")

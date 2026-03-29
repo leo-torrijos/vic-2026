@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_41dhk")
-speaker = "player"
+speaker = "Victim"
 audio_recording = ExtResource("1_xo6g8")
 subtitle = "Si no te gusta andate al cho ri zo"
 metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"
