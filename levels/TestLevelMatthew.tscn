@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bkm8g823voius" path="res://assets/models/decoration/table/table_small.glb" id="22_lcfij"]
 [ext_resource type="PackedScene" uid="uid://ndxrq5lk10j5" path="res://assets/models/decoration/tv/tv.glb" id="24_4isvr"]
 [ext_resource type="PackedScene" uid="uid://ch67ugfk1q5ia" path="res://assets/models/decoration/ceiling light/ceiling light.glb" id="25_aqbmb"]
+[ext_resource type="PackedScene" uid="uid://31hua7vl3rxf" path="res://assets/models/decoration/art/picture1.glb" id="30_cobps"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utgxe"]
 albedo_texture = ExtResource("21_s0crk")
@@ -523,3 +524,6 @@ transform = Transform3D(0.9347451, 0, -0.35531905, 0, 1, 0, 0.35531905, 0, 0.934
 
 [node name="ceiling light" parent="Decoration" index="8" unique_id=1718795923 instance=ExtResource("25_aqbmb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8369572, 3.7968287, 5.1849327)
+
+[node name="picture1" parent="Decoration" index="9" unique_id=1447366209 instance=ExtResource("30_cobps")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.4497213, 2.5012739, 0)
