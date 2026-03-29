@@ -11,9 +11,6 @@ colors = PackedColorArray(0.48, 0.35063997, 0.24479999, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_1cupa"]
 gradient = SubResource("Gradient_b5bdx")
 
-[sub_resource type="LabelSettings" id="LabelSettings_1cupa"]
-font_size = 72
-
 [node name="TitleScreen" type="Control" unique_id=2146323473]
 layout_mode = 3
 anchors_preset = 15
@@ -30,14 +27,15 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = SubResource("GradientTexture1D_1cupa")
 
-[node name="TitleLabel" type="Label" parent="." unique_id=1641069677]
+[node name="TitleLabel" type="RichTextLabel" parent="." unique_id=898484738]
 layout_mode = 0
 offset_top = 136.0
 offset_right = 1280.0
-offset_bottom = 196.0
+offset_bottom = 226.0
 rotation = 0.019276215
-text = "FAUXLUMBO"
-label_settings = SubResource("LabelSettings_1cupa")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "YOU DID IT"
 horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=179432533]
