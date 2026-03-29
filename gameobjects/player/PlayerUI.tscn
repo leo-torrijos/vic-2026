@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bcpdgmdo4j1it" path="res://assets/gui/temp_crosshair_default.png" id="1_5g6qw"]
 [ext_resource type="Script" uid="uid://cwqul75fomprf" path="res://assets/gui/PlayerUI.gd" id="1_acq0l"]
 [ext_resource type="Texture2D" uid="uid://60357aedq606" path="res://assets/gui/radial_circle.png" id="2_lweor"]
-[ext_resource type="Theme" path="res://menus/main_theme.tres" id="2_wvsxu"]
+[ext_resource type="Theme" uid="uid://b8tjyg88h6spv" path="res://menus/main_theme.tres" id="2_wvsxu"]
 [ext_resource type="Texture2D" uid="uid://c8bpqju7jbb7c" path="res://assets/gui/inspect_gauge_inactive.png" id="2_xj3oi"]
 [ext_resource type="Texture2D" uid="uid://cbnlxll00fi66" path="res://assets/gui/inspect_gauge_under.png" id="3_gqqoi"]
 [ext_resource type="Texture2D" uid="uid://3b6sdqt50n6j" path="res://assets/gui/inspect_gauge_over.png" id="4_lweor"]
@@ -60,6 +60,7 @@ theme_override_font_sizes/font_size = 25
 text = "You are suspicious while cleaning!"
 
 [node name="InspectMeter" type="Control" parent="." unique_id=1159815352]
+visible = false
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0

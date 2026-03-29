@@ -8,8 +8,6 @@ const SPEED = 5.0
 const LOOK_SENSITIVITY = 0.005
 const ACCEL = 1.0
 
-const INSPECTION_MAX = 45  # Number of frames it takes to inspect something
-
 const CROSSHAIR_TEXTURES = {
 	"default" : preload("res://assets/gui/temp_crosshair_default.png"),
 	"inspect" : preload("res://assets/gui/temp_crosshair_inspect.png"),
@@ -31,8 +29,6 @@ var state = MOVE
 var current_interaction = null
 var hands_full = false
 var handheld = null
-
-var inspection_count = 0
 
 func _ready() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -74,81 +70,70 @@ func _physics_process(delta: float) -> void:
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:
 					# Inspect handling
-					if current_interaction.inspectable:
-						$PlayerUI/InspectMeter/ActiveInspect.show()
+					if Input.is_action_pressed("interact") and current_interaction.inspectable:
 						crosshair.texture = CROSSHAIR_TEXTURES.inspect
-						if Input.is_action_pressed("interact"):
-							inspection_count += 1
-							if inspection_count > INSPECTION_MAX:
-								$InspectHandler.inspect(current_interaction)
-								inspection_count = 0
-						else:
-							inspection_count = 0
-						$PlayerUI/InspectMeter/ActiveInspect.value = inspection_count
+						if Input.is_action_just_pressed("action1"):
+							$InspectHandler.inspect(current_interaction)
 					else:
-						$PlayerUI/InspectMeter/ActiveInspect.hide()
-					
-					match current_interaction.interaction_type:
-						"clean":
-							if not hands_full:
-								crosshair.texture = CROSSHAIR_TEXTURES.clean
+						match current_interaction.interaction_type:
+							"clean":
+								if not hands_full:
+									crosshair.texture = CROSSHAIR_TEXTURES.clean
+									if Input.is_action_just_pressed("action1"):
+										current_interaction.get_parent().clean(self)
+										state = CLEAN
+										hands_full = true
+										$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", false)
+							"pickup":
+								if not hands_full:
+									crosshair.texture = CROSSHAIR_TEXTURES.pickup
+									if Input.is_action_just_pressed("action1"):
+										handheld = current_interaction.get_parent().collected_object.instantiate()
+										handheld.stored_pickup = current_interaction.get_parent()
+										current_interaction.get_parent().get_parent().remove_child(handheld.stored_pickup)
+										player_hand.add_child(handheld)
+										hands_full = true
+							"put_in_holder":
+								if hands_full and handheld != null:
+									crosshair.texture = CROSSHAIR_TEXTURES.putdown
+									if Input.is_action_just_pressed("action1"):
+										current_interaction.get_parent().place_object(handheld.stored_pickup)
+										handheld.queue_free()
+										hands_full = false
+							"take_from_holder":
+								if hands_full and handheld != null:  # Swap weapons
+									crosshair.texture = CROSSHAIR_TEXTURES.putdown
+									if Input.is_action_just_pressed("action1"):
+										var temp_handheld = current_interaction.get_parent().yield_object()
+										temp_handheld.stored_pickup = current_interaction.get_parent().held_object
+										current_interaction.get_parent().place_object(handheld.stored_pickup)
+										handheld.queue_free()
+										handheld = temp_handheld
+										player_hand.add_child(handheld)
+								elif not hands_full:
+									crosshair.texture = CROSSHAIR_TEXTURES.pickup
+									if Input.is_action_just_pressed("action1"):
+										handheld = current_interaction.get_parent().yield_object()
+										handheld.stored_pickup = current_interaction.get_parent().held_object
+										player_hand.add_child(handheld)
+										hands_full = true
+							"drag":
+								if not hands_full:
+									crosshair.texture = CROSSHAIR_TEXTURES.pickup
+									if Input.is_action_just_pressed("action1") and global_position.distance_to(current_interaction.global_position) < 1.0:
+										hands_full = true
+										state = DRAG
+										current_interaction.get_parent().drag(self)
+							"stall":
+								crosshair.texture = CROSSHAIR_TEXTURES.talk
 								if Input.is_action_just_pressed("action1"):
-									current_interaction.get_parent().clean(self)
-									state = CLEAN
-									hands_full = true
-									$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", false)
-						"pickup":
-							if not hands_full:
-								crosshair.texture = CROSSHAIR_TEXTURES.pickup
-								if Input.is_action_just_pressed("action1"):
-									handheld = current_interaction.get_parent().collected_object.instantiate()
-									handheld.stored_pickup = current_interaction.get_parent()
-									current_interaction.get_parent().get_parent().remove_child(handheld.stored_pickup)
-									player_hand.add_child(handheld)
-									hands_full = true
-						"put_in_holder":
-							if hands_full and handheld != null:
-								crosshair.texture = CROSSHAIR_TEXTURES.putdown
-								if Input.is_action_just_pressed("action1"):
-									current_interaction.get_parent().place_object(handheld.stored_pickup)
-									handheld.queue_free()
-									hands_full = false
-						"take_from_holder":
-							if hands_full and handheld != null:  # Swap weapons
-								crosshair.texture = CROSSHAIR_TEXTURES.putdown
-								if Input.is_action_just_pressed("action1"):
-									var temp_handheld = current_interaction.get_parent().yield_object()
-									temp_handheld.stored_pickup = current_interaction.get_parent().held_object
-									current_interaction.get_parent().place_object(handheld.stored_pickup)
-									handheld.queue_free()
-									handheld = temp_handheld
-									player_hand.add_child(handheld)
-							elif not hands_full:
-								crosshair.texture = CROSSHAIR_TEXTURES.pickup
-								if Input.is_action_just_pressed("action1"):
-									handheld = current_interaction.get_parent().yield_object()
-									handheld.stored_pickup = current_interaction.get_parent().held_object
-									player_hand.add_child(handheld)
-									hands_full = true
-						"drag":
-							if not hands_full:
-								crosshair.texture = CROSSHAIR_TEXTURES.pickup
-								if Input.is_action_just_pressed("action1") and global_position.distance_to(current_interaction.global_position) < 1.0:
-									hands_full = true
-									state = DRAG
-									current_interaction.get_parent().drag(self)
-						"stall":
-							crosshair.texture = CROSSHAIR_TEXTURES.talk
-							if Input.is_action_just_pressed("action1"):
-								var cop = current_interaction.get_parent()
-								if cop.state != Cop.STALLED:
-									# TODO: allow different stall times for info/objects
-									current_interaction.get_parent().stall(1.0)
-								else:
-									# TODO: handle attempts to stall when cop is already stalled
-									pass
-				else:
-					$PlayerUI/InspectMeter/ActiveInspect.hide()
+									var cop = current_interaction.get_parent()
+									if cop.state != Cop.STALLED:
+										# TODO: allow different stall times for info/objects
+										current_interaction.get_parent().stall(1.0)
+									else:
+										# TODO: handle attempts to stall when cop is already stalled
+										pass
 		CLEAN:
 			crosshair.texture = CROSSHAIR_TEXTURES.clean
 			velocity = Vector3.ZERO
