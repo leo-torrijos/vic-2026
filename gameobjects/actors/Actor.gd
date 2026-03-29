@@ -18,10 +18,13 @@ var level
 var nav_mesh
 
 func _physics_process(_delta: float) -> void:
+	if state != FREEZE and not is_on_floor():
+		velocity.y -= 9
 	match state:
 		FREEZE:
 			velocity = Vector3.ZERO
 		IDLE:
+			
 			velocity = Vector3.ZERO
 		PATROL:
 			move()
@@ -30,6 +33,8 @@ func _physics_process(_delta: float) -> void:
 			velocity = Vector3.ZERO
 
 func move():
+	if not is_on_floor():
+		return
 	current_navigation_delay += 1
 	if not next_position:
 		current_navigation_delay = navigation_cycle
