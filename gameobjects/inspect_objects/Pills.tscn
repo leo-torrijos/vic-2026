@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ccw6luc6j1gea"]
+
+[ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="1_n7dhm"]
+[ext_resource type="Script" uid="uid://bnjkosbxuxl05" path="res://gameobjects/inspect_objects/Pills.gd" id="1_vibys"]
+[ext_resource type="PackedScene" uid="uid://bpw53v2jnidpa" path="res://assets/models/decoration/pills/pills.glb" id="2_mb4nb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mb4nb"]
+radius = 0.18
+
+[node name="Pills" type="Node3D" unique_id=1697985111]
+script = ExtResource("1_vibys")
+
+[node name="InteractTrigger" parent="." unique_id=1392577794 instance=ExtResource("1_n7dhm")]
+collision_layer = 132
+interaction_type = "poison"
+inspection_name = "pills"
+
+[node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032063648, 0)
+shape = SubResource("SphereShape3D_mb4nb")
+
+[node name="pills" parent="." unique_id=847986171 instance=ExtResource("2_mb4nb")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.030431837, 0)
+
+[editable path="InteractTrigger"]

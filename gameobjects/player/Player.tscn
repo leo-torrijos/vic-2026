@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cf8c464f6knv2" path="res://gameobjects/player/PlayerUI.tscn" id="2_c5dv2"]
 [ext_resource type="Script" uid="uid://ct1y6uiwetlb2" path="res://gameobjects/player/InspectHandler.gd" id="3_ln0t8"]
 [ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="4_5ys7b"]
+[ext_resource type="PackedScene" uid="uid://bydk8xn06y1d2" path="res://assets/models/viewmodel/viewmodel.glb" id="5_2sgil"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fyu5l"]
 radius = 0.3
@@ -25,7 +26,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3200324, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck" unique_id=1284098317]
 current = true
-fov = 80.0
+fov = 90.0
+
+[node name="viewmodel2" parent="Neck/Camera3D" unique_id=74526712 instance=ExtResource("5_2sgil")]
+transform = Transform3D(-1, 0, -1.509958e-07, -1.2456417e-08, 0.99659145, 0.08249512, 1.5048113e-07, 0.08249512, -0.99659145, 0, -1.7383213, 0.055301487)
 
 [node name="InteractRay" type="RayCast3D" parent="Neck/Camera3D" unique_id=2141607628]
 target_position = Vector3(0, 0, -2)

@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://3b6sdqt50n6j" path="res://assets/gui/inspect_gauge_over.png" id="4_lweor"]
 [ext_resource type="Texture2D" uid="uid://bs5487fg72w02" path="res://assets/gui/inspect_gauge_progress.png" id="5_acq0l"]
 [ext_resource type="Texture2D" uid="uid://ro7a7pokitvf" path="res://assets/gui/inspect_notif_e.png" id="9_qe4yl"]
+[ext_resource type="FontFile" uid="uid://rjeop1tk5byc" path="res://assets/fonts/Fraunces9ptSuperSoft-SemiBold.otf" id="10_eqccn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a0gtm"]
+font = ExtResource("10_eqccn")
+font_size = 32
 
 [node name="PlayerUI" type="CanvasLayer" unique_id=411402018]
 script = ExtResource("1_acq0l")
@@ -100,8 +105,17 @@ texture_progress = ExtResource("5_acq0l")
 
 [node name="InspectIndicator" type="TextureRect" parent="." unique_id=1055422671]
 visible = false
-offset_left = 696.0
-offset_top = 296.0
-offset_right = 736.0
-offset_bottom = 336.0
+offset_left = 672.0
+offset_top = 320.0
+offset_right = 712.0
+offset_bottom = 360.0
 texture = ExtResource("9_qe4yl")
+
+[node name="InspectLabel" type="Label" parent="." unique_id=1039757002]
+visible = false
+offset_left = 1000.0
+offset_top = 656.0
+offset_right = 1259.0
+offset_bottom = 697.0
+text = "E - Inspect Mode"
+label_settings = SubResource("LabelSettings_a0gtm")
