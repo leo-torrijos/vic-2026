@@ -86,8 +86,8 @@ func game_over() -> void:
 	pass
 
 func update_suspicion_ui(total_suspicion):
-	$SuspicionUI/Control/SuspicionMeter.value = total_suspicion
-	if total_suspicion >= 100:
+	$SuspicionUI/Control/SuspicionMeter.value = Global.total_suspicion
+	if Global.total_suspicion >= 100:
 		next_phase(LOSE)
 
 
