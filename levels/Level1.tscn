@@ -20,7 +20,11 @@
 [ext_resource type="Material" uid="uid://cukme7sy60bcv" path="res://assets/maptextures/house/metal shine.tres" id="13_6gurj"]
 [ext_resource type="Material" uid="uid://bf1qvmvr23vr4" path="res://assets/maptextures/house/metal_silver_seamless.tres" id="13_ccxey"]
 [ext_resource type="Material" uid="uid://dagcx3mbfcp04" path="res://assets/maptextures/house/metal_gold_seamless.tres" id="15_tsgrn"]
+[ext_resource type="PackedScene" uid="uid://cyqrjik031n3x" path="res://gameobjects/decor/PaintingDecor.tscn" id="17_8dxbh"]
+[ext_resource type="PackedScene" uid="uid://d1mucey0ana1y" path="res://gameobjects/decor/LargePlantDecor.tscn" id="18_mq75a"]
 [ext_resource type="PackedScene" uid="uid://d3517wb0ww4t3" path="res://gameobjects/containers/WeaponHolder.tscn" id="19_0bnej"]
+[ext_resource type="PackedScene" uid="uid://cb6j360p30wu4" path="res://gameobjects/decor/SmallTableDecor.tscn" id="19_l12am"]
+[ext_resource type="PackedScene" uid="uid://ch67ugfk1q5ia" path="res://assets/models/decoration/ceiling light/ceiling light.glb" id="19_ok7fr"]
 [ext_resource type="PackedScene" uid="uid://bta8i2xft3c74" path="res://gameobjects/actors/Cop.tscn" id="22_tsgrn"]
 
 [sub_resource type="Environment" id="Environment_gqfrg"]
@@ -853,10 +857,40 @@ shape = SubResource("ConvexPolygonShape3D_y65ch")
 shape = SubResource("ConvexPolygonShape3D_x8qgq")
 
 [node name="BrownChairDecor" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="0" unique_id=467157150 instance=ExtResource("11_rv5to")]
-transform = Transform3D(-0.048902117, 0, -0.99880356, 0, 1, 0, 0.99880356, 0, -0.048902117, -7.2657, -2.3841858e-07, -10.028678)
+transform = Transform3D(0.45515645, 0, -0.8904116, 0, 1, 0, 0.8904116, 0, 0.45515645, -7.2286706, -2.3841858e-07, -9.298411)
 
 [node name="BrownChairDecor2" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="1" unique_id=1408437009 instance=ExtResource("11_rv5to")]
-transform = Transform3D(-0.048902117, 0, -0.99880356, 0, 1, 0, 0.99880356, 0, -0.048902117, -7.088908, -2.3841858e-07, -11.955024)
+transform = Transform3D(-0.83967686, 0, -0.5430865, 0, 1, 0, 0.5430865, 0, -0.83967686, -7.088908, -2.3841858e-07, -11.955024)
+
+[node name="BrownChairDecor3" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="2" unique_id=1694354727 instance=ExtResource("11_rv5to")]
+transform = Transform3D(0.6572174, 0, 0.75370115, 0, 1, 0, -0.75370115, 0, 0.6572174, -3.5451612, -3.5762787e-07, -3.841811)
+
+[node name="BrownChairDecor4" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="3" unique_id=708665498 instance=ExtResource("11_rv5to")]
+transform = Transform3D(0.9284794, 0, -0.371384, 0, 1, 0, 0.371384, 0, 0.9284794, -5.5654397, -2.3841858e-07, -3.9817169)
+
+[node name="Painting" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="4" unique_id=1678101023 instance=ExtResource("17_8dxbh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.059135, 1.4267188, -13.703814)
+
+[node name="Painting2" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="5" unique_id=416380255 instance=ExtResource("17_8dxbh")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5990505, 1.4267188, -14.033793)
+
+[node name="Painting3" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="6" unique_id=1578760725 instance=ExtResource("17_8dxbh")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 8.029127, 1.4267188, -11.072087)
+
+[node name="Decor" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="7" unique_id=1951441817 instance=ExtResource("18_mq75a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5356658, 0, -8.455197)
+
+[node name="SmallTableDecor" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="8" unique_id=2012450275 instance=ExtResource("19_l12am")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8266873, 1.1920929e-07, 0.3820343)
+
+[node name="SmallTableDecor3" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="9" unique_id=25903052 instance=ExtResource("19_l12am")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5236654, 2.3841858e-07, -3.998581)
+
+[node name="SmallTableDecor4" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="10" unique_id=1092375047 instance=ExtResource("19_l12am")]
+transform = Transform3D(0.77297723, 0, -0.63443375, 0, 1, 0, 0.63443375, 0, 0.77297723, -7.120732, 2.3841858e-07, -10.50024)
+
+[node name="SmallTableDecor2" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="11" unique_id=967927079 instance=ExtResource("19_l12am")]
+transform = Transform3D(0.7161436, 0, 0.697953, 0, 1, 0, -0.697953, 0, 0.7161436, 10.197811, 2.3841858e-07, -2.969086)
 
 [node name="CleanupTimer" parent="." index="3" unique_id=831077995]
 wait_time = 10.0
@@ -865,14 +899,44 @@ wait_time = 10.0
 transform = Transform3D(0.53704935, 0.6516063, -0.5357118, 1.7383279e-08, 0.63506764, 0.7724565, 0.8435508, -0.41484725, 0.34106266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights" parent_id_path=PackedInt32Array(1463423439) index="1" unique_id=2130609673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12061095, 2.7588646, -12.211325)
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" parent_id_path=PackedInt32Array(1463423439) index="1" unique_id=819427921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47372, 2.7588649, -2.913297)
 light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
 light_energy = 0.5
 shadow_enabled = true
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" parent_id_path=PackedInt32Array(1463423439) index="2" unique_id=819427921]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47372, 2.7588649, -2.913297)
+[node name="ceiling light" parent="Lights" parent_id_path=PackedInt32Array(1463423439) index="2" unique_id=1731513958 instance=ExtResource("19_ok7fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 3.0203383, -12.207251)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/ceiling light" index="1" unique_id=2130609673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061338723, -0.49984002, -0.0040740967)
+light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="ceiling light2" parent="Lights" parent_id_path=PackedInt32Array(1463423439) index="3" unique_id=355784182 instance=ExtResource("19_ok7fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035268575, 3.0203383, -1.4851654)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/ceiling light2" index="1" unique_id=544505562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061338723, -0.49984002, -0.0040740967)
+light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="ceiling light3" parent="Lights" parent_id_path=PackedInt32Array(1463423439) index="4" unique_id=1095648387 instance=ExtResource("19_ok7fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.347882, 3.020338, -13.375567)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/ceiling light3" index="1" unique_id=569274228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061338723, -0.49984002, -0.0040740967)
+light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="ceiling light4" parent="Lights" parent_id_path=PackedInt32Array(1463423439) index="5" unique_id=1385337669 instance=ExtResource("19_ok7fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.105926, 3.020338, -1.6967788)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/ceiling light4" index="1" unique_id=1230368008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061338723, -0.49984002, -0.0040740967)
 light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
 light_energy = 0.5
 shadow_enabled = true
@@ -1046,3 +1110,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5817697, 0.9672539, -13.68
 
 [connection signal="about_to_die" from="Actors/Victim" to="." method="_on_victim_about_to_die"]
 [connection signal="death" from="Actors/Victim" to="." method="_on_victim_death"]
+[connection signal="path_completed" from="Paths/WalkPathCop" to="." method="_on_walk_path_cop_path_completed"]

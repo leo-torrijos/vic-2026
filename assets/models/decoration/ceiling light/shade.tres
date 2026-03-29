@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nr67by6ovbex"]
+
+[ext_resource type="Texture2D" uid="uid://s77j6glro4cp" path="res://assets/models/decoration/ceiling light/ceiling light_house_canvas_cream.png" id="1_8vq5i"]
+
+[resource]
+resource_name = "shade"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_8vq5i")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsllur51mu3di"]
+
+[ext_resource type="Texture2D" uid="uid://crv14h4ca2wgu" path="res://assets/models/decoration/ceiling light/ceiling light_house_trim_brown.png" id="1_shw54"]
+
+[resource]
+resource_name = "trim"
+cull_mode = 2
+albedo_texture = ExtResource("1_shw54")
+roughness = 0.5
