@@ -72,6 +72,8 @@ func _physics_process(delta: float) -> void:
 					current_interaction = handheld.get_node("KillRay").get_collider()
 					if current_interaction.interaction_type == "kill":
 						current_interaction.get_parent().die()
+					elif current_interaction.interaction_type == "poison":
+						current_interaction.get_parent().poison()
 			else:
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:

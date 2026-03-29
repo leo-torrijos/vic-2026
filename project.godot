@@ -93,6 +93,7 @@ none={
 3d_physics/layer_5="damage"
 3d_physics/layer_6="decor"
 3d_physics/layer_7="cop"
+3d_physics/layer_8="poison"
 
 [physics]
 

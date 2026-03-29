@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1mdpx6jruo4r"]
+
+[ext_resource type="PackedScene" uid="uid://cneeo0pxpurvp" path="res://gameobjects/weapon/Weapon.tscn" id="1_hlb8k"]
+[ext_resource type="PackedScene" uid="uid://d3p562wp47sm8" path="res://assets/models/ratpoison.glb" id="2_i5d7b"]
+
+[node name="WeaponPoison" unique_id=579591955 instance=ExtResource("1_hlb8k")]
+
+[node name="KillRay" parent="." index="0" unique_id=1038757202]
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 128
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=151005533]
+visible = false
+
+[node name="ratpoison" parent="." index="2" unique_id=541854484 instance=ExtResource("2_i5d7b")]
+transform = Transform3D(-0.023351949, 0.005245176, -0.09709361, -0.0010809004, 0.09983423, 0.0056531923, 0.097229205, 0.0023696166, -0.023256527, 0.32662094, -0.27647159, -0.30152136)
