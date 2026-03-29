@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dit8uydsusfkp" path="res://gameobjects/actors/Actor.tscn" id="1_e4gn8"]
 [ext_resource type="Script" uid="uid://bahuo3p8odixe" path="res://gameobjects/actors/Victim.gd" id="2_gr526"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_20lhs"]
+[ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="4_usmqo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20lhs"]
 radius = 0.25830078
@@ -23,7 +24,9 @@ radius = 0.6
 [node name="Victim" unique_id=154303676 instance=ExtResource("1_e4gn8")]
 script = ExtResource("2_gr526")
 
-[node name="InteractTrigger" parent="." index="3" unique_id=1392577794 instance=ExtResource("3_20lhs")]
+[node name="TalkingAudio" parent="." index="0" unique_id=1082221871 instance=ExtResource("4_usmqo")]
+
+[node name="InteractTrigger" parent="." index="4" unique_id=1392577794 instance=ExtResource("3_20lhs")]
 collision_layer = 16
 interaction_type = "kill"
 
@@ -31,14 +34,14 @@ interaction_type = "kill"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76045287, 0)
 shape = SubResource("CapsuleShape3D_20lhs")
 
-[node name="TalkTrigger" parent="." index="4" unique_id=1181301621 instance=ExtResource("3_20lhs")]
+[node name="TalkTrigger" parent="." index="5" unique_id=1181301621 instance=ExtResource("3_20lhs")]
 interaction_type = "talk"
 
 [node name="CollisionShape3D" parent="TalkTrigger" index="0" unique_id=1950459346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76045287, 0)
 shape = SubResource("CapsuleShape3D_20lhs")
 
-[node name="DetectDecor" type="Area3D" parent="." index="5" unique_id=1853595755]
+[node name="DetectDecor" type="Area3D" parent="." index="6" unique_id=1853595755]
 collision_layer = 0
 collision_mask = 32
 
@@ -46,7 +49,7 @@ collision_mask = 32
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5484604, 0)
 shape = SubResource("CylinderShape3D_20lhs")
 
-[node name="DetectPills" type="Area3D" parent="." index="6" unique_id=1815080146]
+[node name="DetectPills" type="Area3D" parent="." index="7" unique_id=1815080146]
 collision_layer = 0
 collision_mask = 128
 
@@ -54,7 +57,7 @@ collision_mask = 128
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5484604, 0)
 shape = SubResource("CylinderShape3D_45nhq")
 
-[node name="DamageDecor" type="Area3D" parent="." index="7" unique_id=1657117917]
+[node name="DamageDecor" type="Area3D" parent="." index="8" unique_id=1657117917]
 collision_layer = 0
 collision_mask = 32
 
@@ -63,15 +66,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7938079, 0)
 shape = SubResource("CylinderShape3D_usmqo")
 disabled = true
 
-[node name="MessRetargetTimer" type="Timer" parent="." index="8" unique_id=952297132]
+[node name="MessRetargetTimer" type="Timer" parent="." index="9" unique_id=952297132]
 wait_time = 0.5
 one_shot = true
 
-[node name="DeathTimer" type="Timer" parent="." index="9" unique_id=18451875]
+[node name="DeathTimer" type="Timer" parent="." index="10" unique_id=18451875]
 wait_time = 4.0
 one_shot = true
 
-[node name="TakePillsTimer" type="Timer" parent="." index="11" unique_id=1650320580]
+[node name="TakePillsTimer" type="Timer" parent="." index="12" unique_id=1650320580]
 wait_time = 3.0
 one_shot = true
 

@@ -2,6 +2,14 @@
 
 [ext_resource type="FontFile" uid="uid://ci7lvp46vmvek" path="res://assets/fonts/Fraunces9ptSuperSoft-Regular.otf" id="1_e0fnq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cxxj"]
+bg_color = Color(0.534047, 0.017577145, 9.62615e-08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0fnq"]
+bg_color = Color(0.35, 0.25596666, 0.168, 1)
+
 [resource]
 default_font = ExtResource("1_e0fnq")
 default_font_size = 0
+Button/styles/hover = SubResource("StyleBoxFlat_3cxxj")
+Button/styles/normal = SubResource("StyleBoxFlat_e0fnq")

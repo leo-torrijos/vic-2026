@@ -26,8 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://bnysi8whw1q7c" path="res://gameobjects/actors/navigation/WalkPath.tscn" id="24_goy2t"]
 [ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="24_ll8t0"]
 [ext_resource type="PackedScene" uid="uid://bhsf2vutljybb" path="res://gameobjects/actors/navigation/WalkPoint.tscn" id="25_qgcry"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="25_uyv43"]
+[ext_resource type="Resource" uid="uid://b75f0pxoe4m1c" path="res://resources/dialogue/sequences/cop/saw_corpse_sequence.tres" id="26_3byf5"]
 [ext_resource type="PackedScene" uid="uid://d3517wb0ww4t3" path="res://gameobjects/containers/WeaponHolder.tscn" id="26_pp8lr"]
-[ext_resource type="PackedScene" uid="uid://dbelrjeyyilkb" path="res://gameobjects/components/DialogueDirector.tscn" id="29_3byf5"]
+[ext_resource type="Resource" uid="uid://dsr3crll5empc" path="res://resources/dialogue/sequences/cop/saw_blood_sequence.tres" id="27_pp470"]
 
 [sub_resource type="Environment" id="Environment_gqfrg"]
 ambient_light_source = 2
@@ -531,8 +533,6 @@ points = PackedVector3Array(8.125, 0.875, -16.75, 8.125, 0.75, -16.75, 7.875, 0.
 [node name="WorldEnvironment" parent="." index="0" unique_id=600597906]
 environment = SubResource("Environment_gqfrg")
 
-[node name="TalkingAudio" parent="Player" parent_id_path=PackedInt32Array(349429890) index="6" unique_id=1082221871 instance=ExtResource("24_ll8t0")]
-
 [node name="NavigationRegion3D" parent="." index="2" unique_id=1918371590]
 navigation_mesh = SubResource("NavigationMesh_32mhh")
 
@@ -952,13 +952,15 @@ transform = Transform3D(-0.61237234, 0.5, -0.61237234, -0.7071067, -1.4901161e-0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1208386, 0, -12.437648)
 collision_mask = 1
 
-[node name="TalkingAudio" parent="Actors/Victim" index="9" unique_id=892510935 instance=ExtResource("24_ll8t0")]
+[node name="TalkingAudio2" parent="Actors/Victim" index="9" unique_id=892510935 instance=ExtResource("24_ll8t0")]
 
 [node name="Cop" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="1" unique_id=789131365 node_paths=PackedStringArray("spawn_point") instance=ExtResource("23_474ws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.416554)
 spawn_point = NodePath("../../Paths/WalkPathCop/WalkPoint")
-
-[node name="TalkingAudio" parent="Actors/Cop" index="6" unique_id=1315216573 instance=ExtResource("24_ll8t0")]
+dialogues = Dictionary[String, ExtResource("25_uyv43")]({
+"Saw blood": ExtResource("27_pp470"),
+"Saw corpse": ExtResource("26_3byf5")
+})
 
 [node name="WalkPathVictim" parent="Paths" parent_id_path=PackedInt32Array(1295105940) index="0" unique_id=453985004 node_paths=PackedStringArray("navigator") instance=ExtResource("24_goy2t")]
 navigator = NodePath("../../Actors/Victim")
@@ -1115,12 +1117,6 @@ transform = Transform3D(-0.9659258, 0, -0.2588191, 0, 1, 0, 0.2588191, 0, -0.965
 
 [node name="WeaponHolder" parent="." index="8" unique_id=662123432 instance=ExtResource("26_pp8lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5817697, 0.9672539, -13.684996)
-
-[node name="DialogueDirector" parent="." index="12" unique_id=1024034190 node_paths=PackedStringArray("speakers") instance=ExtResource("29_3byf5")]
-speakers = {
-"Cop": NodePath("../Actors/Cop"),
-"Detective": NodePath("../Player")
-}
 
 [connection signal="about_to_die" from="Actors/Victim" to="." method="_on_victim_about_to_die"]
 [connection signal="death" from="Actors/Victim" to="." method="_on_victim_death"]

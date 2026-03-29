@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dit8uydsusfkp" path="res://gameobjects/actors/Actor.tscn" id="1_fk3hd"]
 [ext_resource type="Script" uid="uid://clathxjr7epd8" path="res://gameobjects/actors/Cop.gd" id="2_gupl4"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="3_btpbt"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_jqqm1"]
+[ext_resource type="Resource" uid="uid://b75f0pxoe4m1c" path="res://resources/dialogue/sequences/cop/saw_corpse_sequence.tres" id="4_jymge"]
+[ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="6_jymge"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqqm1"]
 radius = 0.25830078
@@ -11,15 +14,20 @@ height = 1.5348511
 [node name="Cop" unique_id=154303676 instance=ExtResource("1_fk3hd")]
 collision_layer = 64
 script = ExtResource("2_gupl4")
+dialogues = Dictionary[String, ExtResource("3_btpbt")]({
+"Saw corpse": ExtResource("4_jymge")
+})
 
-[node name="InteractTrigger" parent="." index="3" unique_id=1392577794 instance=ExtResource("3_jqqm1")]
+[node name="TalkingAudio" parent="." index="0" unique_id=1082221871 instance=ExtResource("6_jymge")]
+
+[node name="InteractTrigger" parent="." index="4" unique_id=1392577794 instance=ExtResource("3_jqqm1")]
 interaction_type = "stall"
 
 [node name="CollisionShape3D" parent="InteractTrigger" index="0" unique_id=1950459346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76045287, 0)
 shape = SubResource("CapsuleShape3D_jqqm1")
 
-[node name="StallTimer" type="Timer" parent="." index="4" unique_id=372697858]
+[node name="StallTimer" type="Timer" parent="." index="5" unique_id=372697858]
 one_shot = true
 
 [connection signal="timeout" from="StallTimer" to="." method="_on_stall_timer_timeout"]

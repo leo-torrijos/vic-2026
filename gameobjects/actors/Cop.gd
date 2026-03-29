@@ -2,11 +2,12 @@ extends Actor
 class_name Cop
 
 @export var spawn_point : Node3D
-var sequence
+@export var dialogues : Dictionary[String, DialogueSequence] = {} ## "Saw blood" -> start respective DialogueSequence
+var dialogue_director
 
 func _ready() -> void:
 	state = FREEZE
-	sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
+	var sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
 
 func stall(stall_time: float):
 	$StallTimer.start(stall_time)
@@ -21,6 +22,11 @@ func activate():
 	_on_navigation_agent_3d_target_reached()
 
 func saw_something(what_I_saw:Node3D):
-	print("I saw something\n")
-	if what_I_saw.is_in_group("BloodPuddle"):
-		Global.current_level_director.get_node("DialogueDirector").start_dialogue(sequence)
+	print("I saw this:\n")
+	print(what_I_saw.get_groups())
+	dialogue_director = Global.current_level_director.get_node("DialogueDirector")
+	
+	if what_I_saw.is_in_group("Corpse"):
+		dialogue_director.start_dialogue(dialogues["Saw corpse"])
+	elif what_I_saw.is_in_group("BloodPuddle"):
+		dialogue_director.start_dialogue(dialogues["Saw blood"])
