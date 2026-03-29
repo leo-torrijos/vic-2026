@@ -791,6 +791,8 @@ transform = Transform3D(-0.61237234, 0.5, -0.61237234, -0.7071067, -1.4901161e-0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1208386, 0, -12.437648)
 collision_mask = 1
 
+[node name="TalkingAudio" parent="Actors/Victim" index="8" unique_id=1500153104 instance=ExtResource("2_bocy7")]
+
 [node name="WalkPathVictim" parent="Paths" parent_id_path=PackedInt32Array(1295105940) index="0" unique_id=453985004 node_paths=PackedStringArray("navigator") instance=ExtResource("18_mv5bv")]
 navigator = NodePath("../../Actors/Victim")
 
@@ -845,7 +847,12 @@ transform = Transform3D(0.84958917, 0, -0.527445, 0, 1, 0, 0.527445, 0, 0.849589
 [node name="WeaponHolder" parent="." index="8" unique_id=662123432 instance=ExtResource("20_0byyb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5817697, 0.9672539, -13.684996)
 
-[node name="DialogueDirector" parent="." index="9" unique_id=1024034190 instance=ExtResource("21_f7w5g")]
+[node name="DialogueDirector" parent="." index="9" unique_id=1024034190 node_paths=PackedStringArray("speakers") instance=ExtResource("21_f7w5g")]
+speakers = {
+"Fake policeman": NodePath("../FakePoliceman"),
+"Victim": NodePath("../Actors/Victim"),
+"eldidi": NodePath("../Player")
+}
 
 [node name="FakePoliceman" type="MeshInstance3D" parent="." index="10" unique_id=710554381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5491011, 0.5626631, 0)

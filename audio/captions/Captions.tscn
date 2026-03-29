@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://perrklxlduvd"]
 
+[ext_resource type="Theme" uid="uid://b8tjyg88h6spv" path="res://menus/main_theme.tres" id="1_kfsga"]
+
 [node name="Captions" type="CanvasLayer" unique_id=526434998]
 
 [node name="Control" type="Control" parent="." unique_id=466961970]
@@ -13,8 +15,11 @@ mouse_filter = 2
 
 [node name="Label" type="Label" parent="Control" unique_id=871700169]
 layout_mode = 0
-offset_left = 327.0
-offset_top = 470.0
-offset_right = 747.0
-offset_bottom = 630.0
+offset_left = 301.0
+offset_top = 504.0
+offset_right = 979.0
+offset_bottom = 625.0
+theme = ExtResource("1_kfsga")
 text = "This is supposed to be captions"
+horizontal_alignment = 1
+vertical_alignment = 2

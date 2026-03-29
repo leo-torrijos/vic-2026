@@ -2,17 +2,15 @@ extends Node
 
 class_name DialogueDirector
 
-var speakers = {}  # Who's saying what lol
+@export var speakers : Dictionary[String, Node] = {}  # Who's saying what lol
 var current_sequence: DialogueSequence
 var index = 0
 var is_dialogue_taking_place = false
 
 func _ready():
-	register_speaker("player", get_node("../Player"))
-	register_speaker("fake_policeman", get_node("../FakePoliceman"))
+	#register_speaker("eldidi", get_node("../Player"))
+	#register_speaker("Fake policeman", get_node("../FakePoliceman"))
 	var sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
-	var timer = Timer.new()
-	timer.start(3)
 	start_dialogue(sequence)
 
 func register_speaker(speaker_name: String, node: Node):
@@ -41,7 +39,7 @@ func _play_current_line():
 	talking_audio.play()
 
 	# Show subtitles
-	_display_subtitle(line.subtitle)
+	_display_subtitle(line.speaker + ": " + line.subtitle)
 
 	# Wait for finish
 	talking_audio.finished_speaking.connect(_on_line_finished, CONNECT_ONE_SHOT)
