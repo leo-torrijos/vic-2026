@@ -19,7 +19,7 @@ size = Vector3(0.25, 0.25, 1.5)
 [sub_resource type="SphereShape3D" id="SphereShape3D_o5oy8"]
 radius = 8.0
 
-[node name="Corpse" unique_id=1629555621 instance=ExtResource("1_5juo4")]
+[node name="Corpse" unique_id=1629555621 groups=["Corpse"] instance=ExtResource("1_5juo4")]
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=32117267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

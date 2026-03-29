@@ -46,6 +46,9 @@
 [ext_resource type="PackedScene" uid="uid://cv37iliuiaos" path="res://gameobjects/player/Pause.tscn" id="33_utgxe"]
 [ext_resource type="PackedScene" uid="uid://bv7bvfg5eeg8a" path="res://assets/models/decoration/potterplant/potter_plant.glb" id="40_18yyt"]
 [ext_resource type="PackedScene" uid="uid://dg7rf03d3mhph" path="res://assets/models/decoration/chair/chair_red.glb" id="44_qc14s"]
+[ext_resource type="PackedScene" uid="uid://lsjeoka572k2" path="res://assets/models/decoration/sofa/sofa2.glb" id="46_y3a0y"]
+[ext_resource type="PackedScene" uid="uid://caodl13ilh8q4" path="res://assets/models/decoration/sofa/sofa3.glb" id="47_wdpoi"]
+[ext_resource type="PackedScene" uid="uid://cutjjv015cvkq" path="res://assets/models/decoration/sofa/sofa4.glb" id="48_xsehn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfm81"]
 albedo_texture = ExtResource("32_l8dgq")
@@ -698,10 +701,10 @@ transform = Transform3D(-0.45257482, 0, -0.89172643, 0, 1, 0, 0.89172643, 0, -0.
 [node name="chair_brown2" parent="Decoration" index="1" unique_id=1882274049 instance=ExtResource("12_dlr8e")]
 transform = Transform3D(-0.98901844, 0, -0.14779207, 0, 1, 0, 0.14779207, 0, -0.98901844, 0.41847467, 0.118052244, -4.044359)
 
-[node name="house_lamp" parent="Decoration" index="2" unique_id=594736666 instance=ExtResource("11_g4po3")]
+[node name="house_lamp" parent="Decoration" index="2" unique_id=4120125 instance=ExtResource("11_g4po3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3979797, 0, -4.269451)
 
-[node name="house_lamp2" parent="Decoration" index="3" unique_id=1497505522 instance=ExtResource("11_g4po3")]
+[node name="house_lamp2" parent="Decoration" index="3" unique_id=1433955330 instance=ExtResource("11_g4po3")]
 transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, 4.931813, 0.6512562, 6.183879)
 
 [node name="toilet" parent="Decoration" index="4" unique_id=493333035 instance=ExtResource("18_rkln5")]
@@ -733,6 +736,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8977442, 0.015506506, 3.20
 
 [node name="chair_red" parent="Decoration" index="13" unique_id=757966809 instance=ExtResource("44_qc14s")]
 transform = Transform3D(-0.9309539, 0, 0.36513674, 0, 1, 0, -0.36513674, 0, -0.9309539, 1.5356178, 0.14661503, -3.9823608)
+
+[node name="sofa2" parent="Decoration" index="14" unique_id=1455663774 instance=ExtResource("46_y3a0y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.0630064, 0, -0.9214456)
+
+[node name="sofa3" parent="Decoration" index="15" unique_id=130440387 instance=ExtResource("47_wdpoi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.0270395, 0, 1.2982512)
+
+[node name="sofa4" parent="Decoration" index="16" unique_id=1041618596 instance=ExtResource("48_xsehn")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.956505, 0, 3.3968697)
 
 [node name="Pause" parent="." index="8" unique_id=1666776744 instance=ExtResource("33_utgxe")]
 process_mode = 3

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_patb8")
-speaker = "Fake policeman"
+speaker = "Detective"
 audio_recording = ExtResource("1_ge01d")
 subtitle = "El rap de fernanfloo
 el rap de fernanfloo

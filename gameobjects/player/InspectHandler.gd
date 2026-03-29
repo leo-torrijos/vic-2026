@@ -3,6 +3,7 @@ extends Node3D
 
 ## List of previously inspected objects, used for dialogue with cops in the investigation phase
 var inspected_list = []
+var pills_instance : Pills
 
 
 func inspect(interact: InteractTrigger):
@@ -11,7 +12,8 @@ func inspect(interact: InteractTrigger):
 		inspected_list.push_back(interact.inspection_name)
 		# Unique voicelines?
 		match interact.inspection_name:
-			pass
+			"pills":
+				pills_instance = interact.get_parent()
 	else:
 		match interact.interaction_type:
 			"clean":

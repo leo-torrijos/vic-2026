@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ihcddv63a2e" path="res://menus/Pause.tscn" id="5_ennia"]
 [ext_resource type="AudioStream" uid="uid://b7j5if6g5vop2" path="res://audio/music/House.mp3" id="6_x6cm1"]
 [ext_resource type="AudioStream" uid="uid://b6gs4jndo40j0" path="res://audio/music/Demise.mp3" id="7_vt8va"]
+[ext_resource type="PackedScene" uid="uid://dbelrjeyyilkb" path="res://gameobjects/components/DialogueDirector.tscn" id="8_w37d0"]
 
 [sub_resource type="Environment" id="Environment_lf7d8"]
 ambient_light_source = 2
@@ -72,5 +73,7 @@ stream = ExtResource("6_x6cm1")
 
 [node name="MurderSting" type="AudioStreamPlayer" parent="Music" unique_id=568543826]
 stream = ExtResource("7_vt8va")
+
+[node name="DialogueDirector" parent="." unique_id=1024034190 instance=ExtResource("8_w37d0")]
 
 [connection signal="timeout" from="CleanupTimer" to="." method="_on_cleanup_timer_timeout"]

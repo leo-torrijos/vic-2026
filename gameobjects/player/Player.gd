@@ -30,6 +30,7 @@ var state = MOVE
 @onready var player_ui = $PlayerUI
 @onready var player_hand = $Neck/Camera3D/WeaponBone
 @onready var crosshair: TextureRect = $PlayerUI/Control/CenterContainer/Crosshair
+@onready var animation_player : AnimationPlayer = $Neck/Camera3D/viewmodel2/AnimationPlayer
 #@onready var inspect_indicator: TextureRect = $PlayerUI/InspectIndicator
 
 var current_interaction = null
@@ -71,9 +72,12 @@ func _physics_process(delta: float) -> void:
 				if Input.is_action_just_pressed("action1"):
 					current_interaction = handheld.get_node("KillRay").get_collider()
 					if current_interaction.interaction_type == "kill":
+						animation_player.play("slash")
+						animation_player.queue("idle")
 						current_interaction.get_parent().die()
 					elif current_interaction.interaction_type == "poison":
 						current_interaction.get_parent().poison()
+						handheld.get_node("KillRay").set_collision_mask_value(8, false)
 			else:
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:
@@ -104,6 +108,7 @@ func _physics_process(delta: float) -> void:
 										state = CLEAN
 										hands_full = true
 										$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", false)
+										animation_player.play("clean")
 							"pickup":
 								if not hands_full:
 									crosshair.texture = CROSSHAIR_TEXTURES.pickup
@@ -154,6 +159,12 @@ func _physics_process(delta: float) -> void:
 									else:
 										# TODO: handle attempts to stall when cop is already stalled
 										pass
+							"talk":
+								crosshair.texture = CROSSHAIR_TEXTURES.talk
+								if Input.is_action_just_pressed("action1"):
+									var victim = current_interaction.get_parent()
+									if victim.taken_pills == null and ($InspectHandler.inspected_list.has("pills")):
+										victim.pills_prompt_triggered($InspectHandler.pills_instance)
 				else:
 					$PlayerUI/InspectLabel.hide()
 					#inspect_indicator.hide()
@@ -163,10 +174,12 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_released("action1"):
 				state = MOVE
 				hands_full = false
+				animation_player.stop()
 				if current_interaction:
 					current_interaction.get_parent().cancel_clean()
 					$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", true)
 		DRAG:
+			animation_player.stop()
 			crosshair.texture = CROSSHAIR_TEXTURES.putdown
 			# For dragging stuff, probably corpses.
 			# Ratchet fix: Use "none" in input map to denote no input
@@ -185,10 +198,12 @@ func _physics_process(delta: float) -> void:
 			
 			# Release draggable
 			if Input.is_action_just_released("action1"):
+				animation_player.play("idle")
 				if current_interaction:
 					current_interaction.get_parent().release()
 				state = MOVE
 				hands_full = false
+	
 	move_and_slide()
 	
 func _unhandled_input(event):
@@ -203,5 +218,6 @@ func _unhandled_input(event):
 func done_cleaning():
 	state = MOVE
 	hands_full = false
+	animation_player.play("idle")
 	# TODO: chance to say something on clean?
 	$CleaningSuspicionArea/CollisionShape3D.set_deferred("disabled", true)

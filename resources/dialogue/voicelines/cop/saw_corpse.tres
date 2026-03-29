@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Voiceline" format=3 uid="uid://chx1x016aposj"]
+
+[ext_resource type="AudioStream" uid="uid://d0ij0hn5py0uy" path="res://audio/dialogue/cop_ethan/cop_ethan_body_1.ogg" id="1_87wer"]
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_boyp1"]
+
+[resource]
+script = ExtResource("1_boyp1")
+speaker = "Cop"
+audio_recording = ExtResource("1_87wer")
+subtitle = "Dear god!
+What happened here?"
+metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"
