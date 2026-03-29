@@ -942,6 +942,8 @@ transform = Transform3D(0.84958917, 0, -0.527445, 0, 1, 0, 0.527445, 0, 0.849589
 [node name="WalkPathCop" parent="Paths" parent_id_path=PackedInt32Array(1295105940) index="1" unique_id=1104186730 node_paths=PackedStringArray("navigator") instance=ExtResource("10_vcl05")]
 visible = false
 navigator = NodePath("../../Actors/Cop")
+loop_path = false
+start_on = false
 arrow_color = Color(0.3296368, 0.501839, 0.8439069, 1)
 
 [node name="WalkPoint" parent="Paths/WalkPathCop" index="0" unique_id=509037319 instance=ExtResource("11_nn0v1")]
