@@ -32,9 +32,9 @@ func _ready() -> void:
 		i.nav_mesh = $Actors/Victim/NavigationAgent3D.get_navigation_map()
 
 func next_phase(forced_state=0):
+	phase += 1
 	if forced_state > 0:
 		phase = forced_state
-	phase += 1
 	match phase:
 		INTRO:
 			pass
@@ -89,7 +89,9 @@ func game_over() -> void:
 
 func update_suspicion_ui(total_suspicion):
 	$SuspicionUI/Control/SuspicionMeter.value = Global.total_suspicion
+	print(Global.total_suspicion)
 	if Global.total_suspicion >= 100:
+		print("yes")
 		next_phase(LOSE)
 
 
