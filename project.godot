@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Captions="*uid://perrklxlduvd"
-Global="*uid://dwku1wv33ymq3"
 
 [display]
 
