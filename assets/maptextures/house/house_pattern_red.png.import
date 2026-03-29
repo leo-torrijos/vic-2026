@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://npvmj3ducj1t"
-path.s3tc="res://.godot/imported/house_cushion_brown.png-d1d581c56bbff1a7caa2fee9df35113f.s3tc.ctex"
+uid="uid://tf84lfifffkm"
+path.s3tc="res://.godot/imported/house_pattern_red.png-96533434963d5b2b3c4b026c6801ec75.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/maptextures/house/house_cushion_brown.png"
-dest_files=["res://.godot/imported/house_cushion_brown.png-d1d581c56bbff1a7caa2fee9df35113f.s3tc.ctex"]
+source_file="res://assets/maptextures/house/house_pattern_red.png"
+dest_files=["res://.godot/imported/house_pattern_red.png-96533434963d5b2b3c4b026c6801ec75.s3tc.ctex"]
 
 [params]
 

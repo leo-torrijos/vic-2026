@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://npvmj3ducj1t"
-path.s3tc="res://.godot/imported/house_cushion_brown.png-d1d581c56bbff1a7caa2fee9df35113f.s3tc.ctex"
+uid="uid://cx3wckflc4cav"
+path.s3tc="res://.godot/imported/chair_red_house_canvas_red.png-be4737330d0a5ff53f23a7eab32f34ac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "bf5c3f0a04094621f8f54b0752b1fe5a"
+}
 
 [deps]
 
-source_file="res://assets/maptextures/house/house_cushion_brown.png"
-dest_files=["res://.godot/imported/house_cushion_brown.png-d1d581c56bbff1a7caa2fee9df35113f.s3tc.ctex"]
+source_file="res://assets/models/decoration/chair/chair_red_house_canvas_red.png"
+dest_files=["res://.godot/imported/chair_red_house_canvas_red.png-be4737330d0a5ff53f23a7eab32f34ac.s3tc.ctex"]
 
 [params]
 
