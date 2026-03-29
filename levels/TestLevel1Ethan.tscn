@@ -894,6 +894,9 @@ transform = Transform3D(0.77297723, 0, -0.63443375, 0, 1, 0, 0.63443375, 0, 0.77
 [node name="SmallTableDecor2" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="11" unique_id=967927079 instance=ExtResource("19_d4yrs")]
 transform = Transform3D(0.7161436, 0, 0.697953, 0, 1, 0, -0.697953, 0, 0.7161436, 10.197811, 2.3841858e-07, -2.969086)
 
+[node name="PickupKnife" parent="NavigationRegion3D/Interactables" parent_id_path=PackedInt32Array(1269250877) index="0" unique_id=429504598 instance=ExtResource("21_iat5j")]
+transform = Transform3D(-0.61237234, 0.5, -0.61237234, -0.7071067, -1.4901161e-08, 0.70710677, 0.3535535, 0.86602545, 0.35355344, -2.6268907, 1.2738972, -15.492512)
+
 [node name="CleanupTimer" parent="." index="3" unique_id=831077995]
 wait_time = 10.0
 
@@ -942,9 +945,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061338723, -0.49984002, -0.
 light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
 light_energy = 0.5
 shadow_enabled = true
-
-[node name="PickupKnife" parent="Interactables" parent_id_path=PackedInt32Array(1269250877) index="0" unique_id=429504598 instance=ExtResource("21_iat5j")]
-transform = Transform3D(-0.61237234, 0.5, -0.61237234, -0.7071067, -1.4901161e-08, 0.70710677, 0.3535535, 0.86602545, 0.35355344, -2.6268907, 1.2738972, -15.492512)
 
 [node name="Victim" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="0" unique_id=154303676 instance=ExtResource("22_3m3uf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1208386, 0, -12.437648)
