@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b76k07y6lp2og"]
+
+[ext_resource type="PackedScene" uid="uid://bo6xiyi8m3fud" path="res://gameobjects/containers/GenericContainer.tscn" id="1_66psb"]
+[ext_resource type="PackedScene" uid="uid://bbk3nttmronsp" path="res://assets/models/decoration/toilet/toilet_boring.glb" id="2_kjc1w"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xwdb7"]
+height = 1.25
+radius = 0.3
+
+[node name="ToiletContainer" unique_id=818117057 instance=ExtResource("1_66psb")]
+
+[node name="WeaponHolder" parent="." index="0" unique_id=662123432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32958528, 0.069607615)
+
+[node name="toilet_boring" parent="." index="1" unique_id=494541040 instance=ExtResource("2_kjc1w")]
+
+[node name="seat_001" parent="toilet_boring" index="1" unique_id=957825884]
+transform = Transform3D(1, 0, 0, 0, 0.23695685, 0.9715202, 0, -0.9715202, 0.23695685, -0.015311241, 0.53147393, -0.21677962)
+
+[node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(796536355) index="0" unique_id=296072429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6249481, 0)
+shape = SubResource("CylinderShape3D_xwdb7")
+
+[editable path="toilet_boring"]
