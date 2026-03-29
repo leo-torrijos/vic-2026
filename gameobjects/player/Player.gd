@@ -132,9 +132,9 @@ func _physics_process(delta: float) -> void:
 							if not hands_full:
 								$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.pickup
 								if Input.is_action_just_pressed("action1") and global_position.distance_to(current_interaction.global_position) < 1.0:
-									current_interaction.get_parent().drag(self)
-									state = DRAG
 									hands_full = true
+									state = DRAG
+									current_interaction.get_parent().drag(self)
 						"stall":
 							$PlayerUI/Crosshair.texture = CROSSHAIR_TEXTURES.talk
 							if Input.is_action_just_pressed("action1"):
@@ -175,10 +175,10 @@ func _physics_process(delta: float) -> void:
 			
 			# Release draggable
 			if Input.is_action_just_released("action1"):
-				state = MOVE
-				hands_full = false
 				if current_interaction:
 					current_interaction.get_parent().release()
+				state = MOVE
+				hands_full = false
 	move_and_slide()
 	
 func _unhandled_input(event):
