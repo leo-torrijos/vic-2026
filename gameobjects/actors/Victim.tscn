@@ -42,6 +42,7 @@ collision_mask = 32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageDecor" index="0" unique_id=991964188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7938079, 0)
 shape = SubResource("CylinderShape3D_usmqo")
+disabled = true
 
 [node name="MessRetargetTimer" type="Timer" parent="." index="6" unique_id=952297132]
 wait_time = 0.5

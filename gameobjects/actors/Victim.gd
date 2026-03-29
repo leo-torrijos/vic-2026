@@ -8,6 +8,7 @@ signal about_to_die
 signal death
 
 func die():
+	$DamageDecor/CollisionShape3D.set_deferred("disabled", false)
 	emit_signal("about_to_die")
 	$DeathTimer.start()
 	state = DIE
