@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bm3p78rvpw157"]
+
+[ext_resource type="PackedScene" uid="uid://bo6xiyi8m3fud" path="res://gameobjects/containers/GenericContainer.tscn" id="1_dphlv"]
+[ext_resource type="PackedScene" uid="uid://b1rl6gmw22t02" path="res://assets/models/doorcontainers/cupboard/cupboard.glb" id="2_vtk2l"]
+
+[node name="GenericContainer" unique_id=818117057 instance=ExtResource("1_dphlv")]
+
+[node name="WeaponHolder" parent="." index="0" unique_id=662123432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6846393, 0.14871997)
+
+[node name="cupboard" parent="." index="2" unique_id=170926505 instance=ExtResource("2_vtk2l")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.074596465, 0)
+
+[node name="Cube_001" parent="cupboard" index="1" unique_id=2082866226]
+transform = Transform3D(0.00053765834, 0, 0.30970353, 0, 1, 0, -0.007983155, 0, 0.020858273, -0.25504935, 0.8513137, 0.30914855)
+
+[editable path="cupboard"]

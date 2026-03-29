@@ -11,15 +11,15 @@
 [ext_resource type="Material" uid="uid://btudasgvhct8u" path="res://assets/maptextures/house/house_carpet_blue.tres" id="9_vfe3a"]
 [ext_resource type="Material" uid="uid://iqoj06c17jlr" path="res://assets/maptextures/house/house_curtains_blue.tres" id="10_jnmpp"]
 [ext_resource type="Material" uid="uid://c5vfv3t7va816" path="res://assets/maptextures/house/house_bricks_beige.tres" id="11_k6hxo"]
-[ext_resource type="Material" path="res://assets/maptextures/house/metal_silver_seamless.tres" id="12_46xdq"]
-[ext_resource type="Material" path="res://assets/maptextures/house/metal_gold_seamless.tres" id="13_aa0ii"]
+[ext_resource type="Material" uid="uid://bf1qvmvr23vr4" path="res://assets/maptextures/house/metal_silver_seamless.tres" id="12_46xdq"]
+[ext_resource type="Material" uid="uid://dagcx3mbfcp04" path="res://assets/maptextures/house/metal_gold_seamless.tres" id="13_aa0ii"]
 [ext_resource type="Material" uid="uid://bjnfl63rbnr48" path="res://assets/maptextures/house/house_wood_red.tres" id="14_vcbjw"]
 [ext_resource type="Material" uid="uid://bcgvbms46r4k5" path="res://assets/maptextures/house/house_curtains_beige.tres" id="15_jscuo"]
 [ext_resource type="Material" uid="uid://baiw6einm1mgk" path="res://assets/maptextures/house/house_canvas_red.tres" id="16_m7q71"]
 [ext_resource type="Material" uid="uid://dnwdf5t6h6l0q" path="res://assets/maptextures/house/house_wood_shelves_2.tres" id="17_e48gy"]
-[ext_resource type="Material" path="res://assets/maptextures/house/house_trim_gold.tres" id="18_fmwlo"]
+[ext_resource type="Material" uid="uid://0lgvdh1pde67" path="res://assets/maptextures/house/house_trim_gold.tres" id="18_fmwlo"]
 [ext_resource type="PackedScene" uid="uid://bnh028np76ihb" path="res://gameobjects/decor/BrownChairDecor.tscn" id="19_k6hxo"]
-[ext_resource type="PackedScene" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="20_46xdq"]
+[ext_resource type="PackedScene" uid="uid://dp3wt4qj5ux3v" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="20_46xdq"]
 [ext_resource type="PackedScene" uid="uid://cyqrjik031n3x" path="res://gameobjects/decor/PaintingDecor.tscn" id="21_aa0ii"]
 [ext_resource type="PackedScene" uid="uid://cuaje8w3t5s6a" path="res://gameobjects/decor/TVDecor.tscn" id="22_vcbjw"]
 [ext_resource type="PackedScene" uid="uid://d1mucey0ana1y" path="res://gameobjects/decor/LargePlantDecor.tscn" id="23_jscuo"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bnysi8whw1q7c" path="res://gameobjects/actors/navigation/WalkPath.tscn" id="27_m7q71"]
 [ext_resource type="PackedScene" uid="uid://bhsf2vutljybb" path="res://gameobjects/actors/navigation/WalkPoint.tscn" id="28_e48gy"]
 [ext_resource type="PackedScene" uid="uid://bta8i2xft3c74" path="res://gameobjects/actors/Cop.tscn" id="28_fmwlo"]
+[ext_resource type="PackedScene" uid="uid://bm3p78rvpw157" path="res://gameobjects/containers/Closet.tscn" id="32_yw7ng"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_m7q71"]
 vertices = PackedVector3Array(-18.75, -0.5, -12, -7.25, -0.5, -12, -7.25, -0.5, -14, -6.75, -0.5, -14.25, -6.75, -0.5, -25.75, -18.75, -0.5, -25.75, 8.75, -0.5, -14.25, 9, -0.5, -12.5, 15.75, -0.5, -12.75, 15.75, -0.5, -25.75, -6.75, 7, -13.75, -6.75, 7, 2, 3.25, 7, 2, 3.25, 7, -13.75, 4, 4, -13.75, 4, 4, 2, 8.5, 4, 2, 8.5, 4, -13.75, 0.5, 4, -12.25, 0.25, 4, -13, -0.5, 4, -13, -1, 4, -12, -0.5, 4, -11, -0.75, 4, -3.75, -0.5, 4, -3.25, 0.5, 4, -3.25, -0.5, 4, -5.25, -1, 4, -4.75, -1.75, 4, -5, -1.75, 4, -3.5, -1.75, 4, -11, -1.5, 4, -12, 2.75, 4, -13, 0.75, 4, -11.25, 1.5, 4, -11, 1.5, 2, -6.5, 2.5, 0.75, -4.25, 2.666666, 3.75, -10.083334, -1.75, 4, -13, -6, 4, -13, -6, 4, -10.25, -3.5, 4, -10.25, 1, 1, -4.5, -3.5, 4.5, -9.75, -6, 4.5, -9.75, -6, 4.5, -8.75, -1.75, 4, -8.75, -5.25, 1.25, -13, -5.25, 1.25, -12.5, -2, 1.25, -12.5, -2, 1.25, -13, -3, 0.5, -6.25, -2.25, 0.5, -6.25, -2, 0.5, -6.75, -3.25, 0.5, -8, -5.5, 0.5, -6.75, -5, 0.5, -6.75, -4.75, 0.5, -7.75, -5, 0.5, -8.5, -5, 0.5, -12, -5, 0.5, -9.75, -3.25, 0.5, -9.75, -2, 0.5, -12, -3.5, 0.5, -8.5, -3, 0.5, -9, -1.25, 0.5, -6.75, 0.75, 0.5, -5.5, 0.75, 0.5, -11, 2, 0.5, -12, 2, 0.5, -13, -1.5, 0.5, -13, -1, 0.5, -5.25, 7.75, 0.5, -7.25, 7.75, 0.5, -7.75, 6.75, 0.5, -7.5, 6.25, 0.5, -7, 7.25, 0.5, -5.25, 4, 0.5, -4, 3.25, 0.5, -3.5, 3.25, 0.5, 0.75, 7.75, 0.5, 0.75, 2.5, 0.5, -12, 6, 0.5, -8.25, 5.5, 0.5, -7, 4, 0.5, -11, 4, 0.5, -10, 4.5, 0.5, -9.75, 4.5, 0.5, -5.25, 4, 0.5, -5.5, 5.75, 0.5, -12, 6.75, 0.5, -11, 7.75, 0.5, -10.75, 7.75, 0.5, -12, 6.75, 0.5, -13, 6.25, 0.5, -13, 6, 0.5, -10.25, 4, 0.5, -7.25, 2.75, 0.5, -11.25, 6.5, 0.5, -5.75, 7.75, 0.5, -5.5, 5, 0.5, -12, 4.5, 0.5, -13, 9, -0.5, 0.5, 15.75, -0.5, 0.75, -18.75, -0.5, 0.25, -7.25, -0.5, 0.25, -6, 1, -10.25, -6, 1.25, -9.75, -5.5, 1.25, -9.75, -5.5, 1.25, -10.5, 6.5, 1.5, -10.25, 6.5, 1.5, -8.25, 7.5, 1.5, -8, 7.5, 1.5, -10.5, -5, 4, 0.25, -4.5, 4, 0.5, -4.25, 4, 0, -5, 4, -1.5, -3.5, 4, 0, -3.25, 4, 0.75, -2.75, 4, 0.75, -2.25, 4, -0.25, 0, 4, -1.5, -0.5, 4, -2, -1, 4, -0.75, 0.75, 4, -0.25, -2.5, 4, -4.5, -2, 4, -5, 1.25, 4, 0.75, 1.75, 4, 0.75, -1.75, 4, -7.5, -2.25, 4, -7.5, 1.25, 4, -2, -5.5, 4, -4.5, -5.5, 4, -7.5, -6, 4, -7.5, -6, 4, -1.75, -1.75, 4, -1, -4.75, 4.75, -7.25, -4.75, 4.75, -5.5, -3, 4.75, -5.5, -3, 4.75, -7.25, -4.75, 0.5, -2, -5.25, 0.5, -1.25, -4.25, 0.5, -0.75, -3.5, 0.5, -5.5, -4.25, 0.5, -5.5, -4.5, 0.5, -4.5, -5.25, 0.5, -4.5, -6, 0.5, -5.5, -6, 0.5, -2.75, -5.25, 0.5, -2.75, -1, 0.5, -2, -2, 0.5, -1.5, -1.25, 0.5, -0.25, -4.5, 0.5, 0.5, -2.25, 0.5, 0.75, -2.25, 0.5, 0, -1, 0.5, 0.5, -5.25, 1, -5.5, -5.25, 1, -5, -4.75, 1, -5, -4.75, 1, -5.5, 2.25, 4.25, -2, 2.25, 4.25, -1.5, 2.75, 4.25, -1.5, 2.75, 4.25, -2, -6, 4.5, -1.25, -6, 4.5, -0.75, -5.25, 4.5, -0.75, -5.75, 1.5, -0.5, -5.5, 1.5, 0.25, -4.75, 1.5, 0.25, -4.75, 1.5, -0.75, -7.25, -0.5, 2, -18.75, -0.5, 14.75, -7.5, -0.5, 14.75, 0, 4.5, 0.25, 0, 4.5, 0.75, 0.75, 4.5, 0.75, 0.75, 4.5, 0.25, 9, -0.5, 2, 8.5, -0.5, 2.5, 15.75, -0.5, 14.75, -7, -0.5, 2.5)
@@ -1285,6 +1286,12 @@ speakers = {
 "Detective": NodePath("../Player"),
 "Victim": NodePath("../Actors/Victim")
 }
+
+[node name="GenericContainer" parent="." index="13" unique_id=2099314964 instance=ExtResource("32_yw7ng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.674783, 0, -0.24877262)
+
+[node name="GenericContainer2" parent="." index="14" unique_id=1343824677 instance=ExtResource("32_yw7ng")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -2.3908575, 1.3031492, -13.303417)
 
 [connection signal="about_to_die" from="Actors/Victim" to="." method="_on_victim_about_to_die"]
 [connection signal="death" from="Actors/Victim" to="." method="_on_victim_death"]

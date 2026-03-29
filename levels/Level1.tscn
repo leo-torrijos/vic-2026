@@ -29,7 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://ch67ugfk1q5ia" path="res://assets/models/decoration/ceiling light/ceiling light.glb" id="19_ok7fr"]
 [ext_resource type="PackedScene" uid="uid://bta8i2xft3c74" path="res://gameobjects/actors/Cop.tscn" id="22_tsgrn"]
 [ext_resource type="PackedScene" uid="uid://cuaje8w3t5s6a" path="res://gameobjects/decor/TVDecor.tscn" id="24_wyuhx"]
+[ext_resource type="PackedScene" uid="uid://cohkgkaxsgbhj" path="res://assets/models/doorcontainers/oven/oven.glb" id="25_dp4a1"]
 [ext_resource type="PackedScene" uid="uid://b76k07y6lp2og" path="res://gameobjects/containers/ToiletContainer.tscn" id="26_dp4a1"]
+[ext_resource type="PackedScene" uid="uid://bm3p78rvpw157" path="res://gameobjects/containers/Closet.tscn" id="28_jb2e5"]
 [ext_resource type="PackedScene" uid="uid://dp3wt4qj5ux3v" path="res://gameobjects/decor/LampSmallTableDecor.tscn" id="30_cbal1"]
 
 [sub_resource type="Environment" id="Environment_gqfrg"]
@@ -1101,11 +1103,17 @@ transform = Transform3D(0.7161436, 0, 0.697953, 0, 1, 0, -0.697953, 0, 0.7161436
 [node name="Decor2" parent="NavigationRegion3D/Decor" parent_id_path=PackedInt32Array(2044517480) index="13" unique_id=653557069 instance=ExtResource("24_wyuhx")]
 transform = Transform3D(0.9998853, 0, -0.015148759, 0, 1, 0, 0.015148759, 0, 0.9998853, -4.591601, 0, -3.4745493)
 
+[node name="oven" parent="NavigationRegion3D/Props" parent_id_path=PackedInt32Array(1060471790) index="0" unique_id=1045709768 instance=ExtResource("25_dp4a1")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, -4.9979773, -0.0325377, -15.405047)
+
 [node name="PickupKnife" parent="NavigationRegion3D/Interactables" parent_id_path=PackedInt32Array(1269250877) index="0" unique_id=429504598 instance=ExtResource("10_j4pg1")]
 transform = Transform3D(-0.61237234, 0.5, -0.61237234, -0.7071067, -1.4901161e-08, 0.70710677, 0.3535535, 0.86602545, 0.35355344, -2.6268907, 1.2738972, -15.492512)
 
 [node name="ToiletContainer" parent="NavigationRegion3D/Interactables" parent_id_path=PackedInt32Array(1269250877) index="1" unique_id=818117057 instance=ExtResource("26_dp4a1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.472437, 0, -16.476616)
+
+[node name="GenericContainer" parent="NavigationRegion3D/Interactables" parent_id_path=PackedInt32Array(1269250877) index="2" unique_id=1025276035 instance=ExtResource("28_jb2e5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.6591961, -0.025459766, -15.78001)
 
 [node name="CleanupTimer" parent="." index="3" unique_id=831077995]
 wait_time = 10.0
@@ -1158,12 +1166,10 @@ shadow_enabled = true
 
 [node name="Victim" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="0" unique_id=154303676 instance=ExtResource("9_lbu4x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1208386, 0, -12.437648)
-visible = true
 collision_mask = 1
 
 [node name="Cop" parent="Actors" parent_id_path=PackedInt32Array(295258673) index="1" unique_id=789131365 node_paths=PackedStringArray("spawn_point") instance=ExtResource("22_tsgrn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.416554)
-visible = true
 spawn_point = NodePath("../../Paths/WalkPathCop/WalkPoint")
 
 [node name="WalkPathVictim" parent="Paths" parent_id_path=PackedInt32Array(1295105940) index="0" unique_id=453985004 node_paths=PackedStringArray("navigator") instance=ExtResource("10_vcl05")]
