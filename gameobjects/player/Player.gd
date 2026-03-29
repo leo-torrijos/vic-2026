@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 enum {FREEZE, MOVE, CLEAN, DRAG, DIE}
 

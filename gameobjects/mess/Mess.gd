@@ -7,14 +7,13 @@ extends Node3D
 @export var time_to_clean = 1.5
 
 
-var player
+var player: Player
 
 func _ready() -> void:
 	$CleanTimer.wait_time = time_to_clean
 
 func clean(player_scene):
 	$CleanTimer.start()
-	player = player_scene
 	
 func cancel_clean():
 	$CleanTimer.stop()
