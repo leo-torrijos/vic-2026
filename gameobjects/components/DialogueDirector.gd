@@ -19,12 +19,12 @@ func _ready():
 	#register_speaker("Fake policeman", get_node("../FakePoliceman"))
 	subtitle_label = Captions.get_child(0).get_child(0).get_child(0)
 	subtitle_container = Captions.get_child(0).get_child(0)
-	sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
+	#sequence = load("res://resources/dialogue/sequences/test_sequence/test_sequence.tres")
 	#start_dialogue(sequence)
 
-func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		start_dialogue(sequence)
+#func _physics_process(delta):
+	#if Input.is_action_just_pressed("ui_accept"):
+		#start_dialogue(sequence)
 
 #func _process(delta):
 	#if is_dialogue_taking_place and label.visible_characters != -1:
