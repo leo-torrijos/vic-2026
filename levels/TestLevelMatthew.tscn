@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://31hua7vl3rxf" path="res://assets/models/decoration/art/picture1.glb" id="30_cobps"]
 [ext_resource type="PackedScene" uid="uid://bmfhmufa04lga" path="res://assets/models/decoration/toilet/toilet_pink_fuzzy.glb" id="31_1yvrp"]
 [ext_resource type="PackedScene" uid="uid://bbk3nttmronsp" path="res://assets/models/decoration/toilet/toilet_boring.glb" id="32_utgxe"]
+[ext_resource type="PackedScene" uid="uid://cv37iliuiaos" path="res://gameobjects/player/Pause.tscn" id="33_utgxe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utgxe"]
 albedo_texture = ExtResource("21_s0crk")
@@ -535,3 +536,6 @@ transform = Transform3D(-0.30499732, 0, 0.95235324, 0, 1, 0, -0.95235324, 0, -0.
 
 [node name="toilet_boring" parent="Decoration" index="11" unique_id=1502176777 instance=ExtResource("32_utgxe")]
 transform = Transform3D(0.47325814, 0, 0.8809238, 0, 1, 0, -0.8809238, 0, 0.47325814, -1.6461468, 0, -1.7170525)
+
+[node name="Pause" parent="." index="8" unique_id=1666776744 instance=ExtResource("33_utgxe")]
+process_mode = 3
