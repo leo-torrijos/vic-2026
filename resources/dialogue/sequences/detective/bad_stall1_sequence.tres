@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueSequence" format=3 uid="uid://djkqxtk1dsmlg"]
+
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_g7i6y"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="2_k5kbu"]
+[ext_resource type="Resource" uid="uid://n4tlnpupj1uv" path="res://resources/dialogue/voicelines/detective/bad_stall1.tres" id="2_ogcc0"]
+
+[resource]
+script = ExtResource("2_k5kbu")
+lines = Array[ExtResource("1_g7i6y")]([ExtResource("2_ogcc0")])
+metadata/_custom_type_script = "uid://ci0xrf5ysnuaf"

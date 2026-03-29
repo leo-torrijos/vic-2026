@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Voiceline" format=3 uid="uid://du3qot8w5rb5t"]
+
+[ext_resource type="AudioStream" uid="uid://g8rbjotx4fqg" path="res://audio/dialogue/detective/detective_badstall2.wav" id="1_4j3mq"]
+[ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_nwdh4"]
+
+[resource]
+script = ExtResource("1_nwdh4")
+speaker = "Detective"
+audio_recording = ExtResource("1_4j3mq")
+subtitle = "..."
+metadata/_custom_type_script = "uid://bmkvdkqjvv6yc"

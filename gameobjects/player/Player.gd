@@ -17,6 +17,8 @@ const CROSSHAIR_TEXTURES = {
 	"pickup" : preload("res://assets/gui/temp_crosshair_pickup.png"),
 	"putdown" : preload("res://assets/gui/temp_crosshair_putdown.png"),
 }
+
+@export var BAD_STALLS : Array[DialogueSequence] = []
 #const INSPECT_TEXTURES = {
 	#"e" : preload("res://assets/gui/inspect_notif_e.png"),
 	#"lc" : preload("res://assets/gui/inspect_notif_lc.png"),
@@ -160,6 +162,7 @@ func _physics_process(delta: float) -> void:
 								if Input.is_action_just_pressed("action1"):
 									var cop = current_interaction.get_parent()
 									if cop.state != Cop.STALLED:
+										Global.current_level_director.get_node("DialogueDirector").start_dialogue(BAD_STALLS[randi_range(0, BAD_STALLS.size() - 1)])
 										# TODO: allow different stall times for info/objects
 										current_interaction.get_parent().stall(1.0)
 									else:
@@ -170,6 +173,7 @@ func _physics_process(delta: float) -> void:
 								if Input.is_action_just_pressed("action1"):
 									var victim = current_interaction.get_parent()
 									print(victim)
+									
 									if victim.taken_pills == null and ($InspectHandler.inspected_list.has("pills")):
 										victim.pills_prompt_triggered($InspectHandler.pills_instance)
 				else:

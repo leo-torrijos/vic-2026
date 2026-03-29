@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b20fbd1nitdfa" path="res://gameobjects/player/Player.gd" id="1_wgnyx"]
 [ext_resource type="PackedScene" uid="uid://cf8c464f6knv2" path="res://gameobjects/player/PlayerUI.tscn" id="2_c5dv2"]
+[ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="2_vlawl"]
+[ext_resource type="Resource" uid="uid://djkqxtk1dsmlg" path="res://resources/dialogue/sequences/detective/bad_stall1_sequence.tres" id="3_k607y"]
 [ext_resource type="Script" uid="uid://ct1y6uiwetlb2" path="res://gameobjects/player/InspectHandler.gd" id="3_ln0t8"]
 [ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="4_5ys7b"]
+[ext_resource type="Resource" uid="uid://dqly8bnmxoe2w" path="res://resources/dialogue/sequences/detective/bad_stall2_sequence.tres" id="4_obgpq"]
 [ext_resource type="PackedScene" uid="uid://bydk8xn06y1d2" path="res://assets/models/viewmodel/viewmodel.glb" id="5_2sgil"]
 [ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="6_fsajp"]
 
@@ -21,6 +24,7 @@ radius = 8.0
 collision_layer = 2
 collision_mask = 33
 script = ExtResource("1_wgnyx")
+BAD_STALLS = Array[ExtResource("2_vlawl")]([ExtResource("3_k607y"), ExtResource("4_obgpq")])
 
 [node name="TalkingAudio" parent="." unique_id=1082221871 instance=ExtResource("6_fsajp")]
 
@@ -34,7 +38,7 @@ fov = 90.0
 [node name="viewmodel2" parent="Neck/Camera3D" unique_id=667335026 instance=ExtResource("5_2sgil")]
 transform = Transform3D(-1, 0, -1.509958e-07, -1.2456417e-08, 0.99659145, 0.08249512, 1.5048113e-07, 0.08249512, -0.99659145, 0, -1.7383213, 0.055301487)
 
-[node name="Skeleton3D" parent="Neck/Camera3D/viewmodel2/viewmodel" parent_id_path=PackedInt32Array(667335026, 1913558587) index="0" unique_id=1109744663]
+[node name="Skeleton3D" parent="Neck/Camera3D/viewmodel2/viewmodel" parent_id_path=PackedInt32Array(667335026, 1142822957) index="0" unique_id=2119161100]
 bones/0/rotation = Quaternion(-0.04976058, -3.213118e-14, 3.3794078e-15, 0.9987612)
 bones/2/rotation = Quaternion(-0.5482487, -0.38586998, -0.5043447, 0.54420984)
 bones/3/position = Vector3(0.008492653, 0.24104895, -0.009976234)
@@ -50,7 +54,7 @@ bones/12/rotation = Quaternion(-0.14560796, -0.24399379, 0.641864, 0.7122331)
 bones/13/rotation = Quaternion(0.360447, -0.13063408, 0.1560205, 0.91031337)
 bones/14/rotation = Quaternion(-0.058245566, 0.12290943, -0.0038765268, 0.9906996)
 
-[node name="AnimationPlayer" parent="Neck/Camera3D/viewmodel2" index="1" unique_id=1439803881]
+[node name="AnimationPlayer" parent="Neck/Camera3D/viewmodel2" index="1" unique_id=1881086237]
 autoplay = &"idle"
 
 [node name="InteractRay" type="RayCast3D" parent="Neck/Camera3D" unique_id=2141607628]
