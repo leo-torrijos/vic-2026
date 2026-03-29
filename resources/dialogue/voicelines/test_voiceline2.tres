@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Voiceline" format=3 uid="uid://bg4wg041sjik2"]
 
-[ext_resource type="AudioStream" uid="uid://bxdf421sox3tv" path="res://audio/sfx/test_audio_record.wav" id="1_ge01d"]
+[ext_resource type="AudioStream" uid="uid://dayui0llob8gj" path="res://audio/sfx/chavales-han-cambiado-la-foto-de-las-arkeras.wav" id="1_ge01d"]
 [ext_resource type="Script" uid="uid://bmkvdkqjvv6yc" path="res://resources/dialogue/Voiceline.gd" id="1_patb8"]
 
 [resource]
