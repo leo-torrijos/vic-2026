@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b76j7p33edw82" path="res://assets/models/characters/characters.glb" id="2_tkpry"]
 [ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="3_ku6gs"]
 [ext_resource type="AudioStream" uid="uid://b05vt6tmjdwfg" path="res://audio/sfx/drag_body.ogg" id="4_o5oy8"]
+[ext_resource type="AudioStream" uid="uid://daiqarwin5s4i" path="res://audio/sfx/object_hitting_ground.ogg" id="5_61aqh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5juo4"]
 radius = 0.25
@@ -53,6 +54,12 @@ autostart = true
 [node name="DragSound" type="AudioStreamPlayer3D" parent="." index="7" unique_id=201485081]
 stream = ExtResource("4_o5oy8")
 max_db = 0.0
+
+[node name="FallSound" type="AudioStreamPlayer3D" parent="." index="8" unique_id=225889010]
+stream = ExtResource("5_61aqh")
+volume_db = -6.0
+max_db = 0.0
+pitch_scale = 0.71
 
 [editable path="InteractTrigger"]
 [editable path="SuspicionArea"]
