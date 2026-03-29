@@ -17,11 +17,11 @@ const CROSSHAIR_TEXTURES = {
 	"pickup" : preload("res://assets/gui/temp_crosshair_pickup.png"),
 	"putdown" : preload("res://assets/gui/temp_crosshair_putdown.png"),
 }
-const INSPECT_TEXTURES = {
-	"e" : preload("res://assets/gui/inspect_notif_e.png"),
-	"lc" : preload("res://assets/gui/inspect_notif_lc.png"),
-	"check" : preload("res://assets/gui/inspect_notif_check.png"),
-}
+#const INSPECT_TEXTURES = {
+	#"e" : preload("res://assets/gui/inspect_notif_e.png"),
+	#"lc" : preload("res://assets/gui/inspect_notif_lc.png"),
+	#"check" : preload("res://assets/gui/inspect_notif_check.png"),
+#}
 
 var state = MOVE
 
@@ -30,7 +30,7 @@ var state = MOVE
 @onready var player_ui = $PlayerUI
 @onready var player_hand = $Neck/Camera3D/WeaponBone
 @onready var crosshair: TextureRect = $PlayerUI/Control/CenterContainer/Crosshair
-@onready var inspect_indicator: TextureRect = $PlayerUI/InspectIndicator
+#@onready var inspect_indicator: TextureRect = $PlayerUI/InspectIndicator
 
 var current_interaction = null
 var hands_full = false
@@ -76,22 +76,23 @@ func _physics_process(delta: float) -> void:
 				current_interaction = $Neck/Camera3D/InteractRay.get_collider()
 				if current_interaction and current_interaction is InteractTrigger:
 					if current_interaction.inspectable:
-						inspect_indicator.texture = INSPECT_TEXTURES.e
-						inspect_indicator.show()
-					elif current_interaction.inspected:
-						inspect_indicator.texture = INSPECT_TEXTURES.check
-						inspect_indicator.show()
+						$PlayerUI/InspectLabel.show()
+					#elif current_interaction.inspected:
+						#inspect_indicator.texture = INSPECT_TEXTURES.check
+						#inspect_indicator.show()
 					else:
-						inspect_indicator.hide()
+						$PlayerUI/InspectLabel.hide()
+						#inspect_indicator.hide()
 					
 					# Inspect handling
 					if Input.is_action_pressed("interact") and current_interaction.inspectable:
-						inspect_indicator.texture = INSPECT_TEXTURES.lc
-						inspect_indicator.show()
+						#inspect_indicator.texture = INSPECT_TEXTURES.lc
+						#inspect_indicator.show()
 						crosshair.texture = CROSSHAIR_TEXTURES.inspect
 						if Input.is_action_just_pressed("action1"):
 							$InspectHandler.inspect(current_interaction)
 					else:
+						#inspect_indicator.hide()
 						match current_interaction.interaction_type:
 							"clean":
 								if not hands_full:
@@ -152,7 +153,8 @@ func _physics_process(delta: float) -> void:
 										# TODO: handle attempts to stall when cop is already stalled
 										pass
 				else:
-					inspect_indicator.hide()
+					$PlayerUI/InspectLabel.hide()
+					#inspect_indicator.hide()
 		CLEAN:
 			crosshair.texture = CROSSHAIR_TEXTURES.clean
 			velocity = Vector3.ZERO
