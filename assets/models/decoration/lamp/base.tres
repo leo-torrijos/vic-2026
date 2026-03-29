@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://si8j8lk1h2s7"]
+
+[ext_resource type="Texture2D" uid="uid://dmsban5hviwpr" path="res://assets/models/decoration/lamp/house_lamp_house_wood_spotted.png" id="1_tfu3x"]
+
+[resource]
+resource_name = "base"
+cull_mode = 2
+albedo_texture = ExtResource("1_tfu3x")
+roughness = 0.5
