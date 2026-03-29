@@ -1,6 +1,6 @@
 extends Area3D
 
-var current_cop = null
+var current_cop : Cop = null
 
 @export var suspicion_amount = 1.0
 
@@ -14,6 +14,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if current_cop == null:
 		current_cop = body
+		current_cop.saw_something(self.get_parent_node_3d())
 
 
 func _on_body_exited(body: Node3D) -> void:
