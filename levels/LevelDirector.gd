@@ -60,7 +60,8 @@ func next_phase(forced_state=0):
 #func _physics_process(_delta: float) -> void:
 	#if suspicion >= SUSPICION_LIMIT:
 		#game_over()
-
+func get_current_phase():
+	return phase
 
 ## Intro -> Planning: Cutscene stuff
 ## Planning -> Cleanup: Victim Actor emits signal on death

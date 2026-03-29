@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ci0xrf5ysnuaf" path="res://resources/dialogue/sequences/DialogueSequence.gd" id="3_btpbt"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_jqqm1"]
 [ext_resource type="Resource" uid="uid://b75f0pxoe4m1c" path="res://resources/dialogue/sequences/cop/saw_corpse_sequence.tres" id="4_jymge"]
+[ext_resource type="Resource" uid="uid://dsr3crll5empc" path="res://resources/dialogue/sequences/cop/saw_blood_sequence.tres" id="5_ym8u8"]
 [ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="6_jymge"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqqm1"]
@@ -15,6 +16,7 @@ height = 1.5348511
 collision_layer = 64
 script = ExtResource("2_gupl4")
 dialogues = Dictionary[String, ExtResource("3_btpbt")]({
+"Saw blood": ExtResource("5_ym8u8"),
 "Saw corpse": ExtResource("4_jymge")
 })
 

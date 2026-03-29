@@ -23,6 +23,8 @@ func activate():
 
 func saw_something(what_I_saw:Node3D):
 	print("I saw this:\n")
+	print(what_I_saw)
+	print("\n")
 	print(what_I_saw.get_groups())
 	dialogue_director = Global.current_level_director.get_node("DialogueDirector")
 	

@@ -14,7 +14,8 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if current_cop == null:
 		current_cop = body
-		current_cop.saw_something(self.get_parent_node_3d())
+		if Global.current_level_director.get_current_phase() == 4:
+			current_cop.saw_something(self.get_parent_node_3d())
 
 
 func _on_body_exited(body: Node3D) -> void:
