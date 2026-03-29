@@ -17,6 +17,8 @@ func set_pause():
 	if currently_paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		visible = true
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 
 func _on_retry_pressed() -> void:
