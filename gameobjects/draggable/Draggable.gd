@@ -4,6 +4,9 @@ var blood_puddle_scene = preload("res://gameobjects/mess/BloodPuddle.tscn")
 @onready var original_parent = get_parent()
 var dragging = false
 
+func _ready() -> void:
+	$FallSound.play()
+
 func drag(player_scene):
 	await get_tree().physics_frame
 	reparent(player_scene.neck)
@@ -12,6 +15,7 @@ func drag(player_scene):
 	set_collision_mask_value(1, false)
 	dragging = true
 	$DragSound.play()
+	
 
 func _physics_process(delta: float) -> void:
 	if not $DragBleedTimer.is_stopped() and dragging and $DragBleedDelay.is_stopped():
