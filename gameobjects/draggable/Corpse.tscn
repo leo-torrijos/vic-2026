@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bd3w810op6m3f"]
 
 [ext_resource type="PackedScene" uid="uid://dp5x6nb2dq8nr" path="res://gameobjects/draggable/Draggable.tscn" id="1_5juo4"]
+[ext_resource type="PackedScene" uid="uid://b76j7p33edw82" path="res://assets/models/characters/characters.glb" id="2_tkpry"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5juo4"]
 radius = 0.25
@@ -24,6 +25,10 @@ shape = SubResource("BoxShape3D_5juo4")
 
 [node name="TempMesh" type="MeshInstance3D" parent="." index="2" unique_id=1146013112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10217059, 0)
+visible = false
 mesh = SubResource("BoxMesh_5juo4")
+
+[node name="characters" parent="." index="3" unique_id=314841262 instance=ExtResource("2_tkpry")]
+transform = Transform3D(0.74, 0, 0, 0, -3.2346428e-08, 0.74, 0, -0.74, -3.2346428e-08, 0, 0.0712986, 0.72587585)
 
 [editable path="InteractTrigger"]
