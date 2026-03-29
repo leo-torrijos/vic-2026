@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clsm22fwaqfjf" path="res://gameobjects/player/Player.tscn" id="1_lf7d8"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_ennia"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="3_x6cm1"]
+[ext_resource type="PackedScene" uid="uid://c1ihcddv63a2e" path="res://menus/Pause.tscn" id="5_ennia"]
 
 [sub_resource type="Environment" id="Environment_lf7d8"]
 ambient_light_source = 2
@@ -40,5 +41,7 @@ one_shot = true
 [node name="Actors" type="Node3D" parent="." unique_id=295258673]
 
 [node name="Paths" type="Node3D" parent="." unique_id=1295105940]
+
+[node name="Pause" parent="." unique_id=343961332 instance=ExtResource("5_ennia")]
 
 [connection signal="timeout" from="CleanupTimer" to="." method="_on_cleanup_timer_timeout"]
