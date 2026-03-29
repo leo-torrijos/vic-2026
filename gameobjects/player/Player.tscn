@@ -34,7 +34,7 @@ fov = 90.0
 [node name="viewmodel2" parent="Neck/Camera3D" unique_id=667335026 instance=ExtResource("5_2sgil")]
 transform = Transform3D(-1, 0, -1.509958e-07, -1.2456417e-08, 0.99659145, 0.08249512, 1.5048113e-07, 0.08249512, -0.99659145, 0, -1.7383213, 0.055301487)
 
-[node name="Skeleton3D" parent="Neck/Camera3D/viewmodel2/viewmodel" parent_id_path=PackedInt32Array(667335026, 1991240717) index="0" unique_id=627001221]
+[node name="Skeleton3D" parent="Neck/Camera3D/viewmodel2/viewmodel" parent_id_path=PackedInt32Array(667335026, 1913558587) index="0" unique_id=1109744663]
 bones/0/rotation = Quaternion(-0.04976058, -3.213118e-14, 3.3794078e-15, 0.9987612)
 bones/2/rotation = Quaternion(-0.5482487, -0.38586998, -0.5043447, 0.54420984)
 bones/3/position = Vector3(0.008492653, 0.24104895, -0.009976234)
@@ -50,7 +50,7 @@ bones/12/rotation = Quaternion(-0.14560796, -0.24399379, 0.641864, 0.7122331)
 bones/13/rotation = Quaternion(0.360447, -0.13063408, 0.1560205, 0.91031337)
 bones/14/rotation = Quaternion(-0.058245566, 0.12290943, -0.0038765268, 0.9906996)
 
-[node name="AnimationPlayer" parent="Neck/Camera3D/viewmodel2" index="1" unique_id=1153360390]
+[node name="AnimationPlayer" parent="Neck/Camera3D/viewmodel2" index="1" unique_id=1439803881]
 autoplay = &"idle"
 
 [node name="InteractRay" type="RayCast3D" parent="Neck/Camera3D" unique_id=2141607628]
@@ -58,7 +58,12 @@ target_position = Vector3(0, 0, -2)
 collision_mask = 5
 collide_with_areas = true
 
-[node name="WeaponBone" type="Node3D" parent="Neck/Camera3D" unique_id=1248395745]
+[node name="WeaponBone" type="BoneAttachment3D" parent="Neck/Camera3D" unique_id=1189262484]
+transform = Transform3D(0.99173814, -0.12485562, 0.029437184, -0.019567346, 0.0795526, 0.9966386, -0.1267778, -0.98898053, 0.07645237, 0.28180423, -0.28148353, -0.2799083)
+bone_name = "hand_right"
+bone_idx = 14
+use_external_skeleton = true
+external_skeleton = NodePath("../viewmodel2/viewmodel/Skeleton3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1144212660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
