@@ -47,11 +47,11 @@ mesh = SubResource("BoxMesh_wgnyx")
 [node name="InspectHandler" type="Node3D" parent="." unique_id=553094586]
 script = ExtResource("3_ln0t8")
 
-[node name="SuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("4_5ys7b")]
+[node name="CleaningSuspicionArea" parent="." unique_id=1503767028 instance=ExtResource("4_5ys7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68512213, 0)
 suspicion_amount = 5.0
 
-[node name="CollisionShape3D" parent="SuspicionArea" index="0" unique_id=506871328]
+[node name="CollisionShape3D" parent="CleaningSuspicionArea" index="0" unique_id=506871328]
 shape = SubResource("SphereShape3D_2sgil")
 
-[editable path="SuspicionArea"]
+[editable path="CleaningSuspicionArea"]
