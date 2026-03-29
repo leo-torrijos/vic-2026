@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bcpdgmdo4j1it" path="res://assets/gui/temp_crosshair_default.png" id="1_5g6qw"]
 [ext_resource type="Script" uid="uid://cwqul75fomprf" path="res://assets/gui/PlayerUI.gd" id="1_acq0l"]
 [ext_resource type="Texture2D" uid="uid://60357aedq606" path="res://assets/gui/radial_circle.png" id="2_lweor"]
-[ext_resource type="Theme" path="res://menus/main_theme.tres" id="2_wvsxu"]
+[ext_resource type="Theme" uid="uid://b8tjyg88h6spv" path="res://menus/main_theme.tres" id="2_wvsxu"]
 [ext_resource type="Texture2D" uid="uid://c8bpqju7jbb7c" path="res://assets/gui/inspect_gauge_inactive.png" id="2_xj3oi"]
 [ext_resource type="Texture2D" uid="uid://cbnlxll00fi66" path="res://assets/gui/inspect_gauge_under.png" id="3_gqqoi"]
 [ext_resource type="Texture2D" uid="uid://3b6sdqt50n6j" path="res://assets/gui/inspect_gauge_over.png" id="4_lweor"]
 [ext_resource type="Texture2D" uid="uid://bs5487fg72w02" path="res://assets/gui/inspect_gauge_progress.png" id="5_acq0l"]
+[ext_resource type="Texture2D" uid="uid://ro7a7pokitvf" path="res://assets/gui/inspect_notif_e.png" id="9_qe4yl"]
 
 [node name="PlayerUI" type="CanvasLayer" unique_id=411402018]
 script = ExtResource("1_acq0l")
@@ -60,6 +61,7 @@ theme_override_font_sizes/font_size = 25
 text = "You are suspicious while cleaning!"
 
 [node name="InspectMeter" type="Control" parent="." unique_id=1159815352]
+visible = false
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -95,3 +97,11 @@ fill_mode = 4
 texture_under = ExtResource("3_gqqoi")
 texture_over = ExtResource("4_lweor")
 texture_progress = ExtResource("5_acq0l")
+
+[node name="InspectIndicator" type="TextureRect" parent="." unique_id=1055422671]
+visible = false
+offset_left = 696.0
+offset_top = 296.0
+offset_right = 736.0
+offset_bottom = 336.0
+texture = ExtResource("9_qe4yl")

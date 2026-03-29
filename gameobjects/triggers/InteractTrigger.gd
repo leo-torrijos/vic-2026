@@ -2,7 +2,6 @@ extends Area3D
 
 class_name InteractTrigger
 
-var inspectable = true
 
 # VALID INPUTS:
 # none
@@ -16,3 +15,5 @@ var inspectable = true
 @export var interaction_type = ""
 ## Special string passed to the player on inspection for certain relevant objects. If left blank, InspectHandler will use interaction_type instead.
 @export var inspection_name = ""
+@export var inspectable = true
+var inspected = false

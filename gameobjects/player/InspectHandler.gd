@@ -7,7 +7,8 @@ var inspected_list = []
 
 func inspect(interact: InteractTrigger):
 	if interact.inspection_name:
-		inspected_list.push(interact.inspection_name)
+		interact.inspected = true
+		inspected_list.push_back(interact.inspection_name)
 		# Unique voicelines?
 		match interact.inspection_name:
 			pass
