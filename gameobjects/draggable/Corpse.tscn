@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="3_ku6gs"]
 [ext_resource type="AudioStream" uid="uid://b05vt6tmjdwfg" path="res://audio/sfx/drag_body.ogg" id="4_o5oy8"]
 [ext_resource type="AudioStream" uid="uid://daiqarwin5s4i" path="res://audio/sfx/object_hitting_ground.ogg" id="5_61aqh"]
+[ext_resource type="PackedScene" uid="uid://kt4k676voxtf" path="res://assets/models/characters/actor.glb" id="6_2g34u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5juo4"]
 radius = 0.25
@@ -36,6 +37,7 @@ mesh = SubResource("BoxMesh_5juo4")
 
 [node name="characters" parent="." index="3" unique_id=314841262 instance=ExtResource("2_tkpry")]
 transform = Transform3D(0.74, 0, 0, 0, -3.2346428e-08, 0.74, 0, -0.74, -3.2346428e-08, 0, 0.0712986, 0.72587585)
+visible = false
 
 [node name="SuspicionArea" parent="." index="4" unique_id=1503767028 instance=ExtResource("3_ku6gs")]
 suspicion_amount = 10.0
@@ -60,6 +62,9 @@ stream = ExtResource("5_61aqh")
 volume_db = -6.0
 max_db = 0.0
 pitch_scale = 0.71
+
+[node name="actor" parent="." index="9" unique_id=1672906365 instance=ExtResource("6_2g34u")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.10851318, 0.048754394, 0.8112695)
 
 [editable path="InteractTrigger"]
 [editable path="SuspicionArea"]

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bahuo3p8odixe" path="res://gameobjects/actors/Victim.gd" id="2_gr526"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_20lhs"]
 [ext_resource type="PackedScene" uid="uid://bnvnrcgg672oa" path="res://gameobjects/components/TalkingAudio.tscn" id="4_usmqo"]
+[ext_resource type="PackedScene" uid="uid://kt4k676voxtf" path="res://assets/models/characters/actor.glb" id="5_45nhq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20lhs"]
 radius = 0.25830078
@@ -74,9 +75,15 @@ one_shot = true
 wait_time = 4.0
 one_shot = true
 
+[node name="characters" parent="." index="11" unique_id=314841262]
+visible = false
+
 [node name="TakePillsTimer" type="Timer" parent="." index="12" unique_id=1650320580]
 wait_time = 3.0
 one_shot = true
+
+[node name="actor" parent="." index="13" unique_id=1672906365 instance=ExtResource("5_45nhq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.043903455, 0, 0.035396397)
 
 [connection signal="area_entered" from="DetectPills" to="." method="_on_detect_pills_area_entered"]
 [connection signal="body_entered" from="DamageDecor" to="." method="_on_damage_decor_body_entered"]
@@ -85,3 +92,4 @@ one_shot = true
 
 [editable path="InteractTrigger"]
 [editable path="TalkTrigger"]
+[editable path="characters"]

@@ -54,9 +54,11 @@ func next_phase(forced_state=0):
 			print_debug("Investigation begins. POLICE INCOMING!")
 		WIN: # Win
 			print_debug("you won!")
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			$Win.show()
 		LOSE: # Lose :(
 			print_debug("Busted!")
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			$GameOver.show()
 
 #func _physics_process(_delta: float) -> void:

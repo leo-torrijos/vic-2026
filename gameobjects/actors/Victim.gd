@@ -26,10 +26,13 @@ func _physics_process(_delta: float) -> void:
 	match state:
 		IDLE, TAKE_PILLS:
 			velocity = Vector3.ZERO
+			$actor/AnimationPlayer.play("new_idle")
 		PATROL, WALK_TO_PILLS:
+			$actor/AnimationPlayer.play("new_walk")
 			move()
 			move_and_slide()
 		DIE, DIE_TO_PILLS:
+			$actor/AnimationPlayer.play("new_dying_stab_wound")
 			if $MessRetargetTimer.is_stopped():
 				if $DetectDecor.has_overlapping_bodies():
 					print("I HATE THAT OBJECT")
