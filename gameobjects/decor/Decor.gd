@@ -13,15 +13,18 @@ var player
 
 func _ready() -> void:
 	$CleanTimer.wait_time = time_to_clean
+	$InteractTrigger/CollisionShape3D.set_deferred("disabled", true)
 	#get_dirty()
 
 func clean(player_scene):
 	$CleanTimer.start()
 	player = player_scene
+	$CleaningSound.play()
 	
 	
 func cancel_clean():
 	$CleanTimer.stop()
+	$CleaningSound.stop()
 
 
 
@@ -32,6 +35,8 @@ func _on_clean_timer_timeout() -> void:
 	$InteractTrigger/CollisionShape3D.set_deferred("disabled", true)
 	$CleanIcon.hide()
 	$AnimationPlayer.play("idle")
+	$CleaningSound.stop()
+	$JustCleanedSound.play()
 
 
 func get_dirty():
@@ -41,3 +46,4 @@ func get_dirty():
 		$InteractTrigger/CollisionShape3D.set_deferred("disabled", false)
 		$CleanIcon.show()
 		$AnimationPlayer.play("damage")
+		$BreakSound.play()

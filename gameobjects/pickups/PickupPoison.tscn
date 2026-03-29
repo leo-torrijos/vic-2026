@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cq3a3qwihwvcv"]
+
+[ext_resource type="PackedScene" uid="uid://jb01h8n0oufj" path="res://gameobjects/pickups/GenericPickup.tscn" id="1_vw6tt"]
+[ext_resource type="PackedScene" uid="uid://b1mdpx6jruo4r" path="res://gameobjects/weapon/WeaponPoison.tscn" id="2_fhx27"]
+[ext_resource type="PackedScene" uid="uid://d3p562wp47sm8" path="res://assets/models/ratpoison.glb" id="2_wrbjo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wrbjo"]
+height = 0.3
+radius = 0.1
+
+[node name="PickupPoison" unique_id=429504598 instance=ExtResource("1_vw6tt")]
+collected_object = ExtResource("2_fhx27")
+
+[node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13200274, 0)
+shape = SubResource("CylinderShape3D_wrbjo")
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=1550902025]
+visible = false
+
+[node name="ratpoison" parent="." index="2" unique_id=541854484 instance=ExtResource("2_wrbjo")]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0, 0, 0)
+
+[editable path="InteractTrigger"]

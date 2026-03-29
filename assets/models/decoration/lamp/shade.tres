@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbhns3do31me7"]
+
+[ext_resource type="Texture2D" uid="uid://8w4dpsgeig34" path="res://assets/models/decoration/lamp/house_lamp_house_canvas_cream.png" id="1_j33s1"]
+
+[resource]
+resource_name = "shade"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_j33s1")

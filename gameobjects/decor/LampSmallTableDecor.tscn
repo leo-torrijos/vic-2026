@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://dp3wt4qj5ux3v"]
+
+[ext_resource type="PackedScene" uid="uid://bfara742u16ma" path="res://gameobjects/decor/Decor.tscn" id="1_arhl1"]
+[ext_resource type="PackedScene" uid="uid://bkm8g823voius" path="res://assets/models/decoration/table/table_small.glb" id="2_6y0cv"]
+[ext_resource type="PackedScene" uid="uid://d0p3svsa3x4cq" path="res://assets/models/decoration/lamp/house_lamp.glb" id="3_6y0cv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6btmw"]
+radius = 3.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_q4qx0"]
+radius = 0.6
+
+[sub_resource type="Animation" id="Animation_6btmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("table_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("table_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q4qx0"]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("table_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.9604645e-08, 0.19044548, 0.3251131)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("table_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.64980984, -1.4245462, 1.3319823)]
+}
+
+[sub_resource type="Animation" id="Animation_yjb4o"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("table_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("table_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2sda"]
+_data = {
+&"RESET": SubResource("Animation_6btmw"),
+&"damage": SubResource("Animation_q4qx0"),
+&"idle": SubResource("Animation_yjb4o")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6btmw"]
+height = 0.65888673
+radius = 0.4
+
+[node name="LampSmallTableDecor" unique_id=1678101023 instance=ExtResource("1_arhl1")]
+
+[node name="CollisionShape3D" parent="SuspicionArea" parent_id_path=PackedInt32Array(1503767028) index="0" unique_id=506871328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3063994, 0)
+shape = SubResource("SphereShape3D_6btmw")
+
+[node name="CollisionShape3D" parent="InteractTrigger" parent_id_path=PackedInt32Array(1392577794) index="0" unique_id=1950459346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40099788, 0)
+shape = SubResource("SphereShape3D_q4qx0")
+
+[node name="AnimationPlayer" parent="." index="4" unique_id=2066790702]
+libraries/ = SubResource("AnimationLibrary_k2sda")
+
+[node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(2033304068) index="0" unique_id=313961488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31889662, 0)
+shape = SubResource("CylinderShape3D_6btmw")
+
+[node name="table_small" parent="." index="6" unique_id=972161940 instance=ExtResource("2_6y0cv")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="house_lamp" parent="table_small" index="1" unique_id=847740821 instance=ExtResource("3_6y0cv")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.6618873, 0)
+
+[node name="lamp" parent="table_small/house_lamp" index="0" unique_id=2005619072]
+cast_shadow = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="table_small/house_lamp" index="1" unique_id=1810535719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009095252, 1.0952705, -0.0040740967)
+light_color = Color(0.999999, 0.99207765, 0.5706216, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[editable path="SuspicionArea"]
+[editable path="InteractTrigger"]
+[editable path="table_small/house_lamp"]

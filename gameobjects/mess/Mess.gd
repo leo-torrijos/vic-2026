@@ -15,11 +15,13 @@ func _ready() -> void:
 func clean(player_scene):
 	$CleanTimer.start()
 	player = player_scene
+	$CleaningSound.play()
 	
 func cancel_clean():
 	$CleanTimer.stop()
-
+	$CleaningSound.stop()
 
 func _on_clean_timer_timeout() -> void:
 	player.done_cleaning()
+	$CleaningSound.stop()
 	queue_free()

@@ -4,6 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="2_ete4e"]
 [ext_resource type="PackedScene" uid="uid://dcvrifttxymgt" path="res://gameobjects/triggers/InteractTrigger.tscn" id="3_ssdt2"]
 [ext_resource type="Texture2D" uid="uid://ej1oo45kj6et" path="res://assets/icons/must_clean_icon.png" id="5_uduik"]
+[ext_resource type="AudioStream" uid="uid://d2uv814gvjvg3" path="res://audio/sfx/wiping.ogg" id="5_v0267"]
+[ext_resource type="AudioStream" uid="uid://daiqarwin5s4i" path="res://audio/sfx/object_hitting_ground.ogg" id="6_v0267"]
+[ext_resource type="AudioStream" uid="uid://buamtjgwqbkw5" path="res://audio/sfx/click.ogg" id="7_04h0m"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v0267"]
+random_pitch = 1.3348398
+streams_count = 1
+stream_0/stream = ExtResource("6_v0267")
 
 [node name="Decor" type="Node3D" unique_id=1678101023]
 script = ExtResource("1_i5m6g")
@@ -31,6 +39,19 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=313961488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5358496, 0)
+
+[node name="CleaningSound" type="AudioStreamPlayer3D" parent="." unique_id=772429530]
+stream = ExtResource("5_v0267")
+max_db = 0.0
+
+[node name="BreakSound" type="AudioStreamPlayer3D" parent="." unique_id=2062316688]
+stream = SubResource("AudioStreamRandomizer_v0267")
+volume_db = -11.0
+max_db = 0.0
+
+[node name="JustCleanedSound" type="AudioStreamPlayer3D" parent="." unique_id=1161204400]
+stream = ExtResource("7_04h0m")
+max_db = 0.0
 
 [connection signal="timeout" from="CleanTimer" to="." method="_on_clean_timer_timeout"]
 
