@@ -31,7 +31,9 @@ func _ready() -> void:
 		# provide nav mesh to aid in random movement while death tweaking
 		i.nav_mesh = $Actors/Victim/NavigationAgent3D.get_navigation_map()
 
-func next_phase():
+func next_phase(forced_state=0):
+	if forced_state > 0:
+		phase = forced_state
 	phase += 1
 	match phase:
 		INTRO:
@@ -51,9 +53,9 @@ func next_phase():
 			$SuspicionUI.show()
 			print_debug("Investigation begins. POLICE INCOMING!")
 		WIN: # Win
-			pass
+			print_debug("you won!")
 		LOSE: # Lose :(
-			pass
+			print_debug("Busted!")
 
 #func _physics_process(_delta: float) -> void:
 	#if suspicion >= SUSPICION_LIMIT:
@@ -82,8 +84,15 @@ func game_over() -> void:
 
 func update_suspicion_ui(total_suspicion):
 	$SuspicionUI/Control/SuspicionMeter.value = total_suspicion
+	if total_suspicion >= 100:
+		next_phase(LOSE)
 
 
 func _on_victim_about_to_die() -> void:
 	if phase < MURDER:
+		next_phase()
+
+
+func _on_walk_path_cop_path_completed() -> void:
+	if phase != LOSE:
 		next_phase()
