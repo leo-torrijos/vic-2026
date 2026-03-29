@@ -4,6 +4,7 @@ class_name Cop
 @export var spawn_point : Node3D
 @export var dialogues : Dictionary[String, DialogueSequence] = {} ## "Saw blood" -> start respective DialogueSequence
 var dialogue_director
+@onready var animation_player = $cop/AnimationPlayer
 
 func _ready() -> void:
 	state = FREEZE
@@ -13,6 +14,17 @@ func stall(stall_time: float):
 	$StallTimer.start(stall_time)
 	state = STALLED
 
+
+func _physics_process(delta: float) -> void:
+	super(delta)
+	
+	match state:
+		FREEZE, IDLE:
+			animation_player.play("cop_idle")
+		STALLED:
+			animation_player.play("new_cop_point")
+		PATROL:
+			animation_player.play("new_walk")
 
 func _on_stall_timer_timeout() -> void:
 	state = PATROL
