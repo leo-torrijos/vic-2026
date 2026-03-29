@@ -19,7 +19,8 @@ func die(to_pills := false):
 		state = DIE
 	$InteractTrigger/CollisionShape3D.set_deferred("disabled", true)
 	move_speed *= 3.0
-	follow_director.queue_free()
+	if follow_director:
+		follow_director.queue_free()
 
 func _physics_process(_delta: float) -> void:
 	match state:
@@ -67,6 +68,7 @@ func pills_prompt_triggered(pills: Pills):
 
 
 func _on_detect_pills_area_entered(area: Area3D) -> void:
+	area.get_node("CollisionShape3D").set_deferred("disabled", true)
 	look_at(area.global_position)
 	state = TAKE_PILLS
 	$TakePillsTimer.start()
@@ -76,4 +78,5 @@ func _on_take_pills_timer_timeout() -> void:
 	if taken_pills.poisoned:
 		die(true)
 	else:
+		follow_director._on_target_reached()
 		state = PATROL

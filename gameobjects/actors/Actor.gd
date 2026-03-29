@@ -51,8 +51,9 @@ func move():
 	rotation.z = 0
 
 func patrol(target_position):
-	state = PATROL
-	nav_agent.set_target_position(target_position)
+	if state != TAKE_PILLS and state != WALK_TO_PILLS:
+		state = PATROL
+		nav_agent.set_target_position(target_position)
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
