@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b20fbd1nitdfa" path="res://gameobjects/player/Player.gd" id="1_wgnyx"]
 [ext_resource type="PackedScene" uid="uid://cf8c464f6knv2" path="res://gameobjects/player/PlayerUI.tscn" id="2_c5dv2"]
-[ext_resource type="Script" path="res://gameobjects/player/InspectHandler.gd" id="3_ln0t8"]
+[ext_resource type="Script" uid="uid://ct1y6uiwetlb2" path="res://gameobjects/player/InspectHandler.gd" id="3_ln0t8"]
 [ext_resource type="PackedScene" uid="uid://c28epbwth2wev" path="res://gameobjects/triggers/SuspicionArea.tscn" id="4_5ys7b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fyu5l"]
