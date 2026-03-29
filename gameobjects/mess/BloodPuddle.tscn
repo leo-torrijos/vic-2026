@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_0tbif"]
 radius = 3.0
 
-[node name="BloodPuddle" unique_id=1815458754 instance=ExtResource("1_2s7qb")]
+[node name="BloodPuddle" unique_id=1815458754 groups=["BloodPuddle"] instance=ExtResource("1_2s7qb")]
 
 [node name="SuspicionArea" parent="." index="1" unique_id=1503767028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11382079, 0)

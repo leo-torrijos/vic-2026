@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c1r5khl0vr6i7"]
+
+[ext_resource type="Script" uid="uid://b6sltktky00u0" path="res://gameobjects/components/VoicelineContext.gd" id="1_yppep"]
+
+[node name="VoicelineContext" type="Area3D" unique_id=1054935973]
+script = ExtResource("1_yppep")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1492834177]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
