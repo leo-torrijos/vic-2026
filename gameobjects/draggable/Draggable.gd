@@ -5,6 +5,7 @@ var blood_puddle_scene = preload("res://gameobjects/mess/BloodPuddle.tscn")
 var dragging = false
 
 func drag(player_scene):
+	await get_tree().physics_frame
 	reparent(player_scene.neck)
 	position.x = 0
 	position.z = 0
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 			original_parent.add_child(blood_puddle)
 
 func release():
+	await get_tree().physics_frame
 	dragging = false
 	set_collision_mask_value(1, true)
 	reparent(original_parent)
