@@ -2,6 +2,7 @@ extends Actor
 class_name Victim
 
 var corpse_scene = preload("res://gameobjects/draggable/Corpse.tscn")
+var blood_puddle_scene = preload("res://gameobjects/mess/BloodPuddle.tscn")
 
 signal death
 
@@ -24,11 +25,14 @@ func _physics_process(delta: float) -> void:
 				if $DetectDecor.has_overlapping_bodies():
 					print("I HATE THAT OBJECT")
 					nav_agent.set_target_position($DetectDecor.get_overlapping_bodies().pick_random().global_position)
-					$MessRetargetTimer.start()
 				else:
 					var random_point = global_position + Vector3(randf_range(-2.0, 2.0), 0.0, randf_range(-2.0, 2.0))
 					nav_agent.set_target_position(NavigationServer3D.map_get_closest_point(nav_mesh, random_point))
-					$MessRetargetTimer.start()
+				$MessRetargetTimer.start()
+				var blood_puddle = blood_puddle_scene.instantiate()
+				blood_puddle.transform = transform
+				blood_puddle.rotation.y = randf_range(0, 2 * PI)
+				get_parent().add_child(blood_puddle)
 			move()
 			move_and_slide()
 
