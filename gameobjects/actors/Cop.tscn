@@ -39,7 +39,7 @@ visible = false
 [node name="cop" parent="." index="7" unique_id=298755920 instance=ExtResource("8_1po6l")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.92, 0, 0.045)
 
-[node name="Skeleton3D" parent="cop/cop rig_004" parent_id_path=PackedInt32Array(298755920, 822273169) index="0" unique_id=424378428]
+[node name="Skeleton3D" parent="cop/cop rig_004" parent_id_path=PackedInt32Array(298755920, 2131537933) index="0" unique_id=1440021425]
 bones/0/position = Vector3(0, 0.97069454, -0.053057075)
 bones/1/position = Vector3(0, 0.14631, 4.7813607e-08)
 bones/1/rotation = Quaternion(-0.10133817, 1.18595594e-07, -1.20804495e-08, 0.99485207)
@@ -70,7 +70,7 @@ bones/26/position = Vector3(0.30454397, 1.5461575, 0.1245182)
 bones/26/rotation = Quaternion(0.23861305, 0.14699589, 0.7778109, 0.56255335)
 bones/26/scale = Vector3(0.9999998, 0.9999998, 0.99999994)
 
-[node name="AnimationPlayer" parent="cop" index="1" unique_id=649311475]
+[node name="AnimationPlayer" parent="cop" index="1" unique_id=725211747]
 autoplay = &"new_walk"
 
 [connection signal="timeout" from="StallTimer" to="." method="_on_stall_timer_timeout"]

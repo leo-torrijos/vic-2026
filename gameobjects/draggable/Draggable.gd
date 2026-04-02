@@ -6,6 +6,7 @@ var dragging = false
 
 func _ready() -> void:
 	$FallSound.play()
+	$actor/AnimationPlayer.play("new_dead")
 
 func drag(player_scene):
 	await get_tree().physics_frame
@@ -15,6 +16,7 @@ func drag(player_scene):
 	set_collision_mask_value(1, false)
 	dragging = true
 	$DragSound.play()
+	$actor/AnimationPlayer.play("new_dead_dragging")
 	
 
 func _physics_process(delta: float) -> void:
@@ -28,6 +30,7 @@ func _physics_process(delta: float) -> void:
 
 func release():
 	$DragSound.stop()
+	$actor/AnimationPlayer.pause()
 	await get_tree().physics_frame
 	dragging = false
 	set_collision_mask_value(1, true)

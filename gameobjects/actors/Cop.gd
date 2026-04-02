@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	
 	match state:
 		FREEZE, IDLE:
-			animation_player.play("cop idle")
+			animation_player.play("new_idle")
 		STALLED:
 			animation_player.play("new_cop_point")
 		PATROL:

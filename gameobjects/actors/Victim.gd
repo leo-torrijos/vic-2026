@@ -5,12 +5,14 @@ var corpse_scene = preload("res://gameobjects/draggable/Corpse.tscn")
 var blood_puddle_scene = preload("res://gameobjects/mess/BloodPuddle.tscn")
 
 var taken_pills : Pills
+@onready var ap: AnimationPlayer = $actor/AnimationPlayer
 
 signal about_to_die
 signal death
 
 func die(to_pills := false):
 	$DyingSound.play()
+	ap.play("new_dying_stab_wound")
 	$DamageDecor/CollisionShape3D.set_deferred("disabled", false)
 	emit_signal("about_to_die")
 	$DeathTimer.start()
@@ -27,13 +29,12 @@ func _physics_process(_delta: float) -> void:
 	match state:
 		IDLE, TAKE_PILLS:
 			velocity = Vector3.ZERO
-			$actor/AnimationPlayer.play("new_idle")
+			ap.play("new_idle")
 		PATROL, WALK_TO_PILLS:
-			$actor/AnimationPlayer.play("new_walk")
+			ap.play("new_walk")
 			move()
 			move_and_slide()
 		DIE, DIE_TO_PILLS:
-			$actor/AnimationPlayer.play("new_dying_stab_wound")
 			if $MessRetargetTimer.is_stopped():
 				if $DetectDecor.has_overlapping_bodies():
 					print("I HATE THAT OBJECT")
@@ -54,6 +55,9 @@ func _physics_process(_delta: float) -> void:
 
 func _on_death_timer_timeout() -> void:
 	death.emit()
+	ap.stop()
+	ap.play("new_fall_to_ground")
+	await ap.animation_finished
 	var corpse = corpse_scene.instantiate()
 	corpse.global_transform = global_transform
 	get_parent().add_child(corpse)
