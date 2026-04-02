@@ -8,8 +8,19 @@ bg_color = Color(0.534047, 0.017577145, 9.62615e-08, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0fnq"]
 bg_color = Color(0.35, 0.25596666, 0.168, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6v7v"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s4yt"]
+bg_color = Color(0.6, 0.072000004, 0.072000004, 1)
+border_width_right = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
 [resource]
 default_font = ExtResource("1_e0fnq")
 default_font_size = 0
 Button/styles/hover = SubResource("StyleBoxFlat_3cxxj")
 Button/styles/normal = SubResource("StyleBoxFlat_e0fnq")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_f6v7v")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_6s4yt")

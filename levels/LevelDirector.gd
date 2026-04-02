@@ -90,7 +90,7 @@ func game_over() -> void:
 	pass
 
 func update_suspicion_ui(total_suspicion):
-	$SuspicionUI/Control/SuspicionMeter.value = Global.total_suspicion
+	create_tween().tween_property($SuspicionUI/Control/SuspicionMeter, "value", Global.total_suspicion, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	print(Global.total_suspicion)
 	if Global.total_suspicion >= 100:
 		print("yes")
